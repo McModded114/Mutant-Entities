@@ -1,0 +1,15 @@
+{
+  "_fv": 47,
+  "_type": "feature",
+  "definition": {
+    "generationStep": "SURFACE_STRUCTURES",
+    "restrictionDimensions": [
+      "Surface"
+    ],
+    "restrictionBiomes": [],
+    "generateCondition": {
+      "name": "InChemicalxbiome"
+    },
+    "featurexml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><xml xmlns=\"https://developers.google.com/blockly/xml\"><block deletable=\"false\" type=\"feature_container\" x=\"40\" y=\"40\"><value name=\"feature\"><block type=\"feature_lake\"><value name=\"fluid\"><block type=\"mcitem_allblocks\"><field name=\"value\">CUSTOM:ChemicalX</field></block></value><value name=\"border\"><block type=\"mcitem_allblocks\"><field name=\"value\">Blocks.AIR</field></block></value></block></value><next><block type=\"placement_rarity\"><field name=\"rarity\">50</field><next><block type=\"placement_in_square\"><next><block type=\"placement_heightmap\"><field name=\"heightmap\">WORLD_SURFACE_WG</field><next><block type=\"placement_biome_filter\"/></next></block></next></block></next></block></next></block></xml>"
+  }
+}

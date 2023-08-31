@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": {
+        "min": 1,
+        "max": 2
+      },
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "weight": 3,
+          "name": "minecraft:entities/drowned"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "weight": 4,
+          "name": "minecraft:gameplay/fishing/treasure"
+        }
+      ]
+    }
+  ]
+}

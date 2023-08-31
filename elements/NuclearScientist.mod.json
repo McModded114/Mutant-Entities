@@ -1,0 +1,16 @@
+{
+  "_fv": 47,
+  "_type": "villagerprofession",
+  "definition": {
+    "displayName": "Nuclear Scientist",
+    "pointOfInterest": {
+      "value": "CUSTOM:NuclearSciencetable"
+    },
+    "actionSound": {
+      "value": "block.enchantment_table.use"
+    },
+    "hat": "None",
+    "professionTextureFile": "nuclear_scientist.png",
+    "zombifiedProfessionTextureFile": "nuclear_scientist.png"
+  }
+}

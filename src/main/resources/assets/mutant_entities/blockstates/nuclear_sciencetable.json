@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "mutant_entities:block/nuclear_sciencetable"
+    }
+  }
+}

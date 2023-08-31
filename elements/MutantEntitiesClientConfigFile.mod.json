@@ -1,0 +1,319 @@
+{
+  "_fv": 47,
+  "_type": "config",
+  "definition": {
+    "pools": [
+      {
+        "category": "Mutant Stats",
+        "entries": [
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 1.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "damage",
+            "varname": "damage",
+            "enablecomment": false,
+            "onlyComment": false,
+            "entityType": "CUSTOM:MutantHusk"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 1.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "health",
+            "varname": "health",
+            "enablecomment": false,
+            "onlyComment": false,
+            "entityType": "CUSTOM:MutantHusk"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 1.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "speed",
+            "varname": "speed",
+            "enablecomment": false,
+            "onlyComment": false,
+            "entityType": "CUSTOM:MutantHusk"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 1.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "attack_knockback",
+            "varname": "knockback",
+            "enablecomment": false,
+            "onlyComment": false,
+            "entityType": "CUSTOM:MutantHusk"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 1.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "knockback_resistance",
+            "varname": "kbresistance",
+            "enablecomment": false,
+            "onlyComment": false,
+            "entityType": "CUSTOM:MutantHusk"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 1.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "follow_range",
+            "varname": "range",
+            "enablecomment": false,
+            "onlyComment": false,
+            "entityType": "CUSTOM:MutantHusk"
+          }
+        ]
+      },
+      {
+        "category": "Mutant Spawning",
+        "entries": [
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 1.0,
+            "textDefault": "",
+            "comment": "Spawn chance. Default: 1",
+            "vardisplay": "spawnChance",
+            "varname": "spawnchance",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "CUSTOM:Creeperling"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 1.0,
+            "textDefault": "",
+            "comment": "The second modifier for mob spawning",
+            "vardisplay": "spawnChanceModifier",
+            "varname": "spawnchance2",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "CUSTOM:Creeperling"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 10.0,
+            "textDefault": "",
+            "comment": "The number spawnChance is divided by to have the final number as a chance for spawning",
+            "vardisplay": "spawnScaling",
+            "varname": "spawnscale",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "CUSTOM:Creeperling"
+          }
+        ]
+      },
+      {
+        "category": "Mob Abilities",
+        "entries": [
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.2,
+            "textDefault": "",
+            "comment": "The chance of a mutant zombie doing the grab and leap attack. Default 0.2, meaning 20%",
+            "vardisplay": "leap_chance",
+            "varname": "leap_chance",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "CUSTOM:Creeperling"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.25,
+            "textDefault": "",
+            "comment": "Chance for mutant zombie slam attack. Default: 0.25",
+            "vardisplay": "slam_chance",
+            "varname": "slam_chance",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "CUSTOM:Creeperling"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.1,
+            "textDefault": "",
+            "comment": "Mutant Zombie roar attack to summon other zombies",
+            "vardisplay": "roar_chance",
+            "varname": "roar_chance",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "CUSTOM:Creeperling"
+          }
+        ]
+      },
+      {
+        "category": "Item Stats",
+        "entries": [
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 10.0,
+            "textDefault": "",
+            "comment": "Attack damage of golden hammer",
+            "vardisplay": "goldenhammerdmg",
+            "varname": "goldenhammerdmg",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "CUSTOM:Creeperling"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": -2.8000000000000003,
+            "textDefault": "",
+            "comment": "Attack speed of golden hammer",
+            "vardisplay": "goldenhammerspd",
+            "varname": "goldenhammerspd",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "CUSTOM:Creeperling"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 10.0,
+            "textDefault": "",
+            "comment": "Attack damage of wither sword",
+            "vardisplay": "withersworddmg",
+            "varname": "withersworddmg",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "CUSTOM:Creeperling"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": -2.6,
+            "textDefault": "",
+            "comment": "Attack speed of wither sword",
+            "vardisplay": "witherswordspd",
+            "varname": "witherswordspd",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "CUSTOM:Creeperling"
+          }
+        ]
+      }
+    ],
+    "file": "mutant_entities-client",
+    "configType": 2,
+    "name": "mutant_entities_client_config_file"
+  }
+}

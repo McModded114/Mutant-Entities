@@ -1,0 +1,30 @@
+{
+  "_fv": 47,
+  "_type": "tag",
+  "definition": {
+    "type": "Entities",
+    "items": [],
+    "blocks": [],
+    "functions": [],
+    "entities": [
+      {
+        "value": "CUSTOM:MutantZombie"
+      },
+      {
+        "value": "CUSTOM:MutantHusk"
+      },
+      {
+        "value": "CUSTOM:ThornyMutantHusk"
+      },
+      {
+        "value": "CUSTOM:MutantZombifiedPiglin"
+      },
+      {
+        "value": "CUSTOM:MutantDrowned"
+      }
+    ],
+    "biomes": [],
+    "name": "mutantzombieattack",
+    "namespace": "mod"
+  }
+}

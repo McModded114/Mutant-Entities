@@ -1,0 +1,63 @@
+{
+  "_fv": 47,
+  "_type": "tag",
+  "definition": {
+    "type": "Entities",
+    "items": [],
+    "blocks": [],
+    "functions": [],
+    "entities": [
+      {
+        "value": "CUSTOM:Creeperling"
+      },
+      {
+        "value": "CUSTOM:Endersoul"
+      },
+      {
+        "value": "CUSTOM:EvolvedMutantDrowned"
+      },
+      {
+        "value": "CUSTOM:MutantCreeper"
+      },
+      {
+        "value": "CUSTOM:MutantDrowned"
+      },
+      {
+        "value": "CUSTOM:MutantDrownedAqua"
+      },
+      {
+        "value": "CUSTOM:MutantEnderman"
+      },
+      {
+        "value": "CUSTOM:MutantHusk"
+      },
+      {
+        "value": "CUSTOM:MutantIronGolem"
+      },
+      {
+        "value": "CUSTOM:MutantShulker"
+      },
+      {
+        "value": "CUSTOM:MutantSkeleton"
+      },
+      {
+        "value": "CUSTOM:MutantWitherSkeleton"
+      },
+      {
+        "value": "CUSTOM:MutantZombie"
+      },
+      {
+        "value": "CUSTOM:MutantZombifiedPiglin"
+      },
+      {
+        "value": "CUSTOM:SpiderPig"
+      },
+      {
+        "value": "CUSTOM:ThornyMutantHusk"
+      }
+    ],
+    "biomes": [],
+    "name": "mutant_entities",
+    "namespace": "mod"
+  }
+}

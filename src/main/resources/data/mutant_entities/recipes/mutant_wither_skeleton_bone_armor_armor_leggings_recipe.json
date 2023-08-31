@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "MMM",
+    "M M",
+    "M M"
+  ],
+  "key": {
+    "M": {
+      "item": "mutant_entities:mutant_wither_skeleton_bone"
+    }
+  },
+  "result": {
+    "item": "mutant_entities:mutant_wither_skeleton_bone_armor_armor_leggings",
+    "count": 1
+  }
+}

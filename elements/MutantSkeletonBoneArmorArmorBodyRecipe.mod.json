@@ -1,0 +1,48 @@
+{
+  "_fv": 47,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:MutantSkeletonBone"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:MutantSkeletonBone"
+      },
+      {
+        "value": "CUSTOM:MutantSkeletonBone"
+      },
+      {
+        "value": "CUSTOM:MutantSkeletonBone"
+      },
+      {
+        "value": "CUSTOM:MutantSkeletonBone"
+      },
+      {
+        "value": "CUSTOM:MutantSkeletonBone"
+      },
+      {
+        "value": "CUSTOM:MutantSkeletonBone"
+      },
+      {
+        "value": "CUSTOM:MutantSkeletonBone"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:MutantSkeletonBoneArmorArmor.body"
+    },
+    "name": "mutant_skeleton_bone_armor_armor_body_recipe",
+    "namespace": "mod"
+  }
+}

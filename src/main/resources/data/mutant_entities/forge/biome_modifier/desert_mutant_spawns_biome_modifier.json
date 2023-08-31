@@ -1,0 +1,24 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "minecraft:desert",
+  "spawners": [
+    {
+      "type": "mutant_entities:thorny_mutant_husk",
+      "maxCount": 1,
+      "minCount": 1,
+      "weight": 1
+    },
+    {
+      "type": "mutant_entities:mutant_husk",
+      "maxCount": 1,
+      "minCount": 1,
+      "weight": 1
+    },
+    {
+      "type": "mutant_entities:partly_mutant_husk",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 1
+    }
+  ]
+}

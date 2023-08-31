@@ -1,0 +1,154 @@
+{
+  "_fv": 47,
+  "_type": "animatedentity",
+  "definition": {
+    "mobName": "Aquatic Mutant Drowned",
+    "mobLabel": "",
+    "mobModelTexture": "mutant_drowned_water.png",
+    "mobModelGlowTexture": "",
+    "visualScale": {
+      "fixedValue": 1.3,
+      "name": "MutantMobsScaling"
+    },
+    "boundingBoxScale": {
+      "fixedValue": 1.0,
+      "name": "MutantMobsScaling"
+    },
+    "modelWidth": 1.12,
+    "modelHeight": 1.96,
+    "modelShadowSize": 2.0,
+    "mountedYOffset": 0.0,
+    "hasSpawnEgg": true,
+    "spawnEggBaseColor": {
+      "value": -7343657,
+      "falpha": 0.0
+    },
+    "spawnEggDotColor": {
+      "value": -8807323,
+      "falpha": 0.0
+    },
+    "creativeTab": {
+      "value": "CUSTOM:MutantEntitiesSpawnEggs"
+    },
+    "isBoss": false,
+    "bossBarColor": "PINK",
+    "bossBarType": "PROGRESS",
+    "equipmentMainHand": {
+      "value": "Items.TRIDENT"
+    },
+    "equipmentOffHand": {
+      "value": ""
+    },
+    "equipmentHelmet": {
+      "value": ""
+    },
+    "equipmentBody": {
+      "value": ""
+    },
+    "equipmentLeggings": {
+      "value": ""
+    },
+    "equipmentBoots": {
+      "value": ""
+    },
+    "mobBehaviourType": "Mob",
+    "mobCreatureType": "UNDEAD",
+    "attackStrength": 25,
+    "attackKnockback": 4.5,
+    "knockbackResistance": 0.9,
+    "movementSpeed": 0.3,
+    "armorBaseValue": 2.0,
+    "trackingRange": 64,
+    "followRange": 48,
+    "health": 300,
+    "xpAmount": 35,
+    "waterMob": true,
+    "flyingMob": false,
+    "guiBoundTo": "<NONE>",
+    "inventorySize": 9,
+    "inventoryStackSize": 64,
+    "deathTime": 20,
+    "lerp": 4,
+    "disableCollisions": false,
+    "ridable": false,
+    "canControlForward": false,
+    "canControlStrafe": false,
+    "immuneToFire": false,
+    "immuneToArrows": false,
+    "immuneToFallDamage": true,
+    "immuneToCactus": false,
+    "immuneToDrowning": false,
+    "immuneToLightning": false,
+    "immuneToPotions": false,
+    "immuneToPlayer": false,
+    "immuneToExplosion": false,
+    "immuneToTrident": false,
+    "immuneToAnvil": false,
+    "immuneToWither": false,
+    "immuneToDragonBreath": false,
+    "mobDrop": {
+      "value": "Items.ROTTEN_FLESH"
+    },
+    "livingSound": {
+      "value": "entity.drowned.ambient_water"
+    },
+    "hurtSound": {
+      "value": "entity.drowned.hurt_water"
+    },
+    "deathSound": {
+      "value": "entity.drowned.death_water"
+    },
+    "stepSound": {
+      "value": "entity.drowned.swim"
+    },
+    "onInitialSpawn": {
+      "name": "MutantDrownedWaterStats"
+    },
+    "hasAI": true,
+    "aiBase": "(none)",
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_on_collide\"><field name=\"speed\">2.1</field><field name=\"longmemory\">TRUE</field><field name=\"multiplier\">2.5</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityPlayer</field><field name=\"priority\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityPlayerMP</field><field name=\"priority\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityIronGolem</field><field name=\"priority\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityVillager</field><field name=\"priority\">1</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">0.8</field><field name=\"condition\">null,null</field><next><block type=\"swim\"><field name=\"speed\">1.8</field><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
+    "model": "mutant_drowned_water.geo.json",
+    "groupName": "",
+    "animation1": "idle",
+    "animation2": "idle",
+    "animation3": "",
+    "animation4": "attack",
+    "animation5": "swim",
+    "animation6": "",
+    "animation7": "",
+    "animation8": "",
+    "animation9": "",
+    "animation10": "",
+    "enable2": true,
+    "enable3": false,
+    "enable4": true,
+    "enable5": true,
+    "enable6": false,
+    "enable7": false,
+    "enable8": false,
+    "enable9": false,
+    "enable10": false,
+    "breedable": false,
+    "tameable": false,
+    "disableDeathRotation": false,
+    "headMovement": false,
+    "eyeHeight": false,
+    "breedTriggerItems": [],
+    "ranged": false,
+    "rangedAttackItem": {
+      "value": ""
+    },
+    "rangedItemType": "Default item",
+    "rangedAttackInterval": 20,
+    "rangedAttackRadius": 10.0,
+    "height": 1.0,
+    "spawnThisMob": true,
+    "doesDespawnWhenIdle": true,
+    "spawningProbability": 2,
+    "mobSpawningType": "waterCreature",
+    "minNumberOfMobsPerGroup": 1,
+    "maxNumberOfMobsPerGroup": 3,
+    "restrictionBiomes": [],
+    "spawnInDungeons": false
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "mutant_entities:block/creeperbomb_top",
+    "up": "mutant_entities:block/creeperbomb_top",
+    "north": "mutant_entities:block/creeperbomb_side",
+    "east": "mutant_entities:block/creeperbomb_side",
+    "south": "mutant_entities:block/creeperbomb_side",
+    "west": "mutant_entities:block/creeperbomb_side",
+    "particle": "mutant_entities:block/creeperbomb_top"
+  },
+  "render_type": "solid"
+}

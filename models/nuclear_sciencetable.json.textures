@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "nuclear_sciencetable"
+      },
+      "name": "default"
+    }
+  }
+}

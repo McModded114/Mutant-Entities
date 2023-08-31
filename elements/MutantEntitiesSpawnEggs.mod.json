@@ -1,0 +1,11 @@
+{
+  "_fv": 47,
+  "_type": "tab",
+  "definition": {
+    "name": "Mutant Entities Spawn Eggs",
+    "icon": {
+      "value": "CUSTOM:MutantZombie.spawn_egg"
+    },
+    "showSearch": false
+  }
+}

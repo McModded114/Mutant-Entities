@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ESE",
+    "SES",
+    "ESE"
+  ],
+  "key": {
+    "E": {
+      "item": "mutant_entities:enchanted_gunpowder"
+    },
+    "S": {
+      "tag": "minecraft:sand"
+    }
+  },
+  "result": {
+    "item": "mutant_entities:creeper_bomb",
+    "count": 1
+  }
+}

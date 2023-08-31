@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": {
+        "min": 3,
+        "max": 7
+      },
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "weight": 3,
+          "name": "minecraft:entities/husk"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "weight": 2,
+          "name": "minecraft:blocks/sand"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2657 @@
+{
+  "mod_elements": [
+    {
+      "name": "MutantHuskAbility",
+      "type": "procedure",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_husk_ability",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/MutantHuskAbilityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ChemicalXRecipe",
+      "type": "recipe",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chemical_x_recipe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/recipes/brewing/ChemicalXRecipeBrewingRecipe.java"
+        ]
+      }
+    },
+    {
+      "name": "SolidChemicalX",
+      "type": "block",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "solid_chemical_x",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/mutant_entities/blockstates/solid_chemical_x.json",
+          "src/main/java/net/mcmodded/mutantentities/block/SolidChemicalXBlock.java",
+          "src/main/resources/assets/mutant_entities/models/block/solid_chemical_x.json",
+          "src/main/resources/assets/mutant_entities/models/item/solid_chemical_x.json"
+        ]
+      }
+    },
+    {
+      "name": "Chemicalxbiome",
+      "type": "tag",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chemicalxbiome",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/tags/worldgen/biome/chemicalxbiome.json"
+        ]
+      },
+      "path": "~/Tags"
+    },
+    {
+      "name": "ToxicDirt",
+      "type": "block",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toxic_dirt",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/block/ToxicDirtBlock.java",
+          "src/main/resources/assets/mutant_entities/models/block/toxic_dirt.json",
+          "src/main/resources/assets/mutant_entities/blockstates/toxic_dirt.json",
+          "src/main/resources/assets/mutant_entities/models/item/toxic_dirt.json"
+        ]
+      }
+    },
+    {
+      "name": "WastelandDirt",
+      "type": "block",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wasteland_dirt",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/mutant_entities/models/item/wasteland_dirt.json",
+          "src/main/resources/assets/mutant_entities/blockstates/wasteland_dirt.json",
+          "src/main/resources/assets/mutant_entities/models/block/wasteland_dirt.json",
+          "src/main/java/net/mcmodded/mutantentities/block/WastelandDirtBlock.java"
+        ]
+      }
+    },
+    {
+      "name": "RadiationDamage",
+      "type": "procedure",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "radiation_damage",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/RadiationDamageProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CollectChemicalX",
+      "type": "procedure",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "collect_chemical_x",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/CollectChemicalXProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ChemicalX",
+      "type": "fluid",
+      "sortid": 32,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chemical_x",
+      "metadata": {
+        "gb": false,
+        "files": [
+          "src/main/resources/assets/mutant_entities/models/block/chemical_x.json",
+          "src/main/java/net/mcmodded/mutantentities/block/ChemicalXBlock.java",
+          "src/main/java/net/mcmodded/mutantentities/fluid/ChemicalXFluid.java",
+          "src/main/java/net/mcmodded/mutantentities/fluid/types/ChemicalXFluidType.java",
+          "src/main/resources/assets/mutant_entities/models/item/chemical_x_bucket.json",
+          "src/main/resources/assets/mutant_entities/blockstates/chemical_x.json"
+        ]
+      }
+    },
+    {
+      "name": "MutateEntities",
+      "type": "procedure",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutate_entities",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/MutateEntitiesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "DirtBlocks",
+      "type": "tag",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dirt_blocks",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minecraft/tags/blocks/dirt.json"
+        ]
+      },
+      "path": "~/Tags"
+    },
+    {
+      "name": "MutantEntities",
+      "type": "tag",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_entities",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/tags/entity_types/mutant_entities.json"
+        ]
+      },
+      "path": "~/Tags"
+    },
+    {
+      "name": "MutantEntity",
+      "type": "procedure",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_entity",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/MutantEntityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "DeadGrass",
+      "type": "plant",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dead_grass",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/mutant_entities/models/block/dead_grass.json",
+          "src/main/java/net/mcmodded/mutantentities/block/DeadGrassBlock.java",
+          "src/main/resources/assets/mutant_entities/models/item/dead_grass.json",
+          "src/main/resources/assets/mutant_entities/blockstates/dead_grass.json"
+        ]
+      }
+    },
+    {
+      "name": "MutantSkeletonShootArrow",
+      "type": "procedure",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_skeleton_shoot_arrow",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/MutantSkeletonShootArrowProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "ChanceOf50",
+      "type": "procedure",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chance_of_50",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/ChanceOf50Procedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "ChemicalXFeature",
+      "type": "feature",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chemical_x_feature",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/forge/biome_modifier/chemical_x_feature_biome_modifier.json",
+          "src/main/resources/data/mutant_entities/worldgen/configured_feature/chemical_x_feature.json",
+          "src/main/resources/data/mutant_entities/worldgen/placed_feature/chemical_x_feature.json",
+          "src/main/java/net/mcmodded/mutantentities/world/features/ChemicalXFeatureFeature.java"
+        ]
+      },
+      "path": "~/Feature"
+    },
+    {
+      "name": "MutantZombie",
+      "type": "animatedentity",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_zombie",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/entity/model/MutantZombieModel.java",
+          "src/main/resources/assets/mutant_entities/models/item/mutant_zombie_spawn_egg.json",
+          "src/main/resources/data/mutant_entities/forge/biome_modifier/mutant_zombie_biome_modifier.json",
+          "src/main/java/net/mcmodded/mutantentities/client/renderer/MutantZombieRenderer.java",
+          "src/main/java/net/mcmodded/mutantentities/entity/MutantZombieEntity.java"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantHusk",
+      "type": "animatedentity",
+      "sortid": 50,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_husk",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/forge/biome_modifier/mutant_husk_biome_modifier.json",
+          "src/main/java/net/mcmodded/mutantentities/client/renderer/MutantHuskRenderer.java",
+          "src/main/resources/assets/mutant_entities/models/item/mutant_husk_spawn_egg.json",
+          "src/main/java/net/mcmodded/mutantentities/entity/model/MutantHuskModel.java",
+          "src/main/java/net/mcmodded/mutantentities/entity/MutantHuskEntity.java"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantZombifiedPiglin",
+      "type": "animatedentity",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_zombified_piglin",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/mutant_entities/models/item/mutant_zombified_piglin_spawn_egg.json",
+          "src/main/java/net/mcmodded/mutantentities/entity/MutantZombifiedPiglinEntity.java",
+          "src/main/java/net/mcmodded/mutantentities/entity/model/MutantZombifiedPiglinModel.java",
+          "src/main/java/net/mcmodded/mutantentities/client/renderer/MutantZombifiedPiglinRenderer.java",
+          "src/main/resources/data/mutant_entities/forge/biome_modifier/mutant_zombified_piglin_biome_modifier.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantSkeleton",
+      "type": "animatedentity",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_skeleton",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/entity/model/MutantSkeletonModel.java",
+          "src/main/java/net/mcmodded/mutantentities/entity/MutantSkeletonEntity.java",
+          "src/main/resources/assets/mutant_entities/models/item/mutant_skeleton_spawn_egg.json",
+          "src/main/resources/data/mutant_entities/forge/biome_modifier/mutant_skeleton_biome_modifier.json",
+          "src/main/java/net/mcmodded/mutantentities/client/renderer/MutantSkeletonRenderer.java"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantEntitiesConfigFile",
+      "type": "config",
+      "sortid": 135,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "mutant_entities_config_file",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/mutantentities/configuration/MutantEntitiesConfigFileConfiguration.java"
+        ]
+      },
+      "path": "~/Mobs/Configs"
+    },
+    {
+      "name": "MutantZombiePigman",
+      "type": "procedure",
+      "sortid": 61,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_zombie_pigman",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/MutantZombiePigmanProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Mob Attributes"
+    },
+    {
+      "name": "Mutants",
+      "type": "procedure",
+      "sortid": 62,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutants",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/MutantsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Mob Attributes"
+    },
+    {
+      "name": "SkeletonStats",
+      "type": "procedure",
+      "sortid": 63,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skeleton_stats",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/SkeletonStatsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Mob Attributes"
+    },
+    {
+      "name": "MutantSkeletonBone",
+      "type": "item",
+      "sortid": 64,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_skeleton_bone",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/item/MutantSkeletonBoneItem.java",
+          "src/main/resources/assets/mutant_entities/models/item/mutant_skeleton_bone.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantSkeletonLoot",
+      "type": "loottable",
+      "sortid": 66,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "mutant_skeleton_loot",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/loot_tables/entities/mutant_skeleton.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantIronGolemStats",
+      "type": "procedure",
+      "sortid": 73,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_iron_golem_stats",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/MutantIronGolemStatsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Mob Attributes"
+    },
+    {
+      "name": "MutantCreeperStats",
+      "type": "procedure",
+      "sortid": 74,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_creeper_stats",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/MutantCreeperStatsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Mob Attributes"
+    },
+    {
+      "name": "MutantCreeper",
+      "type": "animatedentity",
+      "sortid": 75,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_creeper",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/entity/MutantCreeperEntity.java",
+          "src/main/java/net/mcmodded/mutantentities/client/renderer/MutantCreeperRenderer.java",
+          "src/main/java/net/mcmodded/mutantentities/entity/model/MutantCreeperModel.java",
+          "src/main/resources/assets/mutant_entities/models/item/mutant_creeper_spawn_egg.json",
+          "src/main/resources/data/mutant_entities/forge/biome_modifier/mutant_creeper_biome_modifier.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantCreeperExplode",
+      "type": "procedure",
+      "sortid": 76,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_creeper_explode",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/MutantCreeperExplodeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "Creeperling",
+      "type": "animatedentity",
+      "sortid": 77,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "creeperling",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/client/renderer/CreeperlingRenderer.java",
+          "src/main/java/net/mcmodded/mutantentities/entity/CreeperlingEntity.java",
+          "src/main/resources/assets/mutant_entities/models/item/creeperling_spawn_egg.json",
+          "src/main/java/net/mcmodded/mutantentities/entity/model/CreeperlingModel.java"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "SpawnCreeperling",
+      "type": "procedure",
+      "sortid": 78,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spawn_creeperling",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/SpawnCreeperlingProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantIronGolem",
+      "type": "animatedentity",
+      "sortid": 85,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_iron_golem",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/mutant_entities/models/item/mutant_iron_golem_spawn_egg.json",
+          "src/main/java/net/mcmodded/mutantentities/entity/model/MutantIronGolemModel.java",
+          "src/main/java/net/mcmodded/mutantentities/entity/MutantIronGolemEntity.java",
+          "src/main/java/net/mcmodded/mutantentities/client/renderer/MutantIronGolemRenderer.java"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantIronGolemLoot",
+      "type": "loottable",
+      "sortid": 86,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "mutant_iron_golem_loot",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/loot_tables/entities/mutant_iron_golem.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "CreeperBombExplode",
+      "type": "procedure",
+      "sortid": 87,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "creeper_bomb_explode",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/CreeperBombExplodeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "CreeperBomb",
+      "type": "block",
+      "sortid": 88,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "creeper_bomb",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/mutant_entities/models/block/creeper_bomb.json",
+          "src/main/java/net/mcmodded/mutantentities/block/CreeperBombBlock.java",
+          "src/main/resources/assets/mutant_entities/models/item/creeper_bomb.json",
+          "src/main/resources/assets/mutant_entities/blockstates/creeper_bomb.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "EnchantedGunpowder",
+      "type": "item",
+      "sortid": 89,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enchanted_gunpowder",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/item/EnchantedGunpowderItem.java",
+          "src/main/resources/assets/mutant_entities/models/item/enchanted_gunpowder.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "CreeperBombRecipe",
+      "type": "recipe",
+      "sortid": 90,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "creeper_bomb_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/recipes/creeper_bomb_recipe.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantCreeperLoot",
+      "type": "loottable",
+      "sortid": 91,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "mutant_creeper_loot",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/loot_tables/entities/mutant_creeper.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantZombifiedPiglinLoot",
+      "type": "loottable",
+      "sortid": 93,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "mutant_zombified_piglin_loot",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/loot_tables/entities/mutant_zombified_piglin.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantSkeletonBoneArmorArmor",
+      "type": "armor",
+      "sortid": 98,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_skeleton_bone_armor_armor",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/item/MutantSkeletonBoneArmorArmorItem.java",
+          "src/main/resources/assets/mutant_entities/models/item/mutant_skeleton_bone_armor_armor_leggings.json",
+          "src/main/resources/assets/mutant_entities/models/item/mutant_skeleton_bone_armor_armor_helmet.json",
+          "src/main/resources/assets/mutant_entities/models/item/mutant_skeleton_bone_armor_armor_boots.json",
+          "src/main/resources/assets/mutant_entities/models/item/mutant_skeleton_bone_armor_armor_chestplate.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantSkeletonBoneArmorArmorHelmetRecipe",
+      "type": "recipe",
+      "sortid": 94,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_skeleton_bone_armor_armor_helmet_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/recipes/mutant_skeleton_bone_armor_armor_helmet_recipe.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantSkeletonBoneArmorArmorBodyRecipe",
+      "type": "recipe",
+      "sortid": 95,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_skeleton_bone_armor_armor_body_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/recipes/mutant_skeleton_bone_armor_armor_body_recipe.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantSkeletonBoneArmorArmorLeggingsRecipe",
+      "type": "recipe",
+      "sortid": 96,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_skeleton_bone_armor_armor_leggings_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/recipes/mutant_skeleton_bone_armor_armor_leggings_recipe.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantSkeletonBoneArmorArmorBootsRecipe",
+      "type": "recipe",
+      "sortid": 97,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_skeleton_bone_armor_armor_boots_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/recipes/mutant_skeleton_bone_armor_armor_boots_recipe.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantWitherSkeletonStats",
+      "type": "procedure",
+      "sortid": 99,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_wither_skeleton_stats",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/MutantWitherSkeletonStatsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Mob Attributes"
+    },
+    {
+      "name": "MutantWitherSkeleton",
+      "type": "animatedentity",
+      "sortid": 104,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_wither_skeleton",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/mutant_entities/models/item/mutant_wither_skeleton_spawn_egg.json",
+          "src/main/java/net/mcmodded/mutantentities/entity/model/MutantWitherSkeletonModel.java",
+          "src/main/java/net/mcmodded/mutantentities/client/renderer/MutantWitherSkeletonRenderer.java",
+          "src/main/java/net/mcmodded/mutantentities/entity/MutantWitherSkeletonEntity.java"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantWitherSkeletonBone",
+      "type": "item",
+      "sortid": 108,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_wither_skeleton_bone",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/mutant_entities/models/item/mutant_wither_skeleton_bone.json",
+          "src/main/java/net/mcmodded/mutantentities/item/MutantWitherSkeletonBoneItem.java"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantWitherSkeletonBoneArmorArmor",
+      "type": "armor",
+      "sortid": 109,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_wither_skeleton_bone_armor_armor",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/mutant_entities/models/item/mutant_wither_skeleton_bone_armor_armor_helmet.json",
+          "src/main/java/net/mcmodded/mutantentities/item/MutantWitherSkeletonBoneArmorArmorItem.java",
+          "src/main/resources/assets/mutant_entities/models/item/mutant_wither_skeleton_bone_armor_armor_boots.json",
+          "src/main/resources/assets/mutant_entities/models/item/mutant_wither_skeleton_bone_armor_armor_chestplate.json",
+          "src/main/resources/assets/mutant_entities/models/item/mutant_wither_skeleton_bone_armor_armor_leggings.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantWitherSkeletonBoneArmorArmorHelmetRecipe",
+      "type": "recipe",
+      "sortid": 110,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_wither_skeleton_bone_armor_armor_helmet_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/recipes/mutant_wither_skeleton_bone_armor_armor_helmet_recipe.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantWitherSkeletonBoneArmorArmorBodyRecipe",
+      "type": "recipe",
+      "sortid": 111,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_wither_skeleton_bone_armor_armor_body_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/recipes/mutant_wither_skeleton_bone_armor_armor_body_recipe.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantWitherSkeletonBoneArmorArmorLeggingsRecipe",
+      "type": "recipe",
+      "sortid": 112,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_wither_skeleton_bone_armor_armor_leggings_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/recipes/mutant_wither_skeleton_bone_armor_armor_leggings_recipe.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantWitherSkeletonBoneArmorArmorBootsRecipe",
+      "type": "recipe",
+      "sortid": 113,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_wither_skeleton_bone_armor_armor_boots_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/recipes/mutant_wither_skeleton_bone_armor_armor_boots_recipe.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantDrowned",
+      "type": "animatedentity",
+      "sortid": 115,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_drowned",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/client/renderer/MutantDrownedRenderer.java",
+          "src/main/java/net/mcmodded/mutantentities/entity/model/MutantDrownedModel.java",
+          "src/main/resources/data/mutant_entities/forge/biome_modifier/mutant_drowned_biome_modifier.json",
+          "src/main/java/net/mcmodded/mutantentities/entity/MutantDrownedEntity.java",
+          "src/main/resources/assets/mutant_entities/models/item/mutant_drowned_spawn_egg.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantDrownedStats",
+      "type": "procedure",
+      "sortid": 114,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_drowned_stats",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/MutantDrownedStatsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Mob Attributes"
+    },
+    {
+      "name": "MutantDrownedWaterStats",
+      "type": "procedure",
+      "sortid": 116,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_drowned_water_stats",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/MutantDrownedWaterStatsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Mob Attributes"
+    },
+    {
+      "name": "MutantDrownedAqua",
+      "type": "animatedentity",
+      "sortid": 117,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_drowned_aqua",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/entity/model/MutantDrownedAquaModel.java",
+          "src/main/java/net/mcmodded/mutantentities/client/renderer/MutantDrownedAquaRenderer.java",
+          "src/main/resources/assets/mutant_entities/models/item/mutant_drowned_aqua_spawn_egg.json",
+          "src/main/java/net/mcmodded/mutantentities/entity/MutantDrownedAquaEntity.java",
+          "src/main/resources/data/mutant_entities/forge/biome_modifier/mutant_drowned_aqua_biome_modifier.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "EvolvedMutantDrowned",
+      "type": "animatedentity",
+      "sortid": 119,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "evolved_mutant_drowned",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/client/renderer/EvolvedMutantDrownedRenderer.java",
+          "src/main/resources/data/mutant_entities/forge/biome_modifier/evolved_mutant_drowned_biome_modifier.json",
+          "src/main/java/net/mcmodded/mutantentities/entity/model/EvolvedMutantDrownedModel.java",
+          "src/main/java/net/mcmodded/mutantentities/entity/EvolvedMutantDrownedEntity.java",
+          "src/main/resources/assets/mutant_entities/models/item/evolved_mutant_drowned_spawn_egg.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "EvolvedMutantDrownedStats",
+      "type": "procedure",
+      "sortid": 118,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "evolved_mutant_drowned_stats",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/EvolvedMutantDrownedStatsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Mob Attributes"
+    },
+    {
+      "name": "MutantDrownedDefend",
+      "type": "procedure",
+      "sortid": 122,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_drowned_defend",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/MutantDrownedDefendProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "ThornyMutantHusk",
+      "type": "animatedentity",
+      "sortid": 123,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "thorny_mutant_husk",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/client/renderer/ThornyMutantHuskRenderer.java",
+          "src/main/java/net/mcmodded/mutantentities/entity/ThornyMutantHuskEntity.java",
+          "src/main/java/net/mcmodded/mutantentities/entity/model/ThornyMutantHuskModel.java",
+          "src/main/resources/data/mutant_entities/forge/biome_modifier/thorny_mutant_husk_biome_modifier.json",
+          "src/main/resources/assets/mutant_entities/models/item/thorny_mutant_husk_spawn_egg.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "ThornyMutantHuskStats",
+      "type": "procedure",
+      "sortid": 124,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "thorny_mutant_husk_stats",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/ThornyMutantHuskStatsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Mob Attributes"
+    },
+    {
+      "name": "InChemicalxbiome",
+      "type": "procedure",
+      "sortid": 126,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "in_chemicalxbiome",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/InChemicalxbiomeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Feature"
+    },
+    {
+      "name": "LorePaper",
+      "type": "item",
+      "sortid": 127,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lore_paper",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/item/LorePaperItem.java",
+          "src/main/resources/assets/mutant_entities/models/item/lore_paper.json"
+        ]
+      }
+    },
+    {
+      "name": "LorePaperLore",
+      "type": "procedure",
+      "sortid": 128,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lore_paper_lore",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/LorePaperLoreProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CalculatingAttributeModifiers",
+      "type": "procedure",
+      "sortid": 129,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "calculating_attribute_modifiers",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/CalculatingAttributeModifiersProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "NuclearBlocksSpawning",
+      "type": "feature",
+      "sortid": 136,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nuclear_blocks_spawning",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/world/features/NuclearBlocksSpawningFeature.java",
+          "src/main/resources/data/mutant_entities/worldgen/configured_feature/nuclear_blocks_spawning.json",
+          "src/main/resources/data/mutant_entities/worldgen/placed_feature/nuclear_blocks_spawning.json",
+          "src/main/resources/data/mutant_entities/forge/biome_modifier/nuclear_blocks_spawning_biome_modifier.json"
+        ]
+      },
+      "path": "~/Feature"
+    },
+    {
+      "name": "MutantEnderman",
+      "type": "animatedentity",
+      "sortid": 137,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_enderman",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/forge/biome_modifier/mutant_enderman_biome_modifier.json",
+          "src/main/java/net/mcmodded/mutantentities/entity/MutantEndermanEntity.java",
+          "src/main/java/net/mcmodded/mutantentities/client/renderer/MutantEndermanRenderer.java",
+          "src/main/java/net/mcmodded/mutantentities/entity/model/MutantEndermanModel.java",
+          "src/main/resources/assets/mutant_entities/models/item/mutant_enderman_spawn_egg.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "SkeletonEntities",
+      "type": "tag",
+      "sortid": 139,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skeleton_entities",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minecraft/tags/entity_types/skeletons.json"
+        ]
+      },
+      "path": "~/Tags"
+    },
+    {
+      "name": "EntityDies",
+      "type": "procedure",
+      "sortid": 142,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "entity_dies",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/EntityDiesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MutantZombieLoot",
+      "type": "loottable",
+      "sortid": 143,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "mutant_zombie_loot",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/loot_tables/entities/mutant_zombie.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "NuclearSciencetable",
+      "type": "block",
+      "sortid": 146,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nuclear_sciencetable",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/mutant_entities/models/block/nuclear_sciencetable.json",
+          "src/main/java/net/mcmodded/mutantentities/block/NuclearSciencetableBlock.java",
+          "src/main/resources/assets/mutant_entities/blockstates/nuclear_sciencetable.json",
+          "src/main/resources/assets/mutant_entities/models/item/nuclear_sciencetable.json"
+        ]
+      }
+    },
+    {
+      "name": "ValidSpawnBlocks",
+      "type": "tag",
+      "sortid": 147,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "valid_spawn_blocks",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minecraft/tags/blocks/valid_spawn.json"
+        ]
+      },
+      "path": "~/Tags"
+    },
+    {
+      "name": "OnSpawn",
+      "type": "procedure",
+      "sortid": 154,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_spawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/OnSpawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ChemicalXItem",
+      "type": "rangeditem",
+      "sortid": 155,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chemical_x_item",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/entity/ChemicalXItemEntity.java",
+          "src/main/java/net/mcmodded/mutantentities/item/ChemicalXItemItem.java",
+          "src/main/resources/assets/mutant_entities/models/item/chemical_x_item.json"
+        ]
+      }
+    },
+    {
+      "name": "ChemicalXItemUse",
+      "type": "procedure",
+      "sortid": 156,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chemical_x_item_use",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/ChemicalXItemUseProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Endersoul",
+      "type": "animatedentity",
+      "sortid": 161,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "endersoul",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/client/renderer/EndersoulRenderer.java",
+          "src/main/java/net/mcmodded/mutantentities/entity/model/EndersoulModel.java",
+          "src/main/resources/assets/mutant_entities/models/item/endersoul_spawn_egg.json",
+          "src/main/java/net/mcmodded/mutantentities/entity/EndersoulEntity.java"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "Enderman",
+      "type": "procedure",
+      "sortid": 162,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enderman",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/EndermanProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Mob Attributes"
+    },
+    {
+      "name": "EndersoulStats",
+      "type": "procedure",
+      "sortid": 163,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "endersoul_stats",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/EndersoulStatsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Mob Attributes"
+    },
+    {
+      "name": "EndersoulHand",
+      "type": "item",
+      "sortid": 164,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "endersoul_hand",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/item/EndersoulHandItem.java",
+          "src/main/resources/assets/mutant_entities/models/item/endersoul_hand.json"
+        ]
+      }
+    },
+    {
+      "name": "ThrowableCobblestone",
+      "type": "rangeditem",
+      "sortid": 165,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "throwable_cobblestone",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/entity/ThrowableCobblestoneEntity.java",
+          "src/main/java/net/mcmodded/mutantentities/item/ThrowableCobblestoneItem.java",
+          "src/main/java/net/mcmodded/mutantentities/client/renderer/ThrowableCobblestoneRenderer.java",
+          "src/main/resources/assets/mutant_entities/models/item/throwable_cobblestone.json"
+        ]
+      },
+      "path": "~/Mobs/Throwable Block"
+    },
+    {
+      "name": "ThrowableEndstone",
+      "type": "rangeditem",
+      "sortid": 166,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "throwable_endstone",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/entity/ThrowableEndstoneEntity.java",
+          "src/main/resources/assets/mutant_entities/models/item/throwable_endstone.json",
+          "src/main/java/net/mcmodded/mutantentities/client/renderer/ThrowableEndstoneRenderer.java",
+          "src/main/java/net/mcmodded/mutantentities/item/ThrowableEndstoneItem.java"
+        ]
+      },
+      "path": "~/Mobs/Throwable Block"
+    },
+    {
+      "name": "ThrowableDirt",
+      "type": "rangeditem",
+      "sortid": 167,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "throwable_dirt",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/item/ThrowableDirtItem.java",
+          "src/main/resources/assets/mutant_entities/models/item/throwable_dirt.json",
+          "src/main/java/net/mcmodded/mutantentities/client/renderer/ThrowableDirtRenderer.java",
+          "src/main/java/net/mcmodded/mutantentities/entity/ThrowableDirtEntity.java"
+        ]
+      },
+      "path": "~/Mobs/Throwable Block"
+    },
+    {
+      "name": "ThrowableGrassblock",
+      "type": "rangeditem",
+      "sortid": 168,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "throwable_grassblock",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/client/renderer/ThrowableGrassblockRenderer.java",
+          "src/main/java/net/mcmodded/mutantentities/item/ThrowableGrassblockItem.java",
+          "src/main/resources/assets/mutant_entities/models/item/throwable_grassblock.json",
+          "src/main/java/net/mcmodded/mutantentities/entity/ThrowableGrassblockEntity.java"
+        ]
+      },
+      "path": "~/Mobs/Throwable Block"
+    },
+    {
+      "name": "EndersoulHandAbility",
+      "type": "procedure",
+      "sortid": 169,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "endersoul_hand_ability",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/EndersoulHandAbilityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "HurtInWater",
+      "type": "procedure",
+      "sortid": 170,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hurt_in_water",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/HurtInWaterProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantEntitiesBlocks",
+      "type": "tab",
+      "sortid": 172,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_entities_blocks",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "MutantEntitiesItems",
+      "type": "tab",
+      "sortid": 171,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_entities_items",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "MutantEntitiesSpawnEggs",
+      "type": "tab",
+      "sortid": 173,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_entities_spawn_eggs",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "Extralives",
+      "type": "tag",
+      "sortid": 174,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "extralives",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/tags/entity_types/extralives.json"
+        ]
+      },
+      "path": "~/Tags"
+    },
+    {
+      "name": "SpiderPig",
+      "type": "animatedentity",
+      "sortid": 176,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spider_pig",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/entity/SpiderPigEntity.java",
+          "src/main/java/net/mcmodded/mutantentities/client/renderer/SpiderPigRenderer.java",
+          "src/main/resources/data/mutant_entities/forge/biome_modifier/spider_pig_biome_modifier.json",
+          "src/main/java/net/mcmodded/mutantentities/entity/model/SpiderPigModel.java",
+          "src/main/resources/assets/mutant_entities/models/item/spider_pig_spawn_egg.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantShulker",
+      "type": "animatedentity",
+      "sortid": 177,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_shulker",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/entity/model/MutantShulkerModel.java",
+          "src/main/java/net/mcmodded/mutantentities/client/renderer/MutantShulkerRenderer.java",
+          "src/main/resources/assets/mutant_entities/models/item/mutant_shulker_spawn_egg.json",
+          "src/main/java/net/mcmodded/mutantentities/entity/MutantShulkerEntity.java"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "SpiderpigStats",
+      "type": "procedure",
+      "sortid": 178,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spiderpig_stats",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/SpiderpigStatsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Mob Attributes"
+    },
+    {
+      "name": "MutantShulkerStats",
+      "type": "procedure",
+      "sortid": 179,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_shulker_stats",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/MutantShulkerStatsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Mob Attributes"
+    },
+    {
+      "name": "OnRightclickOnEntity",
+      "type": "procedure",
+      "sortid": 182,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_rightclick_on_entity",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/OnRightclickOnEntityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SpiderPigLoot",
+      "type": "loottable",
+      "sortid": 183,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "spider_pig_loot",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/loot_tables/entities/spider_pig.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantEndermanLoot",
+      "type": "loottable",
+      "sortid": 185,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "mutant_enderman_loot",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/loot_tables/entities/mutant_enderman.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "IsNotTamed",
+      "type": "procedure",
+      "sortid": 191,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "is_not_tamed",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/IsNotTamedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "IsTamed",
+      "type": "procedure",
+      "sortid": 192,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "is_tamed",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/IsTamedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "SpiderPigTextures",
+      "type": "procedure",
+      "sortid": 193,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spider_pig_textures",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/SpiderPigTexturesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "ChemicalXEffect",
+      "type": "potioneffect",
+      "sortid": 213,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chemical_x_effect",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/potion/ChemicalXEffectMobEffect.java"
+        ]
+      }
+    },
+    {
+      "name": "KillEntity",
+      "type": "procedure",
+      "sortid": 194,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kill_entity",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/KillEntityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ChemicalXParticle",
+      "type": "particle",
+      "sortid": 214,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chemical_x_particle",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/client/particle/ChemicalXParticleParticle.java",
+          "src/main/resources/assets/mutant_entities/particles/chemical_x_particle.json"
+        ]
+      }
+    },
+    {
+      "name": "ChemicalXEffectParticle",
+      "type": "procedure",
+      "sortid": 195,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chemical_x_effect_particle",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/ChemicalXEffectParticleProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MutantZombieTextures",
+      "type": "procedure",
+      "sortid": 198,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_zombie_textures",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/MutantZombieTexturesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantSnowGolem",
+      "type": "animatedentity",
+      "sortid": 200,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_snow_golem",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/entity/MutantSnowGolemEntity.java",
+          "src/main/java/net/mcmodded/mutantentities/entity/MutantSnowGolemEntityProjectile.java",
+          "src/main/java/net/mcmodded/mutantentities/entity/model/MutantSnowGolemModel.java",
+          "src/main/java/net/mcmodded/mutantentities/client/renderer/MutantSnowGolemRenderer.java",
+          "src/main/resources/assets/mutant_entities/models/item/mutant_snow_golem_spawn_egg.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "NuclearScientist",
+      "type": "villagerprofession",
+      "sortid": 215,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nuclear_scientist",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "Trades",
+      "type": "villagertrade",
+      "sortid": 216,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "trades",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "MutantEntitiesClientConfigFile",
+      "type": "config",
+      "sortid": 201,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "mutant_entities_client_config_file",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/mutantentities/configuration/MutantEntitiesClientConfigFileConfiguration.java"
+        ]
+      },
+      "path": "~/Mobs/Configs"
+    },
+    {
+      "name": "EndersoulLoot",
+      "type": "loottable",
+      "sortid": 204,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "endersoul_loot",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/loot_tables/entities/endersoul.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantDrownedLoot",
+      "type": "loottable",
+      "sortid": 205,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "mutant_drowned_loot",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/loot_tables/entities/mutant_drowned.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantDrownedAquaLoot",
+      "type": "loottable",
+      "sortid": 206,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "mutant_drowned_aqua_loot",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/loot_tables/entities/mutant_drowned_aqua.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "EvolvedMutantDrownedLoot",
+      "type": "loottable",
+      "sortid": 207,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "evolved_mutant_drowned_loot",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/loot_tables/entities/evolved_mutant_drowned.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "MutantHuskLoot",
+      "type": "loottable",
+      "sortid": 208,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "mutant_husk_loot",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/loot_tables/entities/mutant_husk.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "ThornyMutantHuskLoot",
+      "type": "loottable",
+      "sortid": 210,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "thorny_mutant_husk_loot",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/loot_tables/entities/thorny_mutant_husk.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "NewMutantZombieAttack",
+      "type": "procedure",
+      "sortid": 219,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "new_mutant_zombie_attack",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/NewMutantZombieAttackProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "damagesource",
+            "type": "damagesource"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Damage"
+    },
+    {
+      "name": "Mutantzombiepassive",
+      "type": "tag",
+      "sortid": 221,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutantzombiepassive",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/tags/entity_types/mutantzombiepassive.json"
+        ]
+      },
+      "path": "~/Tags"
+    },
+    {
+      "name": "Mutantzombiebase",
+      "type": "tag",
+      "sortid": 222,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutantzombiebase",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/tags/entity_types/mutantzombieattack.json"
+        ]
+      },
+      "path": "~/Tags"
+    },
+    {
+      "name": "WeaponEffects",
+      "type": "procedure",
+      "sortid": 228,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "weapon_effects",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/WeaponEffectsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "amount",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Damage"
+    },
+    {
+      "name": "MutantZombifiedPiglinAttack",
+      "type": "procedure",
+      "sortid": 229,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_zombified_piglin_attack",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/MutantZombifiedPiglinAttackProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Damage"
+    },
+    {
+      "name": "OverworldBiome",
+      "type": "tag",
+      "sortid": 230,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "overworld_biome",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/tags/worldgen/biome/overworld_biome.json"
+        ]
+      },
+      "path": "~/Tags"
+    },
+    {
+      "name": "NuclearWastes",
+      "type": "biome",
+      "sortid": 232,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nuclear_wastes",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/worldgen/biome/nuclear_wastes.json"
+        ]
+      },
+      "path": "~/Feature"
+    },
+    {
+      "name": "ToxicDirtFeature",
+      "type": "feature",
+      "sortid": 233,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toxic_dirt_feature",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/forge/biome_modifier/toxic_dirt_feature_biome_modifier.json",
+          "src/main/java/net/mcmodded/mutantentities/world/features/ToxicDirtFeatureFeature.java",
+          "src/main/resources/data/mutant_entities/worldgen/configured_feature/toxic_dirt_feature.json",
+          "src/main/resources/data/mutant_entities/worldgen/placed_feature/toxic_dirt_feature.json"
+        ]
+      },
+      "path": "~/Feature"
+    },
+    {
+      "name": "SolidChemicalXFeature",
+      "type": "feature",
+      "sortid": 234,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "solid_chemical_x_feature",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/worldgen/placed_feature/solid_chemical_x_feature.json",
+          "src/main/java/net/mcmodded/mutantentities/world/features/SolidChemicalXFeatureFeature.java",
+          "src/main/resources/data/mutant_entities/worldgen/configured_feature/solid_chemical_x_feature.json",
+          "src/main/resources/data/mutant_entities/forge/biome_modifier/solid_chemical_x_feature_biome_modifier.json"
+        ]
+      },
+      "path": "~/Feature"
+    },
+    {
+      "name": "DeadGrassFeature",
+      "type": "feature",
+      "sortid": 235,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dead_grass_feature",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/world/features/DeadGrassFeatureFeature.java",
+          "src/main/resources/data/mutant_entities/worldgen/placed_feature/dead_grass_feature.json",
+          "src/main/resources/data/mutant_entities/forge/biome_modifier/dead_grass_feature_biome_modifier.json",
+          "src/main/resources/data/mutant_entities/worldgen/configured_feature/dead_grass_feature.json"
+        ]
+      },
+      "path": "~/Feature"
+    },
+    {
+      "name": "MutantZombifiedPiglinsHammer",
+      "type": "item",
+      "sortid": 236,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_zombified_piglins_hammer",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/item/MutantZombifiedPiglinsHammerItem.java",
+          "src/main/resources/assets/mutant_entities/models/item/mutant_zombified_piglins_hammer.json"
+        ]
+      }
+    },
+    {
+      "name": "Crushing",
+      "type": "enchantment",
+      "sortid": 238,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "crushing",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/enchantment/CrushingEnchantment.java"
+        ]
+      }
+    },
+    {
+      "name": "Cleaving",
+      "type": "enchantment",
+      "sortid": 239,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cleaving",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/enchantment/CleavingEnchantment.java"
+        ]
+      }
+    },
+    {
+      "name": "DeadGrassLoottable",
+      "type": "loottable",
+      "sortid": 240,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dead_grass_loottable",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/loot_tables/blocks/dead_grass.json"
+        ]
+      }
+    },
+    {
+      "name": "MutantMobsScaling",
+      "type": "procedure",
+      "sortid": 241,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_mobs_scaling",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/MutantMobsScalingProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MutantWitherSkeletonSword",
+      "type": "item",
+      "sortid": 242,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_wither_skeleton_sword",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/mutant_entities/models/item/mutant_wither_skeleton_sword.json",
+          "src/main/java/net/mcmodded/mutantentities/item/MutantWitherSkeletonSwordItem.java"
+        ]
+      }
+    },
+    {
+      "name": "WitherSkeletonNewAttacks",
+      "type": "procedure",
+      "sortid": 247,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wither_skeleton_new_attacks",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/WitherSkeletonNewAttacksProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "damagesource",
+            "type": "damagesource"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Damage"
+    },
+    {
+      "name": "Atk",
+      "type": "attribute",
+      "sortid": 248,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atk",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "NewMutantEndermanAttack",
+      "type": "procedure",
+      "sortid": 249,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "new_mutant_enderman_attack",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/NewMutantEndermanAttackProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "damagesource",
+            "type": "damagesource"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Damage"
+    },
+    {
+      "name": "MutantZombiesScaling",
+      "type": "procedure",
+      "sortid": 250,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutant_zombies_scaling",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/MutantZombiesScalingProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SpiderPigScaling",
+      "type": "procedure",
+      "sortid": 251,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spider_pig_scaling",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/SpiderPigScalingProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Ext",
+      "type": "attribute",
+      "sortid": 252,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ext",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "Smol",
+      "type": "attribute",
+      "sortid": 253,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "smol",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/Mobs"
+    }
+  ],
+  "variable_elements": [
+    {
+      "name": "lorepaper",
+      "type": "string",
+      "scope": "map",
+      "value": "\"\""
+    }
+  ],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {
+      "fluid.mutant_entities.chemical_x": "Chemical X",
+      "item.mutant_entities.mutant_skeleton_bone_armor_armor_leggings": "Mutant Skeleton Bone Leggings",
+      "item.mutant_entities.mutant_drowned_spawn_egg": "Mutant Drowned Spawn Egg",
+      "entity.mutant_entities.creeperling": "Creeperling",
+      "enchantment.mutant_entities.cleaving": "Cleaving",
+      "item.mutant_entities.mutant_zombie_spawn_egg": "Mutant Zombie Spawn Egg",
+      "entity.mutant_entities.thorny_mutant_husk": "Thorny Mutant Husk",
+      "death.attack.mutantgeneric": "%1$s died",
+      "entity.mutant_entities.spider_pig": "Spider Pig",
+      "item.mutant_entities.chemical_x_item": "Chemical X",
+      "item.mutant_entities.endersoul_hand": "Endersoul Hand",
+      "itemGroup.tabmutant_entities_spawn_eggs": "Mutant Entities Spawn Eggs",
+      "entity.mutant_entities.evolved_mutant_drowned": "Evolved Mutant Drowned",
+      "block.mutant_entities.wasteland_dirt": "Wasteland Dirt",
+      "item.mutant_entities.mutant_skeleton_spawn_egg": "Mutant Skeleton Spawn Egg",
+      "item.mutant_entities.mutant_skeleton_bone": "Mutant Skeleton Bone",
+      "item.mutant_entities.mutant_skeleton_bone_armor_armor_helmet": "Mutant Skeleton Bone Helmet",
+      "entity.mutant_entities.mutant_skeleton": "Mutant Skeleton",
+      "entity.mutant_entities.mutant_drowned_aqua": "Aquatic Mutant Drowned",
+      "itemGroup.tabmutant_entities_items": "Mutant Entities Items",
+      "entity.minecraft.villager.mutant_entities.nuclear_scientist": "Nuclear Scientist",
+      "item.mutant_entities.mutant_zombified_piglin_spawn_egg": "Mutant Zombified Piglin Spawn Egg",
+      "item.mutant_entities.mutant_wither_skeleton_spawn_egg": "Mutant Wither Skeleton Spawn Egg",
+      "item.mutant_entities.spider_pig_spawn_egg": "Spider Pig Spawn Egg",
+      "attribute.mutant_entities.ext": "Ext (don\u0027t touch. For mutant zombies)",
+      "item.mutant_entities.mutant_wither_skeleton_bone_armor_armor_leggings": "Mutant Wither Skeleton Bone Leggings",
+      "entity.mutant_entities.mutant_zombified_piglin": "Mutant Zombified Piglin",
+      "entity.mutant_entities.mutant_drowned": "Mutant Drowned",
+      "block.mutant_entities.dead_grass": "Dead Grass",
+      "death.attack.slam.player": "%1$s was crushed by %2$s",
+      "attribute.mutant_entities.smol": "Smol(don\u0027t touch. Used for baby mutants)",
+      "item_group.mutant_entities.mutant_entities_blocks": "Mutant Entities Blocks",
+      "entity.mutant_entities.mutant_creeper": "Mutant Creeper",
+      "entity.mutant_entities.mutant_zombie": "Mutant Zombie",
+      "entity.mutant_entities.mutant_shulker": "Mutant Shulker",
+      "item.mutant_entities.mutant_husk_spawn_egg": "Mutant Husk Spawn Egg",
+      "entity.mutant_entities.mutant_enderman": "Mutant Enderman",
+      "item.mutant_entities.mutant_creeper_spawn_egg": "Mutant Creeper Spawn Egg",
+      "config.mutant_entities.mutant_entities_config_file": "mutant_entities-server",
+      "death.attack.mutantgeneric.player.item": "%1$s was slain by %2$s using %3$s",
+      "block.mutant_entities.solid_chemical_x": "Solid Chemical X",
+      "item.mutant_entities.mutant_wither_skeleton_bone_armor_armor_chestplate": "Mutant Wither Skeleton Bone Chestplate",
+      "item.mutant_entities.evolved_mutant_drowned_spawn_egg": "Evolved Mutant Drowned Spawn Egg",
+      "item.mutant_entities.mutant_wither_skeleton_bone": "Mutant Wither Skeleton Bone",
+      "death.attack.slam.player.item": "%1$s was crushed by %2$s using %3$s",
+      "item.mutant_entities.lore_paper": "Ancient Documents",
+      "item_group.mutant_entities.mutant_entities_spawn_eggs": "Mutant Entities Spawn Eggs",
+      "item.mutant_entities.mutant_shulker_spawn_egg": "Mutant Shulker Spawn Egg",
+      "item.mutant_entities.mutant_wither_skeleton_bone_armor_armor_helmet": "Mutant Wither Skeleton Bone Helmet",
+      "entity.mutant_entities.mutant_wither_skeleton": "Mutant Wither Skeleton",
+      "item.mutant_entities.mutant_skeleton_bone_armor_armor_boots": "Mutant Skeleton Bone Boots",
+      "item.mutant_entities.mutant_wither_skeleton_sword": "Withering Scimitar",
+      "item.mutant_entities.throwable_grassblock": "Throwable Block",
+      "death.attack.chemicalx": "%1$s died from radiation",
+      "item.mutant_entities.thorny_mutant_husk_spawn_egg": "Thorny Mutant Husk Spawn Egg",
+      "entity.mutant_entities.mutant_husk": "Mutant Husk",
+      "item.mutant_entities.mutant_drowned_aqua_spawn_egg": "Aquatic Mutant Drowned Spawn Egg",
+      "death.attack.mutantgeneric.player": "%1$s was slain by %2$s",
+      "itemGroup.tabmutant_entities_blocks": "Mutant Entities Blocks",
+      "item.mutant_entities.mutant_iron_golem_spawn_egg": "Mutant Iron Golem Spawn Egg",
+      "gamerule.partly_mutant_chance.description": "Chance of a partly mutant zombie spawning in place of a normal zombie",
+      "item.mutant_entities.creeperling_spawn_egg": "Creeperling Spawn Egg",
+      "item.mutant_entities.throwable_cobblestone": "Throwable Block",
+      "item.mutant_entities.mutant_skeleton_bone_armor_armor_chestplate": "Mutant Skeleton Bone Chestplate",
+      "entity.mutant_entities.mutant_snow_golem": "Mutant Snow Golem",
+      "attribute.mutant_entities.atk": "Atk (don\u0027t touch. For mutant mob attacks)",
+      "item.mutant_entities.throwable_endstone": "Throwable Block",
+      "death.attack.slam": "%1$s was crushed",
+      "entity.mutant_entities.endersoul": "Endersoul",
+      "enchantment.mutant_entities.crushing": "Crushing",
+      "item.mutant_entities.endersoul_spawn_egg": "Endersoul Spawn Egg",
+      "block.mutant_entities.chemical_x": "Chemical X",
+      "item_group.mutant_entities.mutant_entities_items": "Mutant Entities Items",
+      "item.mutant_entities.mutant_enderman_spawn_egg": "Mutant Enderman Spawn Egg",
+      "gamerule.mutant_zombie_spawn_chance": "Partly Mutant Zombie Spawn Chance",
+      "item.mutant_entities.mutant_zombified_piglins_hammer": "Golden Hammer",
+      "item.mutant_entities.throwable_dirt": "Throwable Block",
+      "config.mutant_entities.mutant_entities_client_config_file": "mutant_entities-client",
+      "effect.mutant_entities.chemical_x_effect": "Chemical X",
+      "block.mutant_entities.nuclear_sciencetable": "Nuclear Science Table",
+      "biome.mutant_entities.nuclear_wastes": "Nuclear Wasteland",
+      "item.mutant_entities.enchanted_gunpowder": "Supercharged Gunpowder",
+      "item.mutant_entities.mutant_wither_skeleton_bone_armor_armor_boots": "Mutant Wither Skeleton Bone Boots",
+      "item.mutant_entities.mutant_snow_golem_spawn_egg": "Mutant Snow Golem Spawn Egg",
+      "block.mutant_entities.creeper_bomb": "Creeper Bomb",
+      "block.mutant_entities.toxic_dirt": "Toxic Dirt",
+      "entity.mutant_entities.mutant_iron_golem": "Mutant Iron Golem"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": [
+      {
+        "name": "Tags",
+        "children": []
+      },
+      {
+        "name": "Mobs",
+        "children": [
+          {
+            "name": "Mob Attributes",
+            "children": []
+          },
+          {
+            "name": "Throwable Block",
+            "children": []
+          },
+          {
+            "name": "Configs",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Damage",
+        "children": []
+      },
+      {
+        "name": "Feature",
+        "children": []
+      }
+    ]
+  },
+  "workspaceSettings": {
+    "modid": "mutant_entities",
+    "modName": "Mutant Entities",
+    "version": "0.0.7-Snapshot",
+    "description": "A mod for 1.19.2 that I made since I couldn\u0027t find any mutant creatures mods for 1.19",
+    "author": "McModded114",
+    "websiteURL": "https://mcreator.net",
+    "license": "All Rights Reserved",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [
+      "geckolib",
+      "allmods"
+    ],
+    "currentGenerator": "forge-1.19.4",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "net.mcmodded.mutantentities",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202300335319
+}

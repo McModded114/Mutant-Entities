@@ -1,0 +1,140 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.mutant_shulker",
+				"texture_width": 256,
+				"texture_height": 256,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 4.5,
+				"visible_bounds_offset": [0, 1.75, 0]
+			},
+			"bones": [
+				{
+					"name": "all",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "shulkerbox",
+					"parent": "all",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "lid",
+					"parent": "shulkerbox",
+					"pivot": [0, 29, 0],
+					"cubes": [
+						{"origin": [-16, 28, -16], "size": [32, 12, 32], "inflate": 0.1, "uv": [0, 0]},
+						{"origin": [-16, 20, -16], "size": [32, 8, 32], "inflate": 0.1, "uv": [128, 0]}
+					]
+				},
+				{
+					"name": "base",
+					"parent": "shulkerbox",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-16, 0, -16], "size": [32, 8, 32], "uv": [0, 44]},
+						{"origin": [-16, 8, -16], "size": [32, 8, 32], "uv": [128, 44]}
+					]
+				},
+				{
+					"name": "head",
+					"parent": "shulkerbox",
+					"pivot": [0, 20, 0],
+					"cubes": [
+						{"origin": [-4, 13, -4], "size": [8, 8, 8], "uv": [0, 50]}
+					]
+				},
+				{
+					"name": "legs",
+					"parent": "all",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "leftlegs",
+					"parent": "legs",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "leftfrontleg",
+					"parent": "leftlegs",
+					"pivot": [12, 2, -12],
+					"rotation": [95, -75, 0],
+					"cubes": [
+						{"origin": [10, -24, -14], "size": [4, 24, 4], "inflate": 0.1, "uv": [0, 84]}
+					]
+				},
+				{
+					"name": "lowerleg",
+					"parent": "leftfrontleg",
+					"pivot": [12, -24, -12],
+					"rotation": [180, 0, 0],
+					"cubes": [
+						{"origin": [10, -48, -14], "size": [4, 24, 4], "uv": [0, 84]}
+					]
+				},
+				{
+					"name": "leftbackleg",
+					"parent": "leftlegs",
+					"pivot": [12, 2, 12],
+					"rotation": [-85, -75, -180],
+					"cubes": [
+						{"origin": [10, -24, 10], "size": [4, 24, 4], "inflate": 0.1, "uv": [0, 84]}
+					]
+				},
+				{
+					"name": "lowerleg2",
+					"parent": "leftbackleg",
+					"pivot": [12, -24, 12],
+					"rotation": [180, 0, 0],
+					"cubes": [
+						{"origin": [10, -48, 10], "size": [4, 24, 4], "uv": [0, 84]}
+					]
+				},
+				{
+					"name": "rightlegs",
+					"parent": "legs",
+					"pivot": [0, 0, 0],
+					"rotation": [0, 180, 0]
+				},
+				{
+					"name": "rightfrontleg",
+					"parent": "rightlegs",
+					"pivot": [12, 2, -12],
+					"rotation": [95, -75, 0],
+					"cubes": [
+						{"origin": [10, -24, -14], "size": [4, 24, 4], "inflate": 0.1, "uv": [0, 84]}
+					]
+				},
+				{
+					"name": "lowerleg3",
+					"parent": "rightfrontleg",
+					"pivot": [12, -24, -12],
+					"rotation": [180, 0, 0],
+					"cubes": [
+						{"origin": [10, -48, -14], "size": [4, 24, 4], "uv": [0, 84]}
+					]
+				},
+				{
+					"name": "rightbackleg",
+					"parent": "rightlegs",
+					"pivot": [12, 2, 12],
+					"rotation": [-85, -75, -180],
+					"cubes": [
+						{"origin": [10, -24, 10], "size": [4, 24, 4], "inflate": 0.1, "uv": [0, 84]}
+					]
+				},
+				{
+					"name": "lowerleg4",
+					"parent": "rightbackleg",
+					"pivot": [12, -24, 12],
+					"rotation": [180, 0, 0],
+					"cubes": [
+						{"origin": [10, -48, 10], "size": [4, 24, 4], "uv": [0, 84]}
+					]
+				}
+			]
+		}
+	]
+}

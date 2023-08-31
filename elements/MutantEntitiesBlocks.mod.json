@@ -1,0 +1,11 @@
+{
+  "_fv": 47,
+  "_type": "tab",
+  "definition": {
+    "name": "Mutant Entities Blocks",
+    "icon": {
+      "value": "CUSTOM:CreeperBomb"
+    },
+    "showSearch": false
+  }
+}

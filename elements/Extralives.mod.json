@@ -1,0 +1,27 @@
+{
+  "_fv": 47,
+  "_type": "tag",
+  "definition": {
+    "type": "Entities",
+    "items": [],
+    "blocks": [],
+    "functions": [],
+    "entities": [
+      {
+        "value": "CUSTOM:MutantHusk"
+      },
+      {
+        "value": "CUSTOM:MutantZombie"
+      },
+      {
+        "value": "CUSTOM:MutantZombifiedPiglin"
+      },
+      {
+        "value": "CUSTOM:ThornyMutantHusk"
+      }
+    ],
+    "biomes": [],
+    "name": "extralives",
+    "namespace": "mod"
+  }
+}

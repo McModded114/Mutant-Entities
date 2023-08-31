@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "mutant_entities:item/withering_scimitar"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "MMM",
+    "M M"
+  ],
+  "key": {
+    "M": {
+      "item": "mutant_entities:mutant_skeleton_bone"
+    }
+  },
+  "result": {
+    "item": "mutant_entities:mutant_skeleton_bone_armor_armor_helmet",
+    "count": 1
+  }
+}

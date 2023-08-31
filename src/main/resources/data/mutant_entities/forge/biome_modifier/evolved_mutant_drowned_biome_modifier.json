@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": {
+    "type": "forge:any"
+  },
+  "spawners": {
+    "type": "mutant_entities:evolved_mutant_drowned",
+    "weight": 2,
+    "minCount": 1,
+    "maxCount": 3
+  }
+}

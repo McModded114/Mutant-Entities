@@ -1,0 +1,21 @@
+{
+  "_fv": 47,
+  "_type": "tag",
+  "definition": {
+    "type": "Blocks",
+    "items": [],
+    "blocks": [
+      {
+        "value": "CUSTOM:ToxicDirt"
+      },
+      {
+        "value": "CUSTOM:WastelandDirt"
+      }
+    ],
+    "functions": [],
+    "entities": [],
+    "biomes": [],
+    "name": "valid_spawn",
+    "namespace": "minecraft"
+  }
+}

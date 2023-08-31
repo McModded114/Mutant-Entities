@@ -1,0 +1,60 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "#minecraft:is_overworld",
+  "spawners": [
+    {
+      "type": "mutant_entities:mutant_zombie",
+      "maxCount": 1,
+      "minCount": 1,
+      "weight": 1
+    },
+    {
+      "type": "mutant_entities:partly_mutant_zombie",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 1
+    },
+    {
+      "type": "mutant_entities:mutant_skeleton",
+      "maxCount": 1,
+      "minCount": 1,
+      "weight": 1
+    },
+    {
+      "type": "mutant_entities:partly_mutant_skeleton",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 1
+    },
+    {
+      "type": "mutant_entities:mutant_drowned",
+      "maxCount": 1,
+      "minCount": 1,
+      "weight": 1
+    },
+    {
+      "type": "mutant_entities:evolved_mutant_drowned",
+      "maxCount": 1,
+      "minCount": 1,
+      "weight": 1
+    },
+    {
+      "type": "mutant_entities:mutant_drowned_aqua",
+      "maxCount": 2,
+      "minCount": 1,
+      "weight": 1
+    },
+    {
+      "type": "mutant_entities:spider_pig",
+      "maxCount": 3,
+      "minCount": 1,
+      "weight": 30
+    },
+    {
+      "type": "mutant_entities:mutant_enderman",
+      "maxCount": 1,
+      "minCount": 1,
+      "weight": 1
+    }
+  ]
+}

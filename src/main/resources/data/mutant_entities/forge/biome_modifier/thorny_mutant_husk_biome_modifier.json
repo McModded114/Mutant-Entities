@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": {
+    "type": "forge:any"
+  },
+  "spawners": {
+    "type": "mutant_entities:thorny_mutant_husk",
+    "weight": 65,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "mutant_entities:custom/golden_hammer",
+  "textures": {
+    "1": "mutant_entities:block/golden_hammer",
+    "particle": "mutant_entities:item/golden_hammer"
+  }
+}

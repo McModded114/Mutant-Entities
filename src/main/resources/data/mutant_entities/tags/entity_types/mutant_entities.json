@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "mutant_entities:mutant_skeleton",
+    "mutant_entities:mutant_zombified_piglin",
+    "mutant_entities:evolved_mutant_drowned",
+    "mutant_entities:mutant_iron_golem",
+    "mutant_entities:mutant_shulker",
+    "mutant_entities:creeperling",
+    "mutant_entities:mutant_drowned",
+    "mutant_entities:mutant_creeper",
+    "mutant_entities:spider_pig",
+    "mutant_entities:mutant_husk",
+    "mutant_entities:mutant_zombie",
+    "mutant_entities:mutant_enderman",
+    "mutant_entities:thorny_mutant_husk",
+    "mutant_entities:mutant_drowned_aqua",
+    "mutant_entities:endersoul",
+    "mutant_entities:mutant_wither_skeleton"
+  ]
+}

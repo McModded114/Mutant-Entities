@@ -1,0 +1,18 @@
+{
+  "type": "mutant_entities:toxic_dirt_feature",
+  "config": {
+    "size": 9,
+    "discard_chance_on_air_exposure": 0,
+    "targets": [
+      {
+        "target": {
+          "predicate_type": "block_match",
+          "block": "mutant_entities:wasteland_dirt"
+        },
+        "state": {
+          "Name": "mutant_entities:toxic_dirt"
+        }
+      }
+    ]
+  }
+}

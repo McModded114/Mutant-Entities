@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "mutant_entities:nuclear_wastes",
+  "features": "mutant_entities:dead_grass_feature",
+  "step": "surface_structures"
+}

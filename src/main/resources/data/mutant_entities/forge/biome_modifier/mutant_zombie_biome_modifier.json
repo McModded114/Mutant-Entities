@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "plains",
+  "spawners": {
+    "type": "mutant_entities:mutant_zombie",
+    "weight": 1,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": {
+        "min": 3,
+        "max": 5
+      },
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "weight": 5,
+          "name": "minecraft:entities/husk"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "weight": 4,
+          "name": "minecraft:blocks/cactus"
+        }
+      ]
+    }
+  ]
+}

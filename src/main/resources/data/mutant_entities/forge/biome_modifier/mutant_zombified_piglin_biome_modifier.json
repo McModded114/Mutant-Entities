@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": {
+    "type": "forge:any"
+  },
+  "spawners": {
+    "type": "mutant_entities:mutant_zombified_piglin",
+    "weight": 95,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

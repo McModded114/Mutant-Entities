@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.mcreator.mutantentities.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+	"MutantEntitiesModRepairItemRecipeMixin"  ],
+  "injectors": {
+	"defaultRequire": 1
+  }
+}
