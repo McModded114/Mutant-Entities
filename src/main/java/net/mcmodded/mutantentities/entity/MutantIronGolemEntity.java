@@ -177,8 +177,11 @@ public class MutantIronGolemEntity extends IronGolem implements GeoEntity {
 		if (this.animationprocedure.equals("empty")) {
 			if ((event.isMoving() || !(event.getLimbSwingAmount() > -0.15F && event.getLimbSwingAmount() < 0.15F))
 
-			) {
+					&& !this.isAggressive()) {
 				return event.setAndContinue(RawAnimation.begin().thenLoop("walk"));
+			}
+			if (this.isAggressive() && event.isMoving()) {
+				return event.setAndContinue(RawAnimation.begin().thenLoop("griddy"));
 			}
 			return event.setAndContinue(RawAnimation.begin().thenLoop("idle"));
 		}

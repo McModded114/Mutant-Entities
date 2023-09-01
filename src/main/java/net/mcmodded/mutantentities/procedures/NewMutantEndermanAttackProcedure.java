@@ -134,6 +134,36 @@ public class NewMutantEndermanAttackProcedure {
 						}
 						MutantEntitiesMod.queueServerWork(16, () -> {
 							((LivingEntity) sourceentity).getAttribute(MutantEntitiesModAttributes.ATK.get()).setBaseValue(0);
+							entity.hurt(((new Object() {
+								public DamageSource get(LevelAccessor _world, final String _msgID, Entity _directSource) {
+									return new DamageSource(((Level) _world).registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.CACTUS), _directSource) {
+										@Override
+										public Component getLocalizedDeathMessage(LivingEntity _livingEntity) {
+											Component _attackerName = null;
+											Component _entityName = _livingEntity.getDisplayName();
+											Component _itemName = null;
+											Entity _attacker = this.getEntity();
+											ItemStack _itemStack = ItemStack.EMPTY;
+											if (_attacker != null) {
+												_attackerName = _attacker.getDisplayName();
+											}
+											if (_attacker instanceof LivingEntity _livingAttacker) {
+												_itemStack = _livingAttacker.getMainHandItem();
+											}
+											if (!_itemStack.isEmpty() && _itemStack.hasCustomHoverName()) {
+												_itemName = _itemStack.getDisplayName();
+											}
+											if (_attacker != null && _itemName != null) {
+												return Component.translatable("death.attack." + _msgID + ".player.item", _entityName, _attackerName, _itemName);
+											} else if (_attacker != null) {
+												return Component.translatable("death.attack." + _msgID + ".player", _entityName, _attackerName);
+											} else {
+												return Component.translatable("death.attack." + _msgID, _entityName);
+											}
+										}
+									};
+								}
+							}).get(world, "mutantgeneric", sourceentity)), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
 							if (Math.random() < 0.5) {
 								if (Math.random() < 0.5) {
 									{
@@ -149,7 +179,7 @@ public class NewMutantEndermanAttackProcedure {
 													entityToSpawn.setSilent(true);
 													return entityToSpawn;
 												}
-											}.getArrow(projectileLevel, sourceentity, (float) (((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue() / 1.7), 1);
+											}.getArrow(projectileLevel, sourceentity, (float) (((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue() / 1.3), 1);
 											_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 											_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 1, 0);
 											projectileLevel.addFreshEntity(_entityToSpawn);
@@ -169,7 +199,7 @@ public class NewMutantEndermanAttackProcedure {
 													entityToSpawn.setSilent(true);
 													return entityToSpawn;
 												}
-											}.getArrow(projectileLevel, sourceentity, (float) (((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue() / 1.7), 1);
+											}.getArrow(projectileLevel, sourceentity, (float) (((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue() / 1.3), 1);
 											_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 											_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 1, 0);
 											projectileLevel.addFreshEntity(_entityToSpawn);

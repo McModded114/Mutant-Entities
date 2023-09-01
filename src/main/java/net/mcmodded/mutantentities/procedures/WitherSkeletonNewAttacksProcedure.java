@@ -122,11 +122,79 @@ public class WitherSkeletonNewAttacksProcedure {
 						if (sourceentity instanceof MutantWitherSkeletonEntity) {
 							((MutantWitherSkeletonEntity) sourceentity).setAnimation("multislash");
 						}
+						for (int index0 = 0; index0 < 26; index0++) {
+							MutantEntitiesMod.queueServerWork(1, () -> {
+								entity.hurt(((new Object() {
+									public DamageSource get(LevelAccessor _world, final String _msgID, Entity _directSource) {
+										return new DamageSource(((Level) _world).registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.CACTUS), _directSource) {
+											@Override
+											public Component getLocalizedDeathMessage(LivingEntity _livingEntity) {
+												Component _attackerName = null;
+												Component _entityName = _livingEntity.getDisplayName();
+												Component _itemName = null;
+												Entity _attacker = this.getEntity();
+												ItemStack _itemStack = ItemStack.EMPTY;
+												if (_attacker != null) {
+													_attackerName = _attacker.getDisplayName();
+												}
+												if (_attacker instanceof LivingEntity _livingAttacker) {
+													_itemStack = _livingAttacker.getMainHandItem();
+												}
+												if (!_itemStack.isEmpty() && _itemStack.hasCustomHoverName()) {
+													_itemName = _itemStack.getDisplayName();
+												}
+												if (_attacker != null && _itemName != null) {
+													return Component.translatable("death.attack." + _msgID + ".player.item", _entityName, _attackerName, _itemName);
+												} else if (_attacker != null) {
+													return Component.translatable("death.attack." + _msgID + ".player", _entityName, _attackerName);
+												} else {
+													return Component.translatable("death.attack." + _msgID, _entityName);
+												}
+											}
+										};
+									}
+								}).get(world, "mutantgeneric", sourceentity)), (float) (((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getBaseValue() / 10));
+							});
+						}
 					} else {
 						if (sourceentity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 							_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 30, 9));
 						if (sourceentity instanceof MutantWitherSkeletonEntity) {
 							((MutantWitherSkeletonEntity) sourceentity).setAnimation("rib_attack");
+						}
+						for (int index1 = 0; index1 < 2; index1++) {
+							MutantEntitiesMod.queueServerWork(19, () -> {
+								entity.hurt(((new Object() {
+									public DamageSource get(LevelAccessor _world, final String _msgID, Entity _directSource) {
+										return new DamageSource(((Level) _world).registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.CACTUS), _directSource) {
+											@Override
+											public Component getLocalizedDeathMessage(LivingEntity _livingEntity) {
+												Component _attackerName = null;
+												Component _entityName = _livingEntity.getDisplayName();
+												Component _itemName = null;
+												Entity _attacker = this.getEntity();
+												ItemStack _itemStack = ItemStack.EMPTY;
+												if (_attacker != null) {
+													_attackerName = _attacker.getDisplayName();
+												}
+												if (_attacker instanceof LivingEntity _livingAttacker) {
+													_itemStack = _livingAttacker.getMainHandItem();
+												}
+												if (!_itemStack.isEmpty() && _itemStack.hasCustomHoverName()) {
+													_itemName = _itemStack.getDisplayName();
+												}
+												if (_attacker != null && _itemName != null) {
+													return Component.translatable("death.attack." + _msgID + ".player.item", _entityName, _attackerName, _itemName);
+												} else if (_attacker != null) {
+													return Component.translatable("death.attack." + _msgID + ".player", _entityName, _attackerName);
+												} else {
+													return Component.translatable("death.attack." + _msgID, _entityName);
+												}
+											}
+										};
+									}
+								}).get(world, "mutantgeneric", sourceentity)), (float) (((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getBaseValue() * 0.8));
+							});
 						}
 					}
 				}

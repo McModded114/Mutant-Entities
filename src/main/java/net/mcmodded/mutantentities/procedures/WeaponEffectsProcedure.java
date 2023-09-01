@@ -9,6 +9,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.TamableAnimal;
@@ -68,26 +69,36 @@ public class WeaponEffectsProcedure {
 				for (Entity entityiterator : _entfound) {
 					if (!(entityiterator == sourceentity)) {
 						if (!((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) == sourceentity)) {
-							if (entityiterator instanceof LivingEntity _entity)
-								_entity.hurt(new DamageSource(_entity.level.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC)) {
-									@Override
-									public Component getLocalizedDeathMessage(LivingEntity _msgEntity) {
-										String _translatekey = "death.attack." + "slam";
-										if (this.getEntity() == null && this.getDirectEntity() == null) {
-											return _msgEntity.getKillCredit() != null
-													? Component.translatable(_translatekey + ".player", _msgEntity.getDisplayName(), _msgEntity.getKillCredit().getDisplayName())
-													: Component.translatable(_translatekey, _msgEntity.getDisplayName());
-										} else {
-											Component _component = this.getEntity() == null ? this.getDirectEntity().getDisplayName() : this.getEntity().getDisplayName();
-											ItemStack _itemstack = ItemStack.EMPTY;
-											if (this.getEntity() instanceof LivingEntity _livingentity)
-												_itemstack = _livingentity.getMainHandItem();
-											return !_itemstack.isEmpty() && _itemstack.hasCustomHoverName()
-													? Component.translatable(_translatekey + ".item", _msgEntity.getDisplayName(), _component, _itemstack.getDisplayName())
-													: Component.translatable(_translatekey, _msgEntity.getDisplayName(), _component);
+							entityiterator.hurt(((new Object() {
+								public DamageSource get(LevelAccessor _world, final String _msgID, Entity _directSource) {
+									return new DamageSource(((Level) _world).registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.CACTUS), _directSource) {
+										@Override
+										public Component getLocalizedDeathMessage(LivingEntity _livingEntity) {
+											Component _attackerName = null;
+											Component _entityName = _livingEntity.getDisplayName();
+											Component _itemName = null;
+											Entity _attacker = this.getEntity();
+											ItemStack _itemStack = ItemStack.EMPTY;
+											if (_attacker != null) {
+												_attackerName = _attacker.getDisplayName();
+											}
+											if (_attacker instanceof LivingEntity _livingAttacker) {
+												_itemStack = _livingAttacker.getMainHandItem();
+											}
+											if (!_itemStack.isEmpty() && _itemStack.hasCustomHoverName()) {
+												_itemName = _itemStack.getDisplayName();
+											}
+											if (_attacker != null && _itemName != null) {
+												return Component.translatable("death.attack." + _msgID + ".player.item", _entityName, _attackerName, _itemName);
+											} else if (_attacker != null) {
+												return Component.translatable("death.attack." + _msgID + ".player", _entityName, _attackerName);
+											} else {
+												return Component.translatable("death.attack." + _msgID, _entityName);
+											}
 										}
-									}
-								}, (float) (amount / 4));
+									};
+								}
+							}).get(world, "slam", sourceentity)), (float) (amount / 4));
 							world.levelEvent(2001, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()),
 									Block.getId((world.getBlockState(BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())))));
 						}
