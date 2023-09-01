@@ -2159,10 +2159,6 @@
             "type": "entity"
           },
           {
-            "name": "amount",
-            "type": "number"
-          },
-          {
             "name": "world",
             "type": "world"
           }

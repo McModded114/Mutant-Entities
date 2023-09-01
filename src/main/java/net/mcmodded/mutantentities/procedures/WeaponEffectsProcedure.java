@@ -9,18 +9,12 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.damagesource.DamageTypes;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.network.chat.Component;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.core.BlockPos;
 
 import net.mcmodded.mutantentities.init.MutantEntitiesModItems;
@@ -37,15 +31,15 @@ public class WeaponEffectsProcedure {
 	@SubscribeEvent
 	public static void onEntityAttacked(LivingAttackEvent event) {
 		if (event != null && event.getEntity() != null) {
-			execute(event, event.getEntity().level, event.getEntity(), event.getSource().getEntity(), event.getAmount());
+			execute(event, event.getEntity().level, event.getEntity(), event.getSource().getEntity());
 		}
 	}
 
-	public static void execute(LevelAccessor world, Entity entity, Entity sourceentity, double amount) {
-		execute(null, world, entity, sourceentity, amount);
+	public static void execute(LevelAccessor world, Entity entity, Entity sourceentity) {
+		execute(null, world, entity, sourceentity);
 	}
 
-	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity, Entity sourceentity, double amount) {
+	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
 			return;
 		double entities = 0;
@@ -64,45 +58,11 @@ public class WeaponEffectsProcedure {
 		if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == MutantEntitiesModItems.MUTANT_ZOMBIFIED_PIGLINS_HAMMER.get()) {
 			{
 				final Vec3 _center = new Vec3((entity.getX()), (entity.getY()), (entity.getZ()));
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(2 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(4 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
 						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
-					if (!(entityiterator == sourceentity)) {
-						if (!((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) == sourceentity)) {
-							entityiterator.hurt(((new Object() {
-								public DamageSource get(LevelAccessor _world, final String _msgID, Entity _directSource) {
-									return new DamageSource(((Level) _world).registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.CACTUS), _directSource) {
-										@Override
-										public Component getLocalizedDeathMessage(LivingEntity _livingEntity) {
-											Component _attackerName = null;
-											Component _entityName = _livingEntity.getDisplayName();
-											Component _itemName = null;
-											Entity _attacker = this.getEntity();
-											ItemStack _itemStack = ItemStack.EMPTY;
-											if (_attacker != null) {
-												_attackerName = _attacker.getDisplayName();
-											}
-											if (_attacker instanceof LivingEntity _livingAttacker) {
-												_itemStack = _livingAttacker.getMainHandItem();
-											}
-											if (!_itemStack.isEmpty() && _itemStack.hasCustomHoverName()) {
-												_itemName = _itemStack.getDisplayName();
-											}
-											if (_attacker != null && _itemName != null) {
-												return Component.translatable("death.attack." + _msgID + ".player.item", _entityName, _attackerName, _itemName);
-											} else if (_attacker != null) {
-												return Component.translatable("death.attack." + _msgID + ".player", _entityName, _attackerName);
-											} else {
-												return Component.translatable("death.attack." + _msgID, _entityName);
-											}
-										}
-									};
-								}
-							}).get(world, "slam", sourceentity)), (float) (amount / 4));
-							world.levelEvent(2001, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()),
-									Block.getId((world.getBlockState(BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())))));
-						}
-					}
+					world.levelEvent(2001, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()),
+							Block.getId((world.getBlockState(BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())))));
 				}
 			}
 		}
