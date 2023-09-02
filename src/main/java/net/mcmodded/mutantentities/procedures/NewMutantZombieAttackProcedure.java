@@ -240,7 +240,7 @@ public class NewMutantZombieAttackProcedure {
 			if (Math.random() < (double) MutantEntitiesConfigFileConfiguration.ROAR_CHANCE.get()) {
 				((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.ATK.get()).setBaseValue(1);
 				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 145, 9, false, false));
+					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 999, 9, false, true));
 				if (entity instanceof MutantZombieEntity) {
 					((MutantZombieEntity) entity).setAnimation("roar");
 				}
@@ -277,6 +277,8 @@ public class NewMutantZombieAttackProcedure {
 				}
 				MutantEntitiesMod.queueServerWork(144, () -> {
 					((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.ATK.get()).setBaseValue(0);
+					if (entity instanceof LivingEntity _entity)
+						_entity.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
 				});
 			}
 		}

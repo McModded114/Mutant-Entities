@@ -43,9 +43,7 @@ public class OnSpawnProcedure {
 		if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("mutant_entities:mutant_entities")))) {
 			if (entity.getPersistentData().getBoolean("textured") == false) {
 				if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("mutant_entities:extralives")))) {
-					if (!world.isClientSide()) {
-						((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.EXT.get()).setBaseValue((1 + Math.round(Math.random() * ((double) MutantEntitiesConfigFileConfiguration.MAXLIVES.get() - 1))));
-					}
+					((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.EXT.get()).setBaseValue((double) MutantEntitiesConfigFileConfiguration.MAXLIVES.get());
 				}
 				entity.getPersistentData().putBoolean("textured", true);
 				if (!world.isClientSide()) {

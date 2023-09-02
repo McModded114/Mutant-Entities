@@ -33,7 +33,7 @@ public class MutantEntitiesConfigFileConfiguration {
 		RANGE = BUILDER.define("follow_range", (double) 1);
 		BUILDER.pop();
 		BUILDER.push("Mutant Spawning");
-		BABYCHANCE = BUILDER.comment("The chance for a mutant mob to spawn as baby version which is weaker but a bit faster. 0.2 = 20%").define("babychance", (double) 0.2);
+		BABYCHANCE = BUILDER.comment("The chance for a mutant mob to spawn as baby version which is weaker but a bit faster. 0.1 = 10%").define("babychance", (double) 0.1);
 		BUILDER.pop();
 		BUILDER.push("Mob Abilities");
 		LEAP_CHANCE = BUILDER.comment("The chance of a mutant zombie doing the grab and leap attack. Default 0.2, meaning 20%").define("leap_chance", (double) 0.2);
