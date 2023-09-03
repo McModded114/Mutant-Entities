@@ -2641,13 +2641,12 @@
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [
-      "geckolib",
-      "allmods"
+      "geckolib"
     ],
     "currentGenerator": "forge-1.19.4",
     "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcmodded.mutantentities",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202300335319
+  "mcreatorVersion": 202300336712
 }

@@ -26,10 +26,4 @@ description="A mod for newer versions of minecraft that I made since I couldn't 
     versionRange="[0,)"
     ordering="NONE"
     side="BOTH"
-[[dependencies.mutant_entities]]
-    modId="allmods"
-    mandatory=false
-    versionRange="[0,)"
-    ordering="NONE"
-    side="BOTH"
 

@@ -18,6 +18,6 @@ public class MutantZombifiedPiglinsHammerItem extends Item {
 
 	@Override
 	public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
-		return 2.5F;
+		return 2.5f;
 	}
 }

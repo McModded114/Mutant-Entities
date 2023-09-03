@@ -26,8 +26,9 @@ import javax.annotation.Nullable;
 public class WitherSkeletonNewAttacksProcedure {
 	@SubscribeEvent
 	public static void onEntityAttacked(LivingAttackEvent event) {
-		if (event != null && event.getEntity() != null) {
-			execute(event, event.getEntity().level, event.getSource(), event.getEntity(), event.getSource().getEntity());
+		Entity entity = event.getEntity();
+		if (event != null && entity != null) {
+			execute(event, entity.getLevel(), event.getSource(), entity, event.getSource().getEntity());
 		}
 	}
 
@@ -39,7 +40,7 @@ public class WitherSkeletonNewAttacksProcedure {
 		if (entity == null || sourceentity == null)
 			return;
 		if (sourceentity instanceof MutantWitherSkeletonEntity) {
-			if (damagesource.is(DamageTypes.MOB_ATTACK)) {
+			if ((damagesource).is(DamageTypes.MOB_ATTACK)) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
 				}
