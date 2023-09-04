@@ -141,7 +141,7 @@
     "rangedAttackItem": {
       "value": "Blocks.PACKED_ICE"
     },
-    "rangedItemType": "Default item",
+    "rangedItemType": "ThrowableIce",
     "rangedAttackInterval": 40,
     "rangedAttackRadius": 16.0,
     "height": 1.0,

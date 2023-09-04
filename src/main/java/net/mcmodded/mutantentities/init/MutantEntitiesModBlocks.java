@@ -17,6 +17,7 @@ import net.mcmodded.mutantentities.block.NuclearSciencetableBlock;
 import net.mcmodded.mutantentities.block.DeadGrassBlock;
 import net.mcmodded.mutantentities.block.CreeperBombBlock;
 import net.mcmodded.mutantentities.block.ChemicalXBlock;
+import net.mcmodded.mutantentities.block.AncientBushBlock;
 import net.mcmodded.mutantentities.MutantEntitiesMod;
 
 public class MutantEntitiesModBlocks {
@@ -28,4 +29,5 @@ public class MutantEntitiesModBlocks {
 	public static final RegistryObject<Block> DEAD_GRASS = REGISTRY.register("dead_grass", () -> new DeadGrassBlock());
 	public static final RegistryObject<Block> CREEPER_BOMB = REGISTRY.register("creeper_bomb", () -> new CreeperBombBlock());
 	public static final RegistryObject<Block> NUCLEAR_SCIENCETABLE = REGISTRY.register("nuclear_sciencetable", () -> new NuclearSciencetableBlock());
+	public static final RegistryObject<Block> ANCIENT_BUSH = REGISTRY.register("ancient_bush", () -> new AncientBushBlock());
 }

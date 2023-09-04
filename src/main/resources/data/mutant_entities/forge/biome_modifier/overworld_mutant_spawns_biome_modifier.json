@@ -9,20 +9,14 @@
       "weight": 1
     },
     {
-      "type": "mutant_entities:partly_mutant_zombie",
-      "maxCount": 2,
+      "type": "mutant_entities:mutant_creeper",
+      "maxCount": 1,
       "minCount": 1,
-      "weight": 1
+      "weight": 2
     },
     {
       "type": "mutant_entities:mutant_skeleton",
       "maxCount": 1,
-      "minCount": 1,
-      "weight": 1
-    },
-    {
-      "type": "mutant_entities:partly_mutant_skeleton",
-      "maxCount": 2,
       "minCount": 1,
       "weight": 1
     },

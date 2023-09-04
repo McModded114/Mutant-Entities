@@ -1,0 +1,51 @@
+{
+  "_fv": 47,
+  "_type": "rangeditem",
+  "definition": {
+    "renderType": 0,
+    "texture": "throwableblock_item",
+    "customModelName": "Normal",
+    "name": "Throwable Block",
+    "specialInfo": [
+      "Not meant to be used as an item. Only for the mutant snow golem."
+    ],
+    "creativeTab": {
+      "value": "No creative tab entry"
+    },
+    "stackSize": 1,
+    "ammoItem": {
+      "value": ""
+    },
+    "shootConstantly": false,
+    "usageCount": 0,
+    "actionSound": {
+      "value": "block.glass.place"
+    },
+    "hasGlow": false,
+    "animation": "bow",
+    "enableMeleeDamage": false,
+    "damageVsEntity": 0.0,
+    "bulletPower": 1.0,
+    "bulletDamage": 0.0,
+    "bulletKnockback": 1,
+    "bulletParticles": false,
+    "bulletIgnitesFire": false,
+    "bulletItemTexture": {
+      "value": ""
+    },
+    "bulletModel": "Modelblock_projectile",
+    "customBulletModelTexture": "ice.png",
+    "onBulletHitsBlock": {
+      "name": "ThrowableIceProjectileHitsBlock"
+    },
+    "onBulletHitsPlayer": {
+      "name": "ThrowableIceProjectileHitsEntity"
+    },
+    "onBulletHitsEntity": {
+      "name": "ThrowableIceProjectileHitsEntity"
+    },
+    "onBulletFlyingTick": {
+      "name": "ThrowableIceParticles"
+    }
+  }
+}

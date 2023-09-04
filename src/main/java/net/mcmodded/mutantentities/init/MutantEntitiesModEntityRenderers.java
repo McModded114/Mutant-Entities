@@ -11,6 +11,7 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 
+import net.mcmodded.mutantentities.client.renderer.ThrowableIceRenderer;
 import net.mcmodded.mutantentities.client.renderer.ThrowableGrassblockRenderer;
 import net.mcmodded.mutantentities.client.renderer.ThrowableEndstoneRenderer;
 import net.mcmodded.mutantentities.client.renderer.ThrowableDirtRenderer;
@@ -59,6 +60,6 @@ public class MutantEntitiesModEntityRenderers {
 		event.registerEntityRenderer(MutantEntitiesModEntities.SPIDER_PIG.get(), SpiderPigRenderer::new);
 		event.registerEntityRenderer(MutantEntitiesModEntities.MUTANT_SHULKER.get(), MutantShulkerRenderer::new);
 		event.registerEntityRenderer(MutantEntitiesModEntities.MUTANT_SNOW_GOLEM.get(), MutantSnowGolemRenderer::new);
-		event.registerEntityRenderer(MutantEntitiesModEntities.MUTANT_SNOW_GOLEM_PROJECTILE.get(), ThrownItemRenderer::new);
+		event.registerEntityRenderer(MutantEntitiesModEntities.THROWABLE_ICE.get(), ThrowableIceRenderer::new);
 	}
 }

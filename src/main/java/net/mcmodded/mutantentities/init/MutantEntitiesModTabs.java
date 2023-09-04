@@ -40,6 +40,7 @@ public class MutantEntitiesModTabs {
 					tabData.accept(MutantEntitiesModBlocks.DEAD_GRASS.get().asItem());
 					tabData.accept(MutantEntitiesModBlocks.CREEPER_BOMB.get().asItem());
 					tabData.accept(MutantEntitiesModBlocks.NUCLEAR_SCIENCETABLE.get().asItem());
+					tabData.accept(MutantEntitiesModBlocks.ANCIENT_BUSH.get().asItem());
 				})
 
 		);

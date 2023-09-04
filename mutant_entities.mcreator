@@ -603,21 +603,6 @@
       "path": "~/Mobs"
     },
     {
-      "name": "SpawnCreeperling",
-      "type": "procedure",
-      "sortid": 78,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "spawn_creeperling",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcmodded/mutantentities/procedures/SpawnCreeperlingProcedure.java"
-        ],
-        "dependencies": []
-      },
-      "path": "~/Mobs"
-    },
-    {
       "name": "MutantIronGolem",
       "type": "animatedentity",
       "sortid": 85,
@@ -1950,7 +1935,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcmodded/mutantentities/entity/MutantSnowGolemEntity.java",
-          "src/main/java/net/mcmodded/mutantentities/entity/MutantSnowGolemEntityProjectile.java",
           "src/main/java/net/mcmodded/mutantentities/entity/model/MutantSnowGolemModel.java",
           "src/main/java/net/mcmodded/mutantentities/client/renderer/MutantSnowGolemRenderer.java",
           "src/main/resources/assets/mutant_entities/models/item/mutant_snow_golem_spawn_egg.json"
@@ -2187,20 +2171,6 @@
       "path": "~/Damage"
     },
     {
-      "name": "OverworldBiome",
-      "type": "tag",
-      "sortid": 230,
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "overworld_biome",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/mutant_entities/tags/worldgen/biome/overworld_biome.json"
-        ]
-      },
-      "path": "~/Tags"
-    },
-    {
       "name": "NuclearWastes",
       "type": "biome",
       "sortid": 232,
@@ -2211,8 +2181,7 @@
         "files": [
           "src/main/resources/data/mutant_entities/worldgen/biome/nuclear_wastes.json"
         ]
-      },
-      "path": "~/Feature"
+      }
     },
     {
       "name": "ToxicDirtFeature",
@@ -2491,6 +2460,223 @@
         "files": []
       },
       "path": "~/Mobs"
+    },
+    {
+      "name": "ThrowableIce",
+      "type": "rangeditem",
+      "sortid": 255,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "throwable_ice",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/item/ThrowableIceItem.java",
+          "src/main/java/net/mcmodded/mutantentities/client/renderer/ThrowableIceRenderer.java",
+          "src/main/java/net/mcmodded/mutantentities/entity/ThrowableIceEntity.java",
+          "src/main/resources/assets/mutant_entities/models/item/throwable_ice.json"
+        ]
+      },
+      "path": "~/Mobs/Throwable Block"
+    },
+    {
+      "name": "ThrowableIceProjectileHitsEntity",
+      "type": "procedure",
+      "sortid": 254,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "throwable_ice_projectile_hits_entity",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/ThrowableIceProjectileHitsEntityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Throwable Block"
+    },
+    {
+      "name": "ThrowableIceProjectileHitsBlock",
+      "type": "procedure",
+      "sortid": 256,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "throwable_ice_projectile_hits_block",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/ThrowableIceProjectileHitsBlockProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Throwable Block"
+    },
+    {
+      "name": "ThrowableIceParticles",
+      "type": "procedure",
+      "sortid": 257,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "throwable_ice_particles",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/ThrowableIceParticlesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Throwable Block"
+    },
+    {
+      "name": "AncientBush",
+      "type": "plant",
+      "sortid": 258,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ancient_bush",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/mutant_entities/models/block/ancient_bush.json",
+          "src/main/java/net/mcmodded/mutantentities/block/AncientBushBlock.java",
+          "src/main/resources/assets/mutant_entities/blockstates/ancient_bush.json",
+          "src/main/resources/assets/mutant_entities/models/item/ancient_bush.json"
+        ]
+      }
+    },
+    {
+      "name": "AncientBushFeature",
+      "type": "feature",
+      "sortid": 259,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ancient_bush_feature",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/mutant_entities/worldgen/configured_feature/ancient_bush_feature.json",
+          "src/main/java/net/mcmodded/mutantentities/world/features/AncientBushFeatureFeature.java",
+          "src/main/resources/data/mutant_entities/forge/biome_modifier/ancient_bush_feature_biome_modifier.json",
+          "src/main/resources/data/mutant_entities/worldgen/placed_feature/ancient_bush_feature.json"
+        ]
+      },
+      "path": "~/Feature"
+    },
+    {
+      "name": "SpawnCreeperling",
+      "type": "procedure",
+      "sortid": 260,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spawn_creeperling",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/SpawnCreeperlingProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "OtherMutantsDmg",
+      "type": "procedure",
+      "sortid": 261,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "other_mutants_dmg",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcmodded/mutantentities/procedures/OtherMutantsDmgProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "damagesource",
+            "type": "damagesource"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Damage"
     }
   ],
   "variable_elements": [
@@ -2550,6 +2736,7 @@
       "item.mutant_entities.mutant_wither_skeleton_bone": "Mutant Wither Skeleton Bone",
       "death.attack.slam.player.item": "%1$s was crushed by %2$s using %3$s",
       "item.mutant_entities.lore_paper": "Ancient Documents",
+      "item.mutant_entities.throwable_ice": "Throwable Block",
       "item_group.mutant_entities.mutant_entities_spawn_eggs": "Mutant Entities Spawn Eggs",
       "item.mutant_entities.mutant_shulker_spawn_egg": "Mutant Shulker Spawn Egg",
       "item.mutant_entities.mutant_wither_skeleton_bone_armor_armor_helmet": "Mutant Wither Skeleton Bone Helmet",
@@ -2563,6 +2750,7 @@
       "item.mutant_entities.mutant_drowned_aqua_spawn_egg": "Aquatic Mutant Drowned Spawn Egg",
       "death.attack.mutantgeneric.player": "%1$s was slain by %2$s",
       "itemGroup.tabmutant_entities_blocks": "Mutant Entities Blocks",
+      "block.mutant_entities.ancient_bush": "Ancient Bush",
       "item.mutant_entities.mutant_iron_golem_spawn_egg": "Mutant Iron Golem Spawn Egg",
       "gamerule.partly_mutant_chance.description": "Chance of a partly mutant zombie spawning in place of a normal zombie",
       "item.mutant_entities.creeperling_spawn_egg": "Creeperling Spawn Egg",

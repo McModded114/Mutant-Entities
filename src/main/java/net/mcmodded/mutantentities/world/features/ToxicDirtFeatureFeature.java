@@ -2,7 +2,7 @@
 package net.mcmodded.mutantentities.world.features;
 
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
-import net.minecraft.world.level.levelgen.feature.OreFeature;
+import net.minecraft.world.level.levelgen.feature.ScatteredOreFeature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.Level;
@@ -12,7 +12,7 @@ import net.mcmodded.mutantentities.procedures.InChemicalxbiomeProcedure;
 
 import java.util.Set;
 
-public class ToxicDirtFeatureFeature extends OreFeature {
+public class ToxicDirtFeatureFeature extends ScatteredOreFeature {
 	private final Set<ResourceKey<Level>> generateDimensions = Set.of(Level.OVERWORLD);
 
 	public ToxicDirtFeatureFeature() {

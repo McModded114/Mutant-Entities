@@ -1,0 +1,15 @@
+{
+  "_fv": 47,
+  "_type": "feature",
+  "definition": {
+    "generationStep": "SURFACE_STRUCTURES",
+    "restrictionDimensions": [
+      "Surface"
+    ],
+    "restrictionBiomes": [],
+    "generateCondition": {
+      "name": "InChemicalxbiome"
+    },
+    "featurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"feature_container\" deletable=\"false\" x=\"40\" y=\"40\"><value name=\"feature\"><block type=\"feature_random_patch_simple\" inline=\"false\"><field name=\"tries\">64</field><field name=\"xzSpread\">7</field><field name=\"ySpread\">3</field><value name=\"block\"><block type=\"mcitem_allblocks\"><field name=\"value\">CUSTOM:AncientBush</field></block></value><value name=\"condition\"><block type=\"block_predicate_is_air\"></block></value></block></value><next><block type=\"placement_rarity\"><field name=\"rarity\">3</field><next><block type=\"placement_in_square\"><next><block type=\"placement_heightmap\"><field name=\"heightmap\">MOTION_BLOCKING</field><next><block type=\"placement_biome_filter\"></block></next></block></next></block></next></block></next></block></xml>"
+  }
+}

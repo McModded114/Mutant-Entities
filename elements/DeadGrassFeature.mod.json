@@ -6,11 +6,10 @@
     "restrictionDimensions": [
       "Surface"
     ],
-    "restrictionBiomes": [
-      {
-        "value": "CUSTOM:NuclearWastes"
-      }
-    ],
-    "featurexml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><xml xmlns=\"https://developers.google.com/blockly/xml\"><block deletable=\"false\" type=\"feature_container\" x=\"40\" y=\"40\"><value name=\"feature\"><block inline=\"false\" type=\"feature_random_patch_simple\"><field name=\"tries\">96</field><field name=\"xzSpread\">7</field><field name=\"ySpread\">3</field><value name=\"block\"><block type=\"mcitem_allblocks\"><field name=\"value\">CUSTOM:DeadGrass</field></block></value><value name=\"condition\"><block type=\"block_predicate_is_air\"/></value></block></value><next><block type=\"placement_rarity\"><field name=\"rarity\">5</field><next><block type=\"placement_in_square\"><next><block type=\"placement_heightmap\"><field name=\"heightmap\">MOTION_BLOCKING</field><next><block type=\"placement_biome_filter\"/></next></block></next></block></next></block></next></block></xml>"
+    "restrictionBiomes": [],
+    "generateCondition": {
+      "name": "InChemicalxbiome"
+    },
+    "featurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"feature_container\" deletable=\"false\" x=\"40\" y=\"40\"><value name=\"feature\"><block type=\"feature_random_patch_simple\" inline=\"false\"><field name=\"tries\">96</field><field name=\"xzSpread\">7</field><field name=\"ySpread\">3</field><value name=\"block\"><block type=\"mcitem_allblocks\"><field name=\"value\">CUSTOM:DeadGrass</field></block></value><value name=\"condition\"><block type=\"block_predicate_is_air\"></block></value></block></value><next><block type=\"placement_rarity\"><field name=\"rarity\">5</field><next><block type=\"placement_in_square\"><next><block type=\"placement_heightmap\"><field name=\"heightmap\">MOTION_BLOCKING</field><next><block type=\"placement_biome_filter\"></block></next></block></next></block></next></block></next></block></xml>"
   }
 }

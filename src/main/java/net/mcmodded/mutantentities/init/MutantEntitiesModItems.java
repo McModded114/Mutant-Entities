@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.BlockItem;
 
+import net.mcmodded.mutantentities.item.ThrowableIceItem;
 import net.mcmodded.mutantentities.item.ThrowableGrassblockItem;
 import net.mcmodded.mutantentities.item.ThrowableEndstoneItem;
 import net.mcmodded.mutantentities.item.ThrowableDirtItem;
@@ -77,6 +78,8 @@ public class MutantEntitiesModItems {
 	public static final RegistryObject<Item> MUTANT_SNOW_GOLEM_SPAWN_EGG = REGISTRY.register("mutant_snow_golem_spawn_egg", () -> new ForgeSpawnEggItem(MutantEntitiesModEntities.MUTANT_SNOW_GOLEM, -2493710, -8280924, new Item.Properties()));
 	public static final RegistryObject<Item> MUTANT_ZOMBIFIED_PIGLINS_HAMMER = REGISTRY.register("mutant_zombified_piglins_hammer", () -> new MutantZombifiedPiglinsHammerItem());
 	public static final RegistryObject<Item> MUTANT_WITHER_SKELETON_SWORD = REGISTRY.register("mutant_wither_skeleton_sword", () -> new MutantWitherSkeletonSwordItem());
+	public static final RegistryObject<Item> THROWABLE_ICE = REGISTRY.register("throwable_ice", () -> new ThrowableIceItem());
+	public static final RegistryObject<Item> ANCIENT_BUSH = block(MutantEntitiesModBlocks.ANCIENT_BUSH);
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

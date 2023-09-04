@@ -84,8 +84,7 @@
       "Ores",
       "MonsterRooms",
       "AmethystGeodes",
-      "Fossils",
-      "DeadBushes"
+      "Fossils"
     ],
     "spawnStronghold": true,
     "spawnMineshaft": true,
@@ -173,7 +172,7 @@
       },
       {
         "entity": {
-          "value": "CUSTOM:PartlyMutantZombie"
+          "value": "CUSTOM:Creeperling"
         },
         "minGroup": 1,
         "maxGroup": 2,
@@ -191,7 +190,7 @@
       },
       {
         "entity": {
-          "value": "CUSTOM:PartlyMutantSkeleton"
+          "value": "CUSTOM:Creeperling"
         },
         "minGroup": 1,
         "maxGroup": 2,

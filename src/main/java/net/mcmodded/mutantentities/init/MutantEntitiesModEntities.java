@@ -16,6 +16,7 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 
+import net.mcmodded.mutantentities.entity.ThrowableIceEntity;
 import net.mcmodded.mutantentities.entity.ThrowableGrassblockEntity;
 import net.mcmodded.mutantentities.entity.ThrowableEndstoneEntity;
 import net.mcmodded.mutantentities.entity.ThrowableDirtEntity;
@@ -25,7 +26,6 @@ import net.mcmodded.mutantentities.entity.SpiderPigEntity;
 import net.mcmodded.mutantentities.entity.MutantZombifiedPiglinEntity;
 import net.mcmodded.mutantentities.entity.MutantZombieEntity;
 import net.mcmodded.mutantentities.entity.MutantWitherSkeletonEntity;
-import net.mcmodded.mutantentities.entity.MutantSnowGolemEntityProjectile;
 import net.mcmodded.mutantentities.entity.MutantSnowGolemEntity;
 import net.mcmodded.mutantentities.entity.MutantSkeletonEntity;
 import net.mcmodded.mutantentities.entity.MutantShulkerEntity;
@@ -119,9 +119,8 @@ public class MutantEntitiesModEntities {
 			EntityType.Builder.<MutantSnowGolemEntity>of(MutantSnowGolemEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MutantSnowGolemEntity::new)
 
 					.sized(1.7f, 3.6f));
-	public static final RegistryObject<EntityType<MutantSnowGolemEntityProjectile>> MUTANT_SNOW_GOLEM_PROJECTILE = register("projectile_mutant_snow_golem",
-			EntityType.Builder.<MutantSnowGolemEntityProjectile>of(MutantSnowGolemEntityProjectile::new, MobCategory.MISC).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1)
-					.setCustomClientFactory(MutantSnowGolemEntityProjectile::new).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<ThrowableIceEntity>> THROWABLE_ICE = register("projectile_throwable_ice",
+			EntityType.Builder.<ThrowableIceEntity>of(ThrowableIceEntity::new, MobCategory.MISC).setCustomClientFactory(ThrowableIceEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));

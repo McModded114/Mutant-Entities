@@ -1,18 +1,16 @@
 {
   "type": "mutant_entities:nuclear_blocks_spawning",
   "config": {
-    "target": {
-      "Name": "mutant_entities:wasteland_dirt"
-    },
-    "state": {
-      "Name": "mutant_entities:toxic_dirt"
-    },
-    "radius": {
-      "type": "uniform",
-      "value": {
-        "min_inclusive": 1,
-        "max_inclusive": 3
+    "targets": [
+      {
+        "target": {
+          "predicate_type": "block_match",
+          "block": "mutant_entities:toxic_dirt"
+        },
+        "state": {
+          "Name": "mutant_entities:solid_chemical_x"
+        }
       }
-    }
+    ]
   }
 }

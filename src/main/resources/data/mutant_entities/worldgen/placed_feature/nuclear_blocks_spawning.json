@@ -2,8 +2,8 @@
   "feature": "mutant_entities:nuclear_blocks_spawning",
   "placement": [
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 2
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR_WG"
     },
     {
       "type": "minecraft:in_square"

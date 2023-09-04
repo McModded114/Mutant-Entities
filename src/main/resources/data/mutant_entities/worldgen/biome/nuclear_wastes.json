@@ -55,7 +55,7 @@
         "maxCount": 1
       },
       {
-        "type": "mutant_entities:deleted_mod_element",
+        "type": "mutant_entities:creeperling",
         "weight": 25,
         "minCount": 1,
         "maxCount": 2
@@ -67,7 +67,7 @@
         "maxCount": 1
       },
       {
-        "type": "mutant_entities:deleted_mod_element",
+        "type": "mutant_entities:creeperling",
         "weight": 28,
         "minCount": 1,
         "maxCount": 2
@@ -150,9 +150,7 @@
     ],
     [],
     [],
-    [
-      "minecraft:patch_dead_bush_2"
-    ],
+    [],
     []
   ]
 }
