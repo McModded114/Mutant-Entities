@@ -71,33 +71,6 @@
 				}
 			}
 		},
-		"attack": {
-			"animation_length": 1.1,
-			"override_previous_animation": true,
-			"bones": {
-				"right_arm": {
-					"rotation": {
-						"0.0": [-37.5, -10, 0],
-						"0.7": [-112.5, 0, 0],
-						"1.0": [0, 0, 0]
-					}
-				},
-				"upperbody": {
-					"rotation": {
-						"0.0": [15, 0, 0],
-						"0.4": [15, 0, 0],
-						"1.0": [0, 0, 0]
-					}
-				},
-				"left_arm": {
-					"rotation": {
-						"0.0": [-37.5, 10, 0],
-						"0.7": [-112.5, 0, 0],
-						"1.1": [0, 0, 0]
-					}
-				}
-			}
-		},
 		"leap": {
 			"animation_length": 1,
 			"override_previous_animation": true,

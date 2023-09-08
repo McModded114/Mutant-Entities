@@ -20,7 +20,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 public class MutantZombieRenderer extends GeoEntityRenderer<MutantZombieEntity> {
 	public MutantZombieRenderer(EntityRendererProvider.Context renderManager) {
 		super(renderManager, new MutantZombieModel());
-		this.shadowRadius = 1f;
+		this.shadowRadius = 0f;
 	}
 
 	@Override

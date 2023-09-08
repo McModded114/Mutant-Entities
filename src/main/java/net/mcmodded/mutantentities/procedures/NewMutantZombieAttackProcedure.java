@@ -90,38 +90,38 @@ public class NewMutantZombieAttackProcedure {
 						sourceentity
 								.setDeltaMovement(new Vec3(Math.cos(((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).getBaseValue() * 3 * (sourceentity.getYRot() + 90) * (Math.PI / 180)),
 										0.4, Math.sin(((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).getBaseValue() * 3 * (sourceentity.getYRot() + 90) * (Math.PI / 180))));
-						MutantEntitiesMod.queueServerWork(10, () -> {
-							sourceentity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3((entity.getX()), (entity.getY() + entity.getBbHeight()), (entity.getZ())));
-							entity.hurt(((new Object() {
-								public DamageSource get(LevelAccessor _world, final String _msgID, Entity _directSource) {
-									return new DamageSource(((Level) _world).registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.CACTUS), _directSource) {
-										@Override
-										public Component getLocalizedDeathMessage(LivingEntity _livingEntity) {
-											Component _attackerName = null;
-											Component _entityName = _livingEntity.getDisplayName();
-											Component _itemName = null;
-											Entity _attacker = this.getEntity();
-											ItemStack _itemStack = ItemStack.EMPTY;
-											if (_attacker != null) {
-												_attackerName = _attacker.getDisplayName();
-											}
-											if (_attacker instanceof LivingEntity _livingAttacker) {
-												_itemStack = _livingAttacker.getMainHandItem();
-											}
-											if (!_itemStack.isEmpty() && _itemStack.hasCustomHoverName()) {
-												_itemName = _itemStack.getDisplayName();
-											}
-											if (_attacker != null && _itemName != null) {
-												return Component.translatable("death.attack." + _msgID + ".player.item", _entityName, _attackerName, _itemName);
-											} else if (_attacker != null) {
-												return Component.translatable("death.attack." + _msgID + ".player", _entityName, _attackerName);
-											} else {
-												return Component.translatable("death.attack." + _msgID, _entityName);
-											}
+						sourceentity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3((entity.getX()), (entity.getY() + entity.getBbHeight()), (entity.getZ())));
+						entity.hurt(((new Object() {
+							public DamageSource get(LevelAccessor _world, final String _msgID, Entity _directSource) {
+								return new DamageSource(((Level) _world).registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.CACTUS), _directSource) {
+									@Override
+									public Component getLocalizedDeathMessage(LivingEntity _livingEntity) {
+										Component _attackerName = null;
+										Component _entityName = _livingEntity.getDisplayName();
+										Component _itemName = null;
+										Entity _attacker = this.getEntity();
+										ItemStack _itemStack = ItemStack.EMPTY;
+										if (_attacker != null) {
+											_attackerName = _attacker.getDisplayName();
 										}
-									};
-								}
-							}).get(world, "slam", sourceentity)), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
+										if (_attacker instanceof LivingEntity _livingAttacker) {
+											_itemStack = _livingAttacker.getMainHandItem();
+										}
+										if (!_itemStack.isEmpty() && _itemStack.hasCustomHoverName()) {
+											_itemName = _itemStack.getDisplayName();
+										}
+										if (_attacker != null && _itemName != null) {
+											return Component.translatable("death.attack." + _msgID + ".player.item", _entityName, _attackerName, _itemName);
+										} else if (_attacker != null) {
+											return Component.translatable("death.attack." + _msgID + ".player", _entityName, _attackerName);
+										} else {
+											return Component.translatable("death.attack." + _msgID, _entityName);
+										}
+									}
+								};
+							}
+						}).get(world, "slam", sourceentity)), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
+						MutantEntitiesMod.queueServerWork(10, () -> {
 							((LivingEntity) sourceentity).getAttribute(MutantEntitiesModAttributes.ATK.get()).setBaseValue(0);
 						});
 						sourceentity

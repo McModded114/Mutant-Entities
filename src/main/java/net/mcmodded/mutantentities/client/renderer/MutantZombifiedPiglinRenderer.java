@@ -20,7 +20,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 public class MutantZombifiedPiglinRenderer extends GeoEntityRenderer<MutantZombifiedPiglinEntity> {
 	public MutantZombifiedPiglinRenderer(EntityRendererProvider.Context renderManager) {
 		super(renderManager, new MutantZombifiedPiglinModel());
-		this.shadowRadius = 1f;
+		this.shadowRadius = 0f;
 	}
 
 	@Override

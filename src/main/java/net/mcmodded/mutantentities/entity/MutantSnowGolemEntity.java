@@ -17,8 +17,7 @@ import net.minecraftforge.network.NetworkHooks;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.monster.RangedAttackMob;
-import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.RangedAttackGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
@@ -58,7 +57,7 @@ import javax.annotation.Nullable;
 
 import java.util.EnumSet;
 
-public class MutantSnowGolemEntity extends Monster implements RangedAttackMob, GeoEntity {
+public class MutantSnowGolemEntity extends IronGolem implements RangedAttackMob, GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(MutantSnowGolemEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(MutantSnowGolemEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(MutantSnowGolemEntity.class, EntityDataSerializers.STRING);
@@ -106,7 +105,6 @@ public class MutantSnowGolemEntity extends Monster implements RangedAttackMob, G
 		this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
 		this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(4, new FloatGoal(this));
-		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Monster.class, false, false));
 		this.goalSelector.addGoal(1, new MutantSnowGolemEntity.RangedAttackGoal(this, 1.25, 40, 16f) {
 			@Override
 			public boolean canContinueToUse() {
@@ -256,6 +254,12 @@ public class MutantSnowGolemEntity extends Monster implements RangedAttackMob, G
 	@Override
 	public void performRangedAttack(LivingEntity target, float flval) {
 		ThrowableIceEntity.shoot(this, target);
+	}
+
+	@Override
+	public void aiStep() {
+		super.aiStep();
+		this.updateSwingTime();
 	}
 
 	public static void init() {

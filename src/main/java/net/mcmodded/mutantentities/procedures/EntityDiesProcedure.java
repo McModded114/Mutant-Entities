@@ -49,16 +49,16 @@ public class EntityDiesProcedure {
 	@SubscribeEvent
 	public static void onEntityDeath(LivingDeathEvent event) {
 		if (event != null && event.getEntity() != null) {
-			execute(event, event.getEntity().level, event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getEntity());
+			execute(event, event.getEntity().level, event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getEntity(), event.getSource().getEntity());
 		}
 	}
 
-	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
-		execute(null, world, x, y, z, entity);
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity) {
+		execute(null, world, x, y, z, entity, sourceentity);
 	}
 
-	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
-		if (entity == null)
+	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity) {
+		if (entity == null || sourceentity == null)
 			return;
 		double random = 0;
 		double random1 = 0;
@@ -238,6 +238,17 @@ public class EntityDiesProcedure {
 					_level.addFreshEntity(entityToSpawn);
 				}
 			} else if (entity instanceof Pig) {
+				if (world instanceof ServerLevel _level) {
+					Entity entityToSpawn = new SpiderPigEntity(MutantEntitiesModEntities.SPIDER_PIG.get(), _level);
+					entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
+					if (entityToSpawn instanceof Mob _mobToSpawn)
+						_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+					_level.addFreshEntity(entityToSpawn);
+				}
+			}
+		}
+		if (sourceentity instanceof SpiderPigEntity) {
+			if (entity instanceof Pig) {
 				if (world instanceof ServerLevel _level) {
 					Entity entityToSpawn = new SpiderPigEntity(MutantEntitiesModEntities.SPIDER_PIG.get(), _level);
 					entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);

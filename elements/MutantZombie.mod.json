@@ -16,7 +16,7 @@
     },
     "modelWidth": 1.44,
     "modelHeight": 2.56,
-    "modelShadowSize": 1.0,
+    "modelShadowSize": 0.0,
     "mountedYOffset": 0.0,
     "hasSpawnEgg": true,
     "spawnEggBaseColor": {

@@ -109,29 +109,11 @@
     "spawnEntries": [
       {
         "entity": {
-          "value": "EntitySpider"
-        },
-        "minGroup": 4,
-        "maxGroup": 4,
-        "weight": 100,
-        "spawnType": "monster"
-      },
-      {
-        "entity": {
           "value": "EntityZombie"
         },
         "minGroup": 4,
         "maxGroup": 4,
         "weight": 95,
-        "spawnType": "monster"
-      },
-      {
-        "entity": {
-          "value": "EntityZombieVillager"
-        },
-        "minGroup": 1,
-        "maxGroup": 1,
-        "weight": 5,
         "spawnType": "monster"
       },
       {
@@ -145,38 +127,11 @@
       },
       {
         "entity": {
-          "value": "EntityCreeper"
-        },
-        "minGroup": 4,
-        "maxGroup": 4,
-        "weight": 100,
-        "spawnType": "monster"
-      },
-      {
-        "entity": {
-          "value": "EntityEnderman"
-        },
-        "minGroup": 1,
-        "maxGroup": 4,
-        "weight": 10,
-        "spawnType": "monster"
-      },
-      {
-        "entity": {
           "value": "CUSTOM:MutantZombie"
         },
         "minGroup": 1,
         "maxGroup": 1,
         "weight": 20,
-        "spawnType": "monster"
-      },
-      {
-        "entity": {
-          "value": "CUSTOM:Creeperling"
-        },
-        "minGroup": 1,
-        "maxGroup": 2,
-        "weight": 25,
         "spawnType": "monster"
       },
       {
@@ -190,29 +145,11 @@
       },
       {
         "entity": {
-          "value": "CUSTOM:Creeperling"
-        },
-        "minGroup": 1,
-        "maxGroup": 2,
-        "weight": 28,
-        "spawnType": "monster"
-      },
-      {
-        "entity": {
-          "value": "CUSTOM:SpiderPig"
-        },
-        "minGroup": 1,
-        "maxGroup": 3,
-        "weight": 40,
-        "spawnType": "monster"
-      },
-      {
-        "entity": {
           "value": "CUSTOM:MutantEnderman"
         },
         "minGroup": 1,
         "maxGroup": 1,
-        "weight": 5,
+        "weight": 10,
         "spawnType": "monster"
       },
       {
@@ -232,6 +169,24 @@
         "maxGroup": 4,
         "weight": 20,
         "spawnType": "creature"
+      },
+      {
+        "entity": {
+          "value": "CUSTOM:SpiderPig"
+        },
+        "minGroup": 1,
+        "maxGroup": 3,
+        "weight": 100,
+        "spawnType": "monster"
+      },
+      {
+        "entity": {
+          "value": "CUSTOM:MutantCreeper"
+        },
+        "minGroup": 1,
+        "maxGroup": 1,
+        "weight": 30,
+        "spawnType": "monster"
       }
     ]
   }

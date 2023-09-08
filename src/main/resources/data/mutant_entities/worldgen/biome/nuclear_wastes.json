@@ -13,39 +13,15 @@
   "spawners": {
     "monster": [
       {
-        "type": "spider",
-        "weight": 100,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
         "type": "zombie",
         "weight": 95,
         "minCount": 4,
         "maxCount": 4
       },
       {
-        "type": "zombie_villager",
-        "weight": 5,
-        "minCount": 1,
-        "maxCount": 1
-      },
-      {
         "type": "skeleton",
         "weight": 100,
         "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "creeper",
-        "weight": 100,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "enderman",
-        "weight": 10,
-        "minCount": 1,
         "maxCount": 4
       },
       {
@@ -55,32 +31,26 @@
         "maxCount": 1
       },
       {
-        "type": "mutant_entities:creeperling",
-        "weight": 25,
-        "minCount": 1,
-        "maxCount": 2
-      },
-      {
         "type": "mutant_entities:mutant_skeleton",
         "weight": 23,
         "minCount": 1,
         "maxCount": 1
       },
       {
-        "type": "mutant_entities:creeperling",
-        "weight": 28,
+        "type": "mutant_entities:mutant_enderman",
+        "weight": 10,
         "minCount": 1,
-        "maxCount": 2
+        "maxCount": 1
       },
       {
         "type": "mutant_entities:spider_pig",
-        "weight": 40,
+        "weight": 100,
         "minCount": 1,
         "maxCount": 3
       },
       {
-        "type": "mutant_entities:mutant_enderman",
-        "weight": 5,
+        "type": "mutant_entities:mutant_creeper",
+        "weight": 30,
         "minCount": 1,
         "maxCount": 1
       }

@@ -20,7 +20,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 public class MutantHuskRenderer extends GeoEntityRenderer<MutantHuskEntity> {
 	public MutantHuskRenderer(EntityRendererProvider.Context renderManager) {
 		super(renderManager, new MutantHuskModel());
-		this.shadowRadius = 1f;
+		this.shadowRadius = 0f;
 	}
 
 	@Override

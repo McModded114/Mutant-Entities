@@ -204,20 +204,6 @@
       "path": "~/Mobs"
     },
     {
-      "name": "DirtBlocks",
-      "type": "tag",
-      "sortid": 34,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "dirt_blocks",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/minecraft/tags/blocks/dirt.json"
-        ]
-      },
-      "path": "~/Tags"
-    },
-    {
       "name": "MutantEntities",
       "type": "tag",
       "sortid": 35,
@@ -1290,6 +1276,10 @@
             "type": "entity"
           },
           {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
             "name": "x",
             "type": "number"
           },
@@ -1894,8 +1884,16 @@
         ],
         "dependencies": [
           {
-            "name": "entity",
-            "type": "entity"
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
           },
           {
             "name": "world",
@@ -2245,19 +2243,6 @@
         "files": [
           "src/main/java/net/mcmodded/mutantentities/item/MutantZombifiedPiglinsHammerItem.java",
           "src/main/resources/assets/mutant_entities/models/item/mutant_zombified_piglins_hammer.json"
-        ]
-      }
-    },
-    {
-      "name": "Crushing",
-      "type": "enchantment",
-      "sortid": 238,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "crushing",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcmodded/mutantentities/enchantment/CrushingEnchantment.java"
         ]
       }
     },
@@ -2677,6 +2662,19 @@
         ]
       },
       "path": "~/Damage"
+    },
+    {
+      "name": "AnimalsSpawnableOnBlocks",
+      "type": "tag",
+      "sortid": 262,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "animals_spawnable_on_blocks",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minecraft/tags/blocks/animals_spawnable_on.json"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -2761,7 +2759,6 @@
       "item.mutant_entities.throwable_endstone": "Throwable Block",
       "death.attack.slam": "%1$s was crushed",
       "entity.mutant_entities.endersoul": "Endersoul",
-      "enchantment.mutant_entities.crushing": "Crushing",
       "item.mutant_entities.endersoul_spawn_egg": "Endersoul Spawn Egg",
       "block.mutant_entities.chemical_x": "Chemical X",
       "item_group.mutant_entities.mutant_entities_items": "Mutant Entities Items",

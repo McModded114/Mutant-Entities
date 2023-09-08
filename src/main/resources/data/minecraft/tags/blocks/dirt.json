@@ -1,7 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "mutant_entities:toxic_dirt",
-    "mutant_entities:wasteland_dirt"
-  ]
-}

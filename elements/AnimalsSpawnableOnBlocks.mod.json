@@ -10,12 +10,15 @@
       },
       {
         "value": "CUSTOM:ToxicDirt"
+      },
+      {
+        "value": "CUSTOM:SolidChemicalX"
       }
     ],
     "functions": [],
     "entities": [],
     "biomes": [],
-    "name": "dirt",
+    "name": "animals_spawnable_on",
     "namespace": "minecraft"
   }
 }
