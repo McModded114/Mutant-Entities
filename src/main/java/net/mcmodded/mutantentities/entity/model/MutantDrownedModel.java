@@ -9,12 +9,12 @@ import net.mcmodded.mutantentities.entity.MutantDrownedEntity;
 public class MutantDrownedModel extends GeoModel<MutantDrownedEntity> {
 	@Override
 	public ResourceLocation getAnimationResource(MutantDrownedEntity entity) {
-		return new ResourceLocation("mutant_entities", "animations/mutant_zombie.animation.json");
+		return new ResourceLocation("mutant_entities", "animations/mutant_drowned.animation.json");
 	}
 
 	@Override
 	public ResourceLocation getModelResource(MutantDrownedEntity entity) {
-		return new ResourceLocation("mutant_entities", "geo/mutant_zombie.geo.json");
+		return new ResourceLocation("mutant_entities", "geo/mutant_drowned.geo.json");
 	}
 
 	@Override

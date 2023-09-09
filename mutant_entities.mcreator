@@ -964,122 +964,6 @@
       "path": "~/Mobs/Mob Attributes"
     },
     {
-      "name": "MutantDrownedWaterStats",
-      "type": "procedure",
-      "sortid": 116,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "mutant_drowned_water_stats",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcmodded/mutantentities/procedures/MutantDrownedWaterStatsProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Mobs/Mob Attributes"
-    },
-    {
-      "name": "MutantDrownedAqua",
-      "type": "animatedentity",
-      "sortid": 117,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "mutant_drowned_aqua",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcmodded/mutantentities/entity/model/MutantDrownedAquaModel.java",
-          "src/main/java/net/mcmodded/mutantentities/client/renderer/MutantDrownedAquaRenderer.java",
-          "src/main/resources/assets/mutant_entities/models/item/mutant_drowned_aqua_spawn_egg.json",
-          "src/main/java/net/mcmodded/mutantentities/entity/MutantDrownedAquaEntity.java",
-          "src/main/resources/data/mutant_entities/forge/biome_modifier/mutant_drowned_aqua_biome_modifier.json"
-        ]
-      },
-      "path": "~/Mobs"
-    },
-    {
-      "name": "EvolvedMutantDrowned",
-      "type": "animatedentity",
-      "sortid": 119,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "evolved_mutant_drowned",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcmodded/mutantentities/client/renderer/EvolvedMutantDrownedRenderer.java",
-          "src/main/resources/data/mutant_entities/forge/biome_modifier/evolved_mutant_drowned_biome_modifier.json",
-          "src/main/java/net/mcmodded/mutantentities/entity/model/EvolvedMutantDrownedModel.java",
-          "src/main/java/net/mcmodded/mutantentities/entity/EvolvedMutantDrownedEntity.java",
-          "src/main/resources/assets/mutant_entities/models/item/evolved_mutant_drowned_spawn_egg.json"
-        ]
-      },
-      "path": "~/Mobs"
-    },
-    {
-      "name": "EvolvedMutantDrownedStats",
-      "type": "procedure",
-      "sortid": 118,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "evolved_mutant_drowned_stats",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcmodded/mutantentities/procedures/EvolvedMutantDrownedStatsProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Mobs/Mob Attributes"
-    },
-    {
-      "name": "MutantDrownedDefend",
-      "type": "procedure",
-      "sortid": 122,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "mutant_drowned_defend",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcmodded/mutantentities/procedures/MutantDrownedDefendProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "sourceentity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Mobs"
-    },
-    {
       "name": "ThornyMutantHusk",
       "type": "animatedentity",
       "sortid": 123,
@@ -2435,18 +2319,6 @@
       "path": "~/Mobs"
     },
     {
-      "name": "Smol",
-      "type": "attribute",
-      "sortid": 253,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "smol",
-      "metadata": {
-        "files": []
-      },
-      "path": "~/Mobs"
-    },
-    {
       "name": "ThrowableIce",
       "type": "rangeditem",
       "sortid": 255,
@@ -2675,6 +2547,30 @@
           "src/main/resources/data/minecraft/tags/blocks/animals_spawnable_on.json"
         ]
       }
+    },
+    {
+      "name": "Siz",
+      "type": "attribute",
+      "sortid": 263,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "siz",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "Var",
+      "type": "attribute",
+      "sortid": 264,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "var",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/Mobs"
     }
   ],
   "variable_elements": [
@@ -2700,13 +2596,11 @@
       "item.mutant_entities.chemical_x_item": "Chemical X",
       "item.mutant_entities.endersoul_hand": "Endersoul Hand",
       "itemGroup.tabmutant_entities_spawn_eggs": "Mutant Entities Spawn Eggs",
-      "entity.mutant_entities.evolved_mutant_drowned": "Evolved Mutant Drowned",
       "block.mutant_entities.wasteland_dirt": "Wasteland Dirt",
       "item.mutant_entities.mutant_skeleton_spawn_egg": "Mutant Skeleton Spawn Egg",
       "item.mutant_entities.mutant_skeleton_bone": "Mutant Skeleton Bone",
       "item.mutant_entities.mutant_skeleton_bone_armor_armor_helmet": "Mutant Skeleton Bone Helmet",
       "entity.mutant_entities.mutant_skeleton": "Mutant Skeleton",
-      "entity.mutant_entities.mutant_drowned_aqua": "Aquatic Mutant Drowned",
       "itemGroup.tabmutant_entities_items": "Mutant Entities Items",
       "entity.minecraft.villager.mutant_entities.nuclear_scientist": "Nuclear Scientist",
       "item.mutant_entities.mutant_zombified_piglin_spawn_egg": "Mutant Zombified Piglin Spawn Egg",
@@ -2716,9 +2610,9 @@
       "item.mutant_entities.mutant_wither_skeleton_bone_armor_armor_leggings": "Mutant Wither Skeleton Bone Leggings",
       "entity.mutant_entities.mutant_zombified_piglin": "Mutant Zombified Piglin",
       "entity.mutant_entities.mutant_drowned": "Mutant Drowned",
+      "attribute.mutant_entities.var": "Var (don\u0027t touch.)",
       "block.mutant_entities.dead_grass": "Dead Grass",
       "death.attack.slam.player": "%1$s was crushed by %2$s",
-      "attribute.mutant_entities.smol": "Smol(don\u0027t touch. Used for baby mutants)",
       "item_group.mutant_entities.mutant_entities_blocks": "Mutant Entities Blocks",
       "entity.mutant_entities.mutant_creeper": "Mutant Creeper",
       "entity.mutant_entities.mutant_zombie": "Mutant Zombie",
@@ -2730,7 +2624,6 @@
       "death.attack.mutantgeneric.player.item": "%1$s was slain by %2$s using %3$s",
       "block.mutant_entities.solid_chemical_x": "Solid Chemical X",
       "item.mutant_entities.mutant_wither_skeleton_bone_armor_armor_chestplate": "Mutant Wither Skeleton Bone Chestplate",
-      "item.mutant_entities.evolved_mutant_drowned_spawn_egg": "Evolved Mutant Drowned Spawn Egg",
       "item.mutant_entities.mutant_wither_skeleton_bone": "Mutant Wither Skeleton Bone",
       "death.attack.slam.player.item": "%1$s was crushed by %2$s using %3$s",
       "item.mutant_entities.lore_paper": "Ancient Documents",
@@ -2745,7 +2638,6 @@
       "death.attack.chemicalx": "%1$s died from radiation",
       "item.mutant_entities.thorny_mutant_husk_spawn_egg": "Thorny Mutant Husk Spawn Egg",
       "entity.mutant_entities.mutant_husk": "Mutant Husk",
-      "item.mutant_entities.mutant_drowned_aqua_spawn_egg": "Aquatic Mutant Drowned Spawn Egg",
       "death.attack.mutantgeneric.player": "%1$s was slain by %2$s",
       "itemGroup.tabmutant_entities_blocks": "Mutant Entities Blocks",
       "block.mutant_entities.ancient_bush": "Ancient Bush",
@@ -2762,6 +2654,7 @@
       "item.mutant_entities.endersoul_spawn_egg": "Endersoul Spawn Egg",
       "block.mutant_entities.chemical_x": "Chemical X",
       "item_group.mutant_entities.mutant_entities_items": "Mutant Entities Items",
+      "attribute.mutant_entities.siz": "Siz  (don\u0027t touch. For mutant mob attacks)",
       "item.mutant_entities.mutant_enderman_spawn_egg": "Mutant Enderman Spawn Egg",
       "gamerule.mutant_zombie_spawn_chance": "Partly Mutant Zombie Spawn Chance",
       "item.mutant_entities.mutant_zombified_piglins_hammer": "Golden Hammer",

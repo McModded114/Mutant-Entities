@@ -16,9 +16,7 @@ import net.mcmodded.mutantentities.entity.MutantIronGolemEntity;
 import net.mcmodded.mutantentities.entity.MutantHuskEntity;
 import net.mcmodded.mutantentities.entity.MutantEndermanEntity;
 import net.mcmodded.mutantentities.entity.MutantDrownedEntity;
-import net.mcmodded.mutantentities.entity.MutantDrownedAquaEntity;
 import net.mcmodded.mutantentities.entity.MutantCreeperEntity;
-import net.mcmodded.mutantentities.entity.EvolvedMutantDrownedEntity;
 import net.mcmodded.mutantentities.entity.EndersoulEntity;
 import net.mcmodded.mutantentities.entity.CreeperlingEntity;
 
@@ -84,20 +82,6 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof MutantDrownedEntity syncable) {
-				String animation = syncable.getSyncedAnimation();
-				if (!animation.equals("undefined")) {
-					syncable.setAnimation("undefined");
-					syncable.animationprocedure = animation;
-				}
-			}
-			if (event.getEntity() instanceof MutantDrownedAquaEntity syncable) {
-				String animation = syncable.getSyncedAnimation();
-				if (!animation.equals("undefined")) {
-					syncable.setAnimation("undefined");
-					syncable.animationprocedure = animation;
-				}
-			}
-			if (event.getEntity() instanceof EvolvedMutantDrownedEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

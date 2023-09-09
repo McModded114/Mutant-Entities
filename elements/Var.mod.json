@@ -2,14 +2,17 @@
   "_fv": 47,
   "_type": "attribute",
   "definition": {
-    "description": "Smol(don't touch. Used for baby mutants)",
+    "description": "Var (don't touch.)",
     "minValue": 0.0,
-    "maxValue": 1.0,
-    "defaultValue": 0.0,
+    "maxValue": 1024.0,
+    "defaultValue": 1.0,
     "isPersistent": false,
     "entities": [
       {
         "value": "EntityMonster"
+      },
+      {
+        "value": "EntityAnimal"
       }
     ]
   }

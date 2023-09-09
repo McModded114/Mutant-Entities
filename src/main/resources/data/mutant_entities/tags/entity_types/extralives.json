@@ -4,6 +4,7 @@
     "mutant_entities:mutant_zombified_piglin",
     "mutant_entities:mutant_husk",
     "mutant_entities:mutant_zombie",
+    "mutant_entities:mutant_drowned",
     "mutant_entities:thorny_mutant_husk"
   ]
 }

@@ -59,9 +59,6 @@ public class MutantEntitiesModItems {
 	public static final RegistryObject<Item> MUTANT_WITHER_SKELETON_BONE_ARMOR_ARMOR_LEGGINGS = REGISTRY.register("mutant_wither_skeleton_bone_armor_armor_leggings", () -> new MutantWitherSkeletonBoneArmorArmorItem.Leggings());
 	public static final RegistryObject<Item> MUTANT_WITHER_SKELETON_BONE_ARMOR_ARMOR_BOOTS = REGISTRY.register("mutant_wither_skeleton_bone_armor_armor_boots", () -> new MutantWitherSkeletonBoneArmorArmorItem.Boots());
 	public static final RegistryObject<Item> MUTANT_DROWNED_SPAWN_EGG = REGISTRY.register("mutant_drowned_spawn_egg", () -> new ForgeSpawnEggItem(MutantEntitiesModEntities.MUTANT_DROWNED, -7343657, -8807323, new Item.Properties()));
-	public static final RegistryObject<Item> MUTANT_DROWNED_AQUA_SPAWN_EGG = REGISTRY.register("mutant_drowned_aqua_spawn_egg", () -> new ForgeSpawnEggItem(MutantEntitiesModEntities.MUTANT_DROWNED_AQUA, -7343657, -8807323, new Item.Properties()));
-	public static final RegistryObject<Item> EVOLVED_MUTANT_DROWNED_SPAWN_EGG = REGISTRY.register("evolved_mutant_drowned_spawn_egg",
-			() -> new ForgeSpawnEggItem(MutantEntitiesModEntities.EVOLVED_MUTANT_DROWNED, -7343657, -8807323, new Item.Properties()));
 	public static final RegistryObject<Item> THORNY_MUTANT_HUSK_SPAWN_EGG = REGISTRY.register("thorny_mutant_husk_spawn_egg", () -> new ForgeSpawnEggItem(MutantEntitiesModEntities.THORNY_MUTANT_HUSK, -8818591, -1651564, new Item.Properties()));
 	public static final RegistryObject<Item> LORE_PAPER = REGISTRY.register("lore_paper", () -> new LorePaperItem());
 	public static final RegistryObject<Item> MUTANT_ENDERMAN_SPAWN_EGG = REGISTRY.register("mutant_enderman_spawn_egg", () -> new ForgeSpawnEggItem(MutantEntitiesModEntities.MUTANT_ENDERMAN, -15329770, -16777216, new Item.Properties()));

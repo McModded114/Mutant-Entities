@@ -28,9 +28,7 @@ import net.mcmodded.mutantentities.client.renderer.MutantIronGolemRenderer;
 import net.mcmodded.mutantentities.client.renderer.MutantHuskRenderer;
 import net.mcmodded.mutantentities.client.renderer.MutantEndermanRenderer;
 import net.mcmodded.mutantentities.client.renderer.MutantDrownedRenderer;
-import net.mcmodded.mutantentities.client.renderer.MutantDrownedAquaRenderer;
 import net.mcmodded.mutantentities.client.renderer.MutantCreeperRenderer;
-import net.mcmodded.mutantentities.client.renderer.EvolvedMutantDrownedRenderer;
 import net.mcmodded.mutantentities.client.renderer.EndersoulRenderer;
 import net.mcmodded.mutantentities.client.renderer.CreeperlingRenderer;
 
@@ -47,8 +45,6 @@ public class MutantEntitiesModEntityRenderers {
 		event.registerEntityRenderer(MutantEntitiesModEntities.MUTANT_IRON_GOLEM.get(), MutantIronGolemRenderer::new);
 		event.registerEntityRenderer(MutantEntitiesModEntities.MUTANT_WITHER_SKELETON.get(), MutantWitherSkeletonRenderer::new);
 		event.registerEntityRenderer(MutantEntitiesModEntities.MUTANT_DROWNED.get(), MutantDrownedRenderer::new);
-		event.registerEntityRenderer(MutantEntitiesModEntities.MUTANT_DROWNED_AQUA.get(), MutantDrownedAquaRenderer::new);
-		event.registerEntityRenderer(MutantEntitiesModEntities.EVOLVED_MUTANT_DROWNED.get(), EvolvedMutantDrownedRenderer::new);
 		event.registerEntityRenderer(MutantEntitiesModEntities.THORNY_MUTANT_HUSK.get(), ThornyMutantHuskRenderer::new);
 		event.registerEntityRenderer(MutantEntitiesModEntities.MUTANT_ENDERMAN.get(), MutantEndermanRenderer::new);
 		event.registerEntityRenderer(MutantEntitiesModEntities.CHEMICAL_X_ITEM.get(), ThrownItemRenderer::new);

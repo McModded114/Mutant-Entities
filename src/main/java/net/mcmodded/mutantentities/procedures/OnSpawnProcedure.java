@@ -14,10 +14,10 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.tags.TagKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.Component;
 import net.minecraft.core.registries.Registries;
 
 import net.mcmodded.mutantentities.init.MutantEntitiesModAttributes;
+import net.mcmodded.mutantentities.entity.MutantDrownedEntity;
 import net.mcmodded.mutantentities.configuration.MutantEntitiesConfigFileConfiguration;
 
 import javax.annotation.Nullable;
@@ -36,7 +36,7 @@ public class OnSpawnProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		String name = "";
+		double var = 0;
 		if (entity instanceof Pig) {
 			((Pig) entity).goalSelector.addGoal(0, new TemptGoal(((Pig) entity), 1, Ingredient.of(Items.SPIDER_EYE), false));
 		}
@@ -47,24 +47,41 @@ public class OnSpawnProcedure {
 				}
 				entity.getPersistentData().putBoolean("textured", true);
 				if (!world.isClientSide()) {
+					entity.getPersistentData().putDouble("variant", Math.round(Math.random() * (double) MutantEntitiesConfigFileConfiguration.MAXTEXTUREVARIANTS.get()));
+					var = entity.getPersistentData().getDouble("variant");
 					if (Math.random() < (double) MutantEntitiesConfigFileConfiguration.BABYCHANCE.get()) {
-						((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.SMOL.get()).setBaseValue(1);
+						((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.SIZ.get()).setBaseValue(0.5);
 						((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH)
 								.setBaseValue((((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH).getBaseValue() / 2));
 						((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE)
 								.setBaseValue((((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getBaseValue() / 2));
-						((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED)
-								.setBaseValue((((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).getBaseValue() * 1.1));
-						entity.setCustomName(Component.literal(("Baby " + entity.getDisplayName().getString())));
-						name = entity.getDisplayName().getString();
-					}
-				} else {
-					if (((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.SMOL.get()).getBaseValue() == 1) {
-						entity.setCustomName(Component.literal(name));
 					}
 				}
-				entity.getPersistentData().putDouble("variant", Math.round(Math.random() * (double) MutantEntitiesConfigFileConfiguration.MAXTEXTUREVARIANTS.get()));
+				entity.getPersistentData().putDouble("variant", var);
 			}
+		}
+		if (entity instanceof MutantDrownedEntity) {
+			if (!world.isClientSide()) {
+				if (Math.random() < 0.5) {
+					if (Math.random() < 0.2) {
+						((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.VAR.get()).setBaseValue(1);
+						((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH)
+								.setBaseValue((((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH).getBaseValue() * 1.5));
+						((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE)
+								.setBaseValue((((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getBaseValue() * 1.2));
+					} else {
+						((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.VAR.get()).setBaseValue(2);
+					}
+				} else {
+					if (Math.random() < 0.5) {
+						((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.VAR.get()).setBaseValue(3);
+					} else {
+						((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.VAR.get()).setBaseValue(0);
+					}
+				}
+			}
+			if (entity instanceof LivingEntity _entity)
+				_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
 		}
 	}
 }

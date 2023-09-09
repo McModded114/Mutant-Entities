@@ -29,7 +29,8 @@ public class MutantEntitiesModAttributes {
 	public static final DeferredRegister<Attribute> ATTRIBUTES = DeferredRegister.create(ForgeRegistries.ATTRIBUTES, MutantEntitiesMod.MODID);
 	public static final RegistryObject<Attribute> ATK = ATTRIBUTES.register("atk", () -> (new RangedAttribute("attribute." + MutantEntitiesMod.MODID + ".atk", 0, 0, 1)).setSyncable(true));
 	public static final RegistryObject<Attribute> EXT = ATTRIBUTES.register("ext", () -> (new RangedAttribute("attribute." + MutantEntitiesMod.MODID + ".ext", 0, 0, 1024)).setSyncable(true));
-	public static final RegistryObject<Attribute> SMOL = ATTRIBUTES.register("smol", () -> (new RangedAttribute("attribute." + MutantEntitiesMod.MODID + ".smol", 0, 0, 1)).setSyncable(true));
+	public static final RegistryObject<Attribute> SIZ = ATTRIBUTES.register("siz", () -> (new RangedAttribute("attribute." + MutantEntitiesMod.MODID + ".siz", 0, 0, 1024)).setSyncable(true));
+	public static final RegistryObject<Attribute> VAR = ATTRIBUTES.register("var", () -> (new RangedAttribute("attribute." + MutantEntitiesMod.MODID + ".var", 1, 0, 1024)).setSyncable(true));
 
 	@SubscribeEvent
 	public static void register(FMLConstructModEvent event) {
@@ -55,8 +56,14 @@ public class MutantEntitiesModAttributes {
 		});
 		entityTypes.forEach((e) -> {
 			Class<? extends Entity> baseClass = e.getBaseClass();
-			if (baseClass.isAssignableFrom(Monster.class)) {
-				event.add(e, SMOL.get());
+			if (baseClass.isAssignableFrom(Monster.class) || baseClass.isAssignableFrom(Animal.class)) {
+				event.add(e, SIZ.get());
+			}
+		});
+		entityTypes.forEach((e) -> {
+			Class<? extends Entity> baseClass = e.getBaseClass();
+			if (baseClass.isAssignableFrom(Monster.class) || baseClass.isAssignableFrom(Animal.class)) {
+				event.add(e, VAR.get());
 			}
 		});
 	}

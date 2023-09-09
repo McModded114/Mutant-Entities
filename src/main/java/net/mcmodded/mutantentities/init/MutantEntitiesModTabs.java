@@ -68,8 +68,6 @@ public class MutantEntitiesModTabs {
 					tabData.accept(MutantEntitiesModItems.MUTANT_IRON_GOLEM_SPAWN_EGG.get());
 					tabData.accept(MutantEntitiesModItems.MUTANT_WITHER_SKELETON_SPAWN_EGG.get());
 					tabData.accept(MutantEntitiesModItems.MUTANT_DROWNED_SPAWN_EGG.get());
-					tabData.accept(MutantEntitiesModItems.MUTANT_DROWNED_AQUA_SPAWN_EGG.get());
-					tabData.accept(MutantEntitiesModItems.EVOLVED_MUTANT_DROWNED_SPAWN_EGG.get());
 					tabData.accept(MutantEntitiesModItems.THORNY_MUTANT_HUSK_SPAWN_EGG.get());
 					tabData.accept(MutantEntitiesModItems.MUTANT_ENDERMAN_SPAWN_EGG.get());
 					tabData.accept(MutantEntitiesModItems.ENDERSOUL_SPAWN_EGG.get());

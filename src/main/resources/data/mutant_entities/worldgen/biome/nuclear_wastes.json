@@ -43,12 +43,6 @@
         "maxCount": 1
       },
       {
-        "type": "mutant_entities:spider_pig",
-        "weight": 100,
-        "minCount": 1,
-        "maxCount": 3
-      },
-      {
         "type": "mutant_entities:mutant_creeper",
         "weight": 30,
         "minCount": 1,
@@ -58,7 +52,7 @@
     "creature": [
       {
         "type": "mutant_entities:spider_pig",
-        "weight": 10,
+        "weight": 17,
         "minCount": 1,
         "maxCount": 3
       },

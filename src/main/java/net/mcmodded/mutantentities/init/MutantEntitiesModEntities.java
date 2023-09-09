@@ -33,9 +33,7 @@ import net.mcmodded.mutantentities.entity.MutantIronGolemEntity;
 import net.mcmodded.mutantentities.entity.MutantHuskEntity;
 import net.mcmodded.mutantentities.entity.MutantEndermanEntity;
 import net.mcmodded.mutantentities.entity.MutantDrownedEntity;
-import net.mcmodded.mutantentities.entity.MutantDrownedAquaEntity;
 import net.mcmodded.mutantentities.entity.MutantCreeperEntity;
-import net.mcmodded.mutantentities.entity.EvolvedMutantDrownedEntity;
 import net.mcmodded.mutantentities.entity.EndersoulEntity;
 import net.mcmodded.mutantentities.entity.CreeperlingEntity;
 import net.mcmodded.mutantentities.entity.ChemicalXItemEntity;
@@ -76,15 +74,6 @@ public class MutantEntitiesModEntities {
 			EntityType.Builder.<MutantDrownedEntity>of(MutantDrownedEntity::new, MobCategory.WATER_CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MutantDrownedEntity::new)
 
 					.sized(1.44f, 2.56f));
-	public static final RegistryObject<EntityType<MutantDrownedAquaEntity>> MUTANT_DROWNED_AQUA = register("mutant_drowned_aqua",
-			EntityType.Builder.<MutantDrownedAquaEntity>of(MutantDrownedAquaEntity::new, MobCategory.WATER_CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MutantDrownedAquaEntity::new)
-
-					.sized(1.12f, 1.96f));
-	public static final RegistryObject<EntityType<EvolvedMutantDrownedEntity>> EVOLVED_MUTANT_DROWNED = register("evolved_mutant_drowned",
-			EntityType.Builder.<EvolvedMutantDrownedEntity>of(EvolvedMutantDrownedEntity::new, MobCategory.WATER_CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
-					.setCustomClientFactory(EvolvedMutantDrownedEntity::new)
-
-					.sized(2f, 2.5f));
 	public static final RegistryObject<EntityType<ThornyMutantHuskEntity>> THORNY_MUTANT_HUSK = register("thorny_mutant_husk",
 			EntityType.Builder.<ThornyMutantHuskEntity>of(ThornyMutantHuskEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ThornyMutantHuskEntity::new)
 
@@ -138,8 +127,6 @@ public class MutantEntitiesModEntities {
 			MutantIronGolemEntity.init();
 			MutantWitherSkeletonEntity.init();
 			MutantDrownedEntity.init();
-			MutantDrownedAquaEntity.init();
-			EvolvedMutantDrownedEntity.init();
 			ThornyMutantHuskEntity.init();
 			MutantEndermanEntity.init();
 			EndersoulEntity.init();
@@ -160,8 +147,6 @@ public class MutantEntitiesModEntities {
 		event.put(MUTANT_IRON_GOLEM.get(), MutantIronGolemEntity.createAttributes().build());
 		event.put(MUTANT_WITHER_SKELETON.get(), MutantWitherSkeletonEntity.createAttributes().build());
 		event.put(MUTANT_DROWNED.get(), MutantDrownedEntity.createAttributes().build());
-		event.put(MUTANT_DROWNED_AQUA.get(), MutantDrownedAquaEntity.createAttributes().build());
-		event.put(EVOLVED_MUTANT_DROWNED.get(), EvolvedMutantDrownedEntity.createAttributes().build());
 		event.put(THORNY_MUTANT_HUSK.get(), ThornyMutantHuskEntity.createAttributes().build());
 		event.put(MUTANT_ENDERMAN.get(), MutantEndermanEntity.createAttributes().build());
 		event.put(ENDERSOUL.get(), EndersoulEntity.createAttributes().build());

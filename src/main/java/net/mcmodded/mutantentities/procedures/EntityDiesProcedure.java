@@ -37,9 +37,7 @@ import net.mcmodded.mutantentities.entity.MutantIronGolemEntity;
 import net.mcmodded.mutantentities.entity.MutantHuskEntity;
 import net.mcmodded.mutantentities.entity.MutantEndermanEntity;
 import net.mcmodded.mutantentities.entity.MutantDrownedEntity;
-import net.mcmodded.mutantentities.entity.MutantDrownedAquaEntity;
 import net.mcmodded.mutantentities.entity.MutantCreeperEntity;
-import net.mcmodded.mutantentities.entity.EvolvedMutantDrownedEntity;
 import net.mcmodded.mutantentities.MutantEntitiesMod;
 
 import javax.annotation.Nullable;
@@ -63,8 +61,8 @@ public class EntityDiesProcedure {
 		double random = 0;
 		double random1 = 0;
 		double random2 = 0;
-		if (!entity.isOnFire()) {
-			if (((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.EXT.get()).getBaseValue() != 0) {
+		if (((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.EXT.get()).getBaseValue() != 0) {
+			if (!entity.isOnFire()) {
 				((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.EXT.get()).setBaseValue((((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.EXT.get()).getBaseValue() - 1));
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
@@ -80,6 +78,15 @@ public class EntityDiesProcedure {
 				}
 				if (entity instanceof MutantZombifiedPiglinEntity) {
 					((MutantZombifiedPiglinEntity) entity).setAnimation("death");
+				}
+				if (((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.EXT.get()).getBaseValue() == 3) {
+					if (entity instanceof MutantDrownedEntity) {
+						((MutantDrownedEntity) entity).setAnimation("finaldeath2");
+					}
+				} else {
+					if (entity instanceof MutantDrownedEntity) {
+						((MutantDrownedEntity) entity).setAnimation("finaldeath");
+					}
 				}
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth((float) ((((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH).getValue() / 100) * 40));
@@ -98,11 +105,42 @@ public class EntityDiesProcedure {
 					if (entity instanceof MutantZombifiedPiglinEntity) {
 						((MutantZombifiedPiglinEntity) entity).setAnimation("revive");
 					}
+					if (((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.EXT.get()).getBaseValue() == 3) {
+						if (entity instanceof MutantDrownedEntity) {
+							((MutantDrownedEntity) entity).setAnimation("revive2");
+						}
+					} else {
+						if (entity instanceof MutantDrownedEntity) {
+							((MutantDrownedEntity) entity).setAnimation("revive");
+						}
+					}
 					MutantEntitiesMod.queueServerWork(85, () -> {
 						if (entity instanceof LivingEntity _entity)
 							_entity.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
 					});
 				});
+			}
+		} else {
+			if (entity instanceof ThornyMutantHuskEntity) {
+				((ThornyMutantHuskEntity) entity).setAnimation("finaldeath");
+			}
+			if (entity instanceof MutantHuskEntity) {
+				((MutantHuskEntity) entity).setAnimation("finaldeath");
+			}
+			if (entity instanceof MutantZombieEntity) {
+				((MutantZombieEntity) entity).setAnimation("finaldeath");
+			}
+			if (entity instanceof MutantZombifiedPiglinEntity) {
+				((MutantZombifiedPiglinEntity) entity).setAnimation("finaldeath");
+			}
+			if (((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.EXT.get()).getBaseValue() == 3) {
+				if (entity instanceof MutantDrownedEntity) {
+					((MutantDrownedEntity) entity).setAnimation("finaldeath2");
+				}
+			} else {
+				if (entity instanceof MutantDrownedEntity) {
+					((MutantDrownedEntity) entity).setAnimation("finaldeath");
+				}
 			}
 		}
 		if (entity instanceof MutantEndermanEntity) {
@@ -117,7 +155,7 @@ public class EntityDiesProcedure {
 				});
 			});
 		}
-		if (entity instanceof LivingEntity _livEnt24 && _livEnt24.hasEffect(MutantEntitiesModMobEffects.CHEMICAL_X_EFFECT.get())) {
+		if (entity instanceof LivingEntity _livEnt37 && _livEnt37.hasEffect(MutantEntitiesModMobEffects.CHEMICAL_X_EFFECT.get())) {
 			if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("forge:zombie")))) {
 				if (world instanceof ServerLevel _level) {
 					Entity entityToSpawn = new MutantZombieEntity(MutantEntitiesModEntities.MUTANT_ZOMBIE.get(), _level);
@@ -127,38 +165,12 @@ public class EntityDiesProcedure {
 					_level.addFreshEntity(entityToSpawn);
 				}
 			} else if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("forge:drowned")))) {
-				if (!world.isClientSide()) {
-					random = Math.random();
-				}
-				if (random < 0.6) {
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new MutantDrownedEntity(MutantEntitiesModEntities.MUTANT_DROWNED.get(), _level);
-						entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						_level.addFreshEntity(entityToSpawn);
-					}
-				} else {
-					if (!world.isClientSide()) {
-						random1 = Math.random();
-					}
-					if (random1 < 0.4) {
-						if (world instanceof ServerLevel _level) {
-							Entity entityToSpawn = new EvolvedMutantDrownedEntity(MutantEntitiesModEntities.EVOLVED_MUTANT_DROWNED.get(), _level);
-							entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-							if (entityToSpawn instanceof Mob _mobToSpawn)
-								_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-							_level.addFreshEntity(entityToSpawn);
-						}
-					} else {
-						if (world instanceof ServerLevel _level) {
-							Entity entityToSpawn = new MutantDrownedAquaEntity(MutantEntitiesModEntities.MUTANT_DROWNED_AQUA.get(), _level);
-							entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-							if (entityToSpawn instanceof Mob _mobToSpawn)
-								_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-							_level.addFreshEntity(entityToSpawn);
-						}
-					}
+				if (world instanceof ServerLevel _level) {
+					Entity entityToSpawn = new MutantDrownedEntity(MutantEntitiesModEntities.MUTANT_DROWNED.get(), _level);
+					entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
+					if (entityToSpawn instanceof Mob _mobToSpawn)
+						_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+					_level.addFreshEntity(entityToSpawn);
 				}
 			} else if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("forge:husk")))) {
 				if (!world.isClientSide()) {
