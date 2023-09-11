@@ -67,7 +67,7 @@
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
-    "deathTime": 24,
+    "deathTime": 60,
     "lerp": 4,
     "disableCollisions": false,
     "ridable": false,
@@ -101,18 +101,15 @@
     "stepSound": {
       "value": "entity.skeleton.step"
     },
-    "whenMobIsHurt": {
-      "name": "MutantSkeletonShootArrow"
-    },
     "hasAI": true,
     "aiBase": "(none)",
-    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">TRUE</field><field name=\"multiplier\">2.5</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityPlayer</field><field name=\"priority\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityPlayerMP</field><field name=\"priority\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityIronGolem</field><field name=\"priority\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityVillager</field><field name=\"priority\">1</field><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">TRUE</field><field name=\"multiplier\">50</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"avoid_entity\"><field name=\"entity\">EntityWolf</field><field name=\"radius\">6</field><field name=\"farspeed\">1</field><field name=\"nearspeed\">1.2</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityPlayer</field><field name=\"priority\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityIronGolem</field><field name=\"priority\">1</field><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
     "model": "mutant_skeleton.geo.json",
     "groupName": "",
     "animation1": "idle",
     "animation2": "walk",
     "animation3": "death",
-    "animation4": "attack",
+    "animation4": "",
     "animation5": "",
     "animation6": "",
     "animation7": "",
@@ -121,7 +118,7 @@
     "animation10": "",
     "enable2": true,
     "enable3": true,
-    "enable4": true,
+    "enable4": false,
     "enable5": false,
     "enable6": false,
     "enable7": false,
@@ -132,7 +129,7 @@
     "tameable": false,
     "disableDeathRotation": true,
     "headMovement": false,
-    "eyeHeight": true,
+    "eyeHeight": false,
     "breedTriggerItems": [],
     "ranged": false,
     "rangedAttackItem": {

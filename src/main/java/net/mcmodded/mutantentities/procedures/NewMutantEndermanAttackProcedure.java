@@ -10,10 +10,13 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.registries.Registries;
 
@@ -47,14 +50,42 @@ public class NewMutantEndermanAttackProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, DamageSource damagesource, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
 			return;
-		Entity summon = null;
+		if (sourceentity instanceof MutantEndermanEntity && entity instanceof LivingEntity) {
+			if (Math.random() < 0.3) {
+				for (int index0 = 0; index0 < Math.round(1 + Math.random() * 3); index0++) {
+					if (Math.random() < 0.5) {
+						if (world instanceof ServerLevel _level) {
+							Entity _entityToSpawn = MutantEntitiesModEntities.ENDERSOUL.get().create(_level);
+							_entityToSpawn.moveTo((entity.getX()), (entity.getY()), (entity.getZ()), world.getRandom().nextFloat() * 360.0F, 0.0F);
+							if (_entityToSpawn instanceof Mob _mobToSpawn) {
+								_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(_entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+							}
+							if ((_entityToSpawn) instanceof Mob _entity && entity instanceof LivingEntity _ent)
+								_entity.setTarget(_ent);
+							_level.addFreshEntity(_entityToSpawn);
+						}
+					} else {
+						if (world instanceof ServerLevel _level) {
+							Entity _entityToSpawn = MutantEntitiesModEntities.ENDERSOUL.get().create(_level);
+							_entityToSpawn.moveTo((sourceentity.getX()), (sourceentity.getY()), (sourceentity.getZ()), world.getRandom().nextFloat() * 360.0F, 0.0F);
+							if (_entityToSpawn instanceof Mob _mobToSpawn) {
+								_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(_entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+							}
+							if ((_entityToSpawn) instanceof Mob _entity && entity instanceof LivingEntity _ent)
+								_entity.setTarget(_ent);
+							_level.addFreshEntity(_entityToSpawn);
+						}
+					}
+				}
+			}
+		}
 		if ((sourceentity instanceof MutantEndermanEntity || sourceentity instanceof EndersoulEntity) && entity instanceof LivingEntity) {
 			if ((damagesource).is(DamageTypes.MOB_ATTACK)) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
 				}
 				if (((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.ATK.get()).getBaseValue() == 0) {
-					if (Math.random() < 0.5) {
+					if (Math.random() < 0.75) {
 						((LivingEntity) sourceentity).getAttribute(MutantEntitiesModAttributes.ATK.get()).setBaseValue(1);
 						if (Math.random() < 0.5) {
 							if (Math.random() < 0.5) {
@@ -108,7 +139,9 @@ public class NewMutantEndermanAttackProcedure {
 									};
 								}
 							}).get(world, "mutantgeneric", sourceentity)), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
-							((LivingEntity) sourceentity).getAttribute(MutantEntitiesModAttributes.ATK.get()).setBaseValue(0);
+							MutantEntitiesMod.queueServerWork(16, () -> {
+								((LivingEntity) sourceentity).getAttribute(MutantEntitiesModAttributes.ATK.get()).setBaseValue(0);
+							});
 						});
 					} else {
 						((LivingEntity) sourceentity).getAttribute(MutantEntitiesModAttributes.ATK.get()).setBaseValue(1);
@@ -134,7 +167,6 @@ public class NewMutantEndermanAttackProcedure {
 							}
 						}
 						MutantEntitiesMod.queueServerWork(16, () -> {
-							((LivingEntity) sourceentity).getAttribute(MutantEntitiesModAttributes.ATK.get()).setBaseValue(0);
 							entity.hurt(((new Object() {
 								public DamageSource get(LevelAccessor _world, final String _msgID, Entity _directSource) {
 									return new DamageSource(((Level) _world).registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.CACTUS), _directSource) {
@@ -250,6 +282,9 @@ public class NewMutantEndermanAttackProcedure {
 									}
 								}
 							}
+							MutantEntitiesMod.queueServerWork(16, () -> {
+								((LivingEntity) sourceentity).getAttribute(MutantEntitiesModAttributes.ATK.get()).setBaseValue(0);
+							});
 						});
 					}
 				}

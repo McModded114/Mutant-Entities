@@ -17,8 +17,8 @@ import net.minecraftforge.network.NetworkHooks;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Endermite;
+import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
@@ -54,7 +54,7 @@ import net.mcmodded.mutantentities.init.MutantEntitiesModEntities;
 
 import javax.annotation.Nullable;
 
-public class EndersoulEntity extends Monster implements GeoEntity {
+public class EndersoulEntity extends EnderMan implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(EndersoulEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(EndersoulEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(EndersoulEntity.class, EntityDataSerializers.STRING);
@@ -161,6 +161,12 @@ public class EndersoulEntity extends Monster implements GeoEntity {
 		double y = entity.getY();
 		double z = entity.getZ();
 		return super.getDimensions(p_33597_).scale((float) MutantMobsScalingProcedure.execute(entity));
+	}
+
+	@Override
+	public void aiStep() {
+		super.aiStep();
+		this.updateSwingTime();
 	}
 
 	public static void init() {

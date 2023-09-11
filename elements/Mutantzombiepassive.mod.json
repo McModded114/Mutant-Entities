@@ -21,6 +21,21 @@
       },
       {
         "value": "EntityPigZombie"
+      },
+      {
+        "value": "CUSTOM:MutantDrowned"
+      },
+      {
+        "value": "CUSTOM:MutantZombie"
+      },
+      {
+        "value": "CUSTOM:MutantZombifiedPiglin"
+      },
+      {
+        "value": "CUSTOM:ThornyMutantHusk"
+      },
+      {
+        "value": "CUSTOM:MutantHusk"
       }
     ],
     "biomes": [],

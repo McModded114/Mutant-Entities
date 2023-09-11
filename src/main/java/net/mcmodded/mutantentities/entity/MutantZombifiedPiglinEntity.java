@@ -18,12 +18,8 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.monster.warden.Warden;
-import net.minecraft.world.entity.monster.piglin.PiglinBrute;
-import net.minecraft.world.entity.monster.piglin.Piglin;
-import net.minecraft.world.entity.monster.WitherSkeleton;
+import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
@@ -59,6 +55,7 @@ import net.minecraft.nbt.CompoundTag;
 
 import net.mcmodded.mutantentities.procedures.MutantZombiesScalingProcedure;
 import net.mcmodded.mutantentities.procedures.MutantZombiePigmanProcedure;
+import net.mcmodded.mutantentities.procedures.MutantZombieBreakLeavesProcedure;
 import net.mcmodded.mutantentities.init.MutantEntitiesModItems;
 import net.mcmodded.mutantentities.init.MutantEntitiesModEntities;
 
@@ -119,12 +116,8 @@ public class MutantZombifiedPiglinEntity extends Monster implements GeoEntity {
 		this.targetSelector.addGoal(3, new HurtByTargetGoal(this).setAlertOthers());
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(5, new FloatGoal(this));
-		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Warden.class, false, false));
-		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, WitherBoss.class, false, false));
-		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, WitherSkeleton.class, false, false));
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, IronGolem.class, false, false));
-		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, PiglinBrute.class, false, false));
-		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Piglin.class, false, false));
+		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, AbstractVillager.class, false, false));
 	}
 
 	@Override
@@ -168,6 +161,7 @@ public class MutantZombifiedPiglinEntity extends Monster implements GeoEntity {
 	@Override
 	public void baseTick() {
 		super.baseTick();
+		MutantZombieBreakLeavesProcedure.execute(this.level, this.getX(), this.getY(), this.getZ());
 		this.refreshDimensions();
 	}
 

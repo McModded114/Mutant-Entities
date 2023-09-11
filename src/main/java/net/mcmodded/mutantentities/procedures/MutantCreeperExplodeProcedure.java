@@ -10,8 +10,9 @@ public class MutantCreeperExplodeProcedure {
 		if (entity == null)
 			return;
 		if (world.getLevelData().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING) == true) {
-			if (world instanceof Level _level && !_level.isClientSide())
-				_level.explode(null, (entity.getX()), (entity.getY()), (entity.getZ()), 9, Level.ExplosionInteraction.TNT);
+			if (world instanceof Level _level && !_level.isClientSide()) {
+				_level.explode(entity, (entity.getX()), (entity.getY()), (entity.getZ()), 9, false, Level.ExplosionInteraction.TNT);
+			}
 		}
 	}
 }

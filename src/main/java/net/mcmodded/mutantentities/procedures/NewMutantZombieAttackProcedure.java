@@ -11,7 +11,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
@@ -63,7 +62,6 @@ public class NewMutantZombieAttackProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, DamageSource damagesource, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
 			return;
-		Entity summon = null;
 		if (sourceentity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("mutant_entities:mutantzombieattack"))) && entity instanceof LivingEntity) {
 			if ((damagesource).is(DamageTypes.MOB_ATTACK)) {
 				if (event != null && event.isCancelable()) {
@@ -236,51 +234,48 @@ public class NewMutantZombieAttackProcedure {
 			}
 		}
 		if (entity instanceof MutantZombieEntity && sourceentity instanceof LivingEntity) {
-			if (entity instanceof Mob _entity && sourceentity instanceof LivingEntity _ent)
-				_entity.setTarget(_ent);
-			if (Math.random() < (double) MutantEntitiesConfigFileConfiguration.ROAR_CHANCE.get()) {
-				((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.ATK.get()).setBaseValue(1);
-				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 999, 9, false, true));
-				if (entity instanceof MutantZombieEntity) {
-					((MutantZombieEntity) entity).setAnimation("roar");
-				}
-				for (int index2 = 0; index2 < 4; index2++) {
-					if (Math.random() < 0.5) {
-						world.levelEvent(2001, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), Block.getId((world.getBlockState(BlockPos.containing(entity.getX(), entity.getY(), entity.getZ())))));
-						if (world instanceof ServerLevel _level) {
-							Entity entityToSpawn = new Zombie(EntityType.ZOMBIE, _level);
-							entityToSpawn.moveTo((entity.getX()), (entity.getY()), (entity.getZ()), 0, 0);
-							entityToSpawn.setYBodyRot(0);
-							entityToSpawn.setYHeadRot(0);
-							if (entityToSpawn instanceof Mob _mobToSpawn)
-								_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-							_level.addFreshEntity(entityToSpawn);
-						}
-						summon = (Entity) world.getEntitiesOfClass(Zombie.class, AABB.ofSize(new Vec3((sourceentity.getX()), (sourceentity.getY()), (sourceentity.getZ())), 4, 4, 4), e -> true).stream().sorted(new Object() {
-							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-							}
-						}.compareDistOf((sourceentity.getX()), (sourceentity.getY()), (sourceentity.getZ()))).findFirst().orElse(null);
-						if (summon instanceof Mob _entity && sourceentity instanceof LivingEntity _ent)
-							_entity.setTarget(_ent);
-					} else {
-						world.levelEvent(2001, BlockPos.containing(sourceentity.getX(), sourceentity.getY(), sourceentity.getZ()),
-								Block.getId((world.getBlockState(BlockPos.containing(sourceentity.getX(), sourceentity.getY(), sourceentity.getZ())))));
-						summon = (Entity) world.getEntitiesOfClass(Zombie.class, AABB.ofSize(new Vec3((sourceentity.getX()), (sourceentity.getY()), (sourceentity.getZ())), 4, 4, 4), e -> true).stream().sorted(new Object() {
-							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-							}
-						}.compareDistOf((sourceentity.getX()), (sourceentity.getY()), (sourceentity.getZ()))).findFirst().orElse(null);
-						if (summon instanceof Mob _entity && sourceentity instanceof LivingEntity _ent)
-							_entity.setTarget(_ent);
+			if (((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.ATK.get()).getBaseValue() == 0) {
+				if (Math.random() < (double) MutantEntitiesConfigFileConfiguration.ROAR_CHANCE.get()) {
+					((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.ATK.get()).setBaseValue(1);
+					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 999, 9, false, true));
+					if (entity instanceof MutantZombieEntity) {
+						((MutantZombieEntity) entity).setAnimation("roar");
 					}
+					for (int index2 = 0; index2 < 4; index2++) {
+						if (Math.random() < 0.5) {
+							world.levelEvent(2001, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), Block.getId((world.getBlockState(BlockPos.containing(entity.getX(), entity.getY(), entity.getZ())))));
+							if (world instanceof ServerLevel _level) {
+								Entity _entityToSpawn = EntityType.ZOMBIE.create(_level);
+								_entityToSpawn.moveTo((entity.getX()), (entity.getY()), (entity.getZ()), world.getRandom().nextFloat() * 360.0F, 0.0F);
+								if (_entityToSpawn instanceof Mob _mobToSpawn) {
+									_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(_entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+								}
+								if ((_entityToSpawn) instanceof Mob _entity && sourceentity instanceof LivingEntity _ent)
+									_entity.setTarget(_ent);
+								_level.addFreshEntity(_entityToSpawn);
+							}
+						} else {
+							world.levelEvent(2001, BlockPos.containing(sourceentity.getX(), sourceentity.getY(), sourceentity.getZ()),
+									Block.getId((world.getBlockState(BlockPos.containing(sourceentity.getX(), sourceentity.getY(), sourceentity.getZ())))));
+							if (world instanceof ServerLevel _level) {
+								Entity _entityToSpawn = EntityType.ZOMBIE.create(_level);
+								_entityToSpawn.moveTo((sourceentity.getX()), (sourceentity.getY()), (sourceentity.getZ()), world.getRandom().nextFloat() * 360.0F, 0.0F);
+								if (_entityToSpawn instanceof Mob _mobToSpawn) {
+									_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(_entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+								}
+								if ((_entityToSpawn) instanceof Mob _entity && sourceentity instanceof LivingEntity _ent)
+									_entity.setTarget(_ent);
+								_level.addFreshEntity(_entityToSpawn);
+							}
+						}
+					}
+					MutantEntitiesMod.queueServerWork(144, () -> {
+						((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.ATK.get()).setBaseValue(0);
+						if (entity instanceof LivingEntity _entity)
+							_entity.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
+					});
 				}
-				MutantEntitiesMod.queueServerWork(144, () -> {
-					((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.ATK.get()).setBaseValue(0);
-					if (entity instanceof LivingEntity _entity)
-						_entity.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
-				});
 			}
 		}
 	}

@@ -16,7 +16,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.core.registries.Registries;
 
 import net.mcmodded.mutantentities.entity.SpiderPigEntity;
-import net.mcmodded.mutantentities.entity.MutantSkeletonEntity;
 import net.mcmodded.mutantentities.MutantEntitiesMod;
 
 import javax.annotation.Nullable;
@@ -39,16 +38,13 @@ public class OtherMutantsDmgProcedure {
 		if (entity == null || sourceentity == null)
 			return;
 		Entity summon = null;
-		if ((sourceentity instanceof MutantSkeletonEntity || sourceentity instanceof SpiderPigEntity) && entity instanceof LivingEntity) {
+		if (sourceentity instanceof SpiderPigEntity && entity instanceof LivingEntity) {
 			if ((damagesource).is(DamageTypes.MOB_ATTACK)) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
 				}
 				if (sourceentity instanceof SpiderPigEntity) {
 					((SpiderPigEntity) sourceentity).setAnimation("attack");
-				}
-				if (sourceentity instanceof MutantSkeletonEntity) {
-					((MutantSkeletonEntity) sourceentity).setAnimation("bowattack");
 				}
 				MutantEntitiesMod.queueServerWork(15, () -> {
 					entity.hurt(((new Object() {

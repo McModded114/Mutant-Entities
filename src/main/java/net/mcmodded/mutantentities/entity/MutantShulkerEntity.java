@@ -38,7 +38,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -98,18 +97,16 @@ public class MutantShulkerEntity extends Monster implements GeoEntity {
 	protected void registerGoals() {
 		super.registerGoals();
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Player.class, false, false));
-		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, ServerPlayer.class, false, false));
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, IronGolem.class, false, false));
-		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, MutantIronGolemEntity.class, false, false));
-		this.goalSelector.addGoal(5, new MeleeAttackGoal(this, 2.4, true) {
+		this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 2.4, true) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
 				return (this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth()) * 2.5;
 			}
 		});
-		this.targetSelector.addGoal(6, new HurtByTargetGoal(this));
-		this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(8, new FloatGoal(this));
+		this.targetSelector.addGoal(4, new HurtByTargetGoal(this));
+		this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(6, new FloatGoal(this));
 	}
 
 	@Override
@@ -183,24 +180,6 @@ public class MutantShulkerEntity extends Monster implements GeoEntity {
 		return PlayState.STOP;
 	}
 
-	private PlayState attackingPredicate(AnimationState event) {
-		double d1 = this.getX() - this.xOld;
-		double d0 = this.getZ() - this.zOld;
-		float velocity = (float) Math.sqrt(d1 * d1 + d0 * d0);
-		if (getAttackAnim(event.getPartialTick()) > 0f && !this.swinging) {
-			this.swinging = true;
-			this.lastSwing = level.getGameTime();
-		}
-		if (this.swinging && this.lastSwing + 7L <= level.getGameTime()) {
-			this.swinging = false;
-		}
-		if (this.swinging && event.getController().getAnimationState() == AnimationController.State.STOPPED) {
-			event.getController().forceAnimationReset();
-			return event.setAndContinue(RawAnimation.begin().thenPlay("attack"));
-		}
-		return PlayState.CONTINUE;
-	}
-
 	private PlayState procedurePredicate(AnimationState event) {
 		Entity entity = this;
 		Level world = entity.level;
@@ -249,7 +228,6 @@ public class MutantShulkerEntity extends Monster implements GeoEntity {
 	@Override
 	public void registerControllers(AnimatableManager.ControllerRegistrar data) {
 		data.add(new AnimationController<>(this, "movement", 4, this::movementPredicate));
-		data.add(new AnimationController<>(this, "attacking", 4, this::attackingPredicate));
 		data.add(new AnimationController<>(this, "procedure", 4, this::procedurePredicate));
 	}
 

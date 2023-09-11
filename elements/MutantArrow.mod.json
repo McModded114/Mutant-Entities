@@ -1,0 +1,45 @@
+{
+  "_fv": 47,
+  "_type": "rangeditem",
+  "definition": {
+    "renderType": 0,
+    "texture": "throwableblock_item",
+    "customModelName": "Normal",
+    "name": "Mutant Arrow",
+    "specialInfo": [
+      "don't use. Only for mutant skeleton ranged attacks."
+    ],
+    "creativeTab": {
+      "value": "COMBAT"
+    },
+    "stackSize": 1,
+    "ammoItem": {
+      "value": ""
+    },
+    "shootConstantly": false,
+    "usageCount": 0,
+    "actionSound": {
+      "value": "entity.arrow.shoot"
+    },
+    "hasGlow": false,
+    "animation": "bow",
+    "enableMeleeDamage": false,
+    "damageVsEntity": 0.0,
+    "bulletPower": 1.0,
+    "bulletDamage": 5.0,
+    "bulletKnockback": 1,
+    "bulletParticles": false,
+    "bulletIgnitesFire": false,
+    "bulletItemTexture": {
+      "value": ""
+    },
+    "bulletModel": "Modelmutant_arrow",
+    "customBulletModelTexture": "mutant_arrow.png",
+    "onBulletHitsPlayer": {
+      "name": "MutantArrowDmg"
+    },
+    "onBulletHitsEntity": {
+      "name": "MutantArrowDmg"
+    }
+  }
+}

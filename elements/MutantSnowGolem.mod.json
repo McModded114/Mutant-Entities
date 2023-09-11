@@ -16,7 +16,7 @@
     },
     "modelWidth": 1.7000000000000002,
     "modelHeight": 3.6,
-    "modelShadowSize": 1.5,
+    "modelShadowSize": 0.0,
     "mountedYOffset": 0.0,
     "hasSpawnEgg": true,
     "spawnEggBaseColor": {
@@ -101,11 +101,11 @@
     "stepSound": {
       "value": ""
     },
+    "onMobTickUpdate": {
+      "name": "MutantSnowGolemSnow"
+    },
     "onInitialSpawn": {
       "name": "Mutants"
-    },
-    "conditionalAnimation": {
-      "name": "MutantZombieTextures"
     },
     "hasAI": true,
     "aiBase": "IronGolem",

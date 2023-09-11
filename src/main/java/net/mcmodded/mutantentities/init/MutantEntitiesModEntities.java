@@ -34,6 +34,7 @@ import net.mcmodded.mutantentities.entity.MutantHuskEntity;
 import net.mcmodded.mutantentities.entity.MutantEndermanEntity;
 import net.mcmodded.mutantentities.entity.MutantDrownedEntity;
 import net.mcmodded.mutantentities.entity.MutantCreeperEntity;
+import net.mcmodded.mutantentities.entity.MutantArrowEntity;
 import net.mcmodded.mutantentities.entity.EndersoulEntity;
 import net.mcmodded.mutantentities.entity.CreeperlingEntity;
 import net.mcmodded.mutantentities.entity.ChemicalXItemEntity;
@@ -71,7 +72,7 @@ public class MutantEntitiesModEntities {
 	public static final RegistryObject<EntityType<MutantWitherSkeletonEntity>> MUTANT_WITHER_SKELETON = register("mutant_wither_skeleton", EntityType.Builder.<MutantWitherSkeletonEntity>of(MutantWitherSkeletonEntity::new, MobCategory.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MutantWitherSkeletonEntity::new).fireImmune().sized(1.4f, 4f));
 	public static final RegistryObject<EntityType<MutantDrownedEntity>> MUTANT_DROWNED = register("mutant_drowned",
-			EntityType.Builder.<MutantDrownedEntity>of(MutantDrownedEntity::new, MobCategory.WATER_CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MutantDrownedEntity::new)
+			EntityType.Builder.<MutantDrownedEntity>of(MutantDrownedEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MutantDrownedEntity::new)
 
 					.sized(1.44f, 2.56f));
 	public static final RegistryObject<EntityType<ThornyMutantHuskEntity>> THORNY_MUTANT_HUSK = register("thorny_mutant_husk",
@@ -97,7 +98,7 @@ public class MutantEntitiesModEntities {
 	public static final RegistryObject<EntityType<ThrowableGrassblockEntity>> THROWABLE_GRASSBLOCK = register("projectile_throwable_grassblock", EntityType.Builder.<ThrowableGrassblockEntity>of(ThrowableGrassblockEntity::new, MobCategory.MISC)
 			.setCustomClientFactory(ThrowableGrassblockEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<SpiderPigEntity>> SPIDER_PIG = register("spider_pig",
-			EntityType.Builder.<SpiderPigEntity>of(SpiderPigEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(SpiderPigEntity::new)
+			EntityType.Builder.<SpiderPigEntity>of(SpiderPigEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(SpiderPigEntity::new)
 
 					.sized(1.46f, 1.23f));
 	public static final RegistryObject<EntityType<MutantShulkerEntity>> MUTANT_SHULKER = register("mutant_shulker",
@@ -110,6 +111,8 @@ public class MutantEntitiesModEntities {
 					.sized(1.7f, 3.6f));
 	public static final RegistryObject<EntityType<ThrowableIceEntity>> THROWABLE_ICE = register("projectile_throwable_ice",
 			EntityType.Builder.<ThrowableIceEntity>of(ThrowableIceEntity::new, MobCategory.MISC).setCustomClientFactory(ThrowableIceEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<MutantArrowEntity>> MUTANT_ARROW = register("projectile_mutant_arrow",
+			EntityType.Builder.<MutantArrowEntity>of(MutantArrowEntity::new, MobCategory.MISC).setCustomClientFactory(MutantArrowEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));

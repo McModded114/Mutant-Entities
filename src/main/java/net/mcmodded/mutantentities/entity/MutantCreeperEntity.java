@@ -19,6 +19,7 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.animal.Ocelot;
 import net.minecraft.world.entity.animal.Cat;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
@@ -43,7 +44,6 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.Difficulty;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -104,18 +104,18 @@ public class MutantCreeperEntity extends Monster implements GeoEntity {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Cat.class, (float) 8, 1, 1.2));
-		this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
-		this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 1.2, true) {
+		this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Cat.class, (float) 6, 1, 1.2));
+		this.goalSelector.addGoal(2, new AvoidEntityGoal<>(this, Ocelot.class, (float) 6, 1, 1.2));
+		this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
+		this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.2, true) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
 				return (this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth()) * 2.5;
 			}
 		});
-		this.goalSelector.addGoal(4, new RandomStrollGoal(this, 0.8));
-		this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(5, new RandomStrollGoal(this, 0.8));
+		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Player.class, false, false));
-		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, ServerPlayer.class, false, false));
 	}
 
 	@Override

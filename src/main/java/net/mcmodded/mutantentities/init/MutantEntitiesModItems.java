@@ -24,6 +24,7 @@ import net.mcmodded.mutantentities.item.MutantWitherSkeletonBoneItem;
 import net.mcmodded.mutantentities.item.MutantWitherSkeletonBoneArmorArmorItem;
 import net.mcmodded.mutantentities.item.MutantSkeletonBoneItem;
 import net.mcmodded.mutantentities.item.MutantSkeletonBoneArmorArmorItem;
+import net.mcmodded.mutantentities.item.MutantArrowItem;
 import net.mcmodded.mutantentities.item.LorePaperItem;
 import net.mcmodded.mutantentities.item.EndersoulHandItem;
 import net.mcmodded.mutantentities.item.EnchantedGunpowderItem;
@@ -77,6 +78,7 @@ public class MutantEntitiesModItems {
 	public static final RegistryObject<Item> MUTANT_WITHER_SKELETON_SWORD = REGISTRY.register("mutant_wither_skeleton_sword", () -> new MutantWitherSkeletonSwordItem());
 	public static final RegistryObject<Item> THROWABLE_ICE = REGISTRY.register("throwable_ice", () -> new ThrowableIceItem());
 	public static final RegistryObject<Item> ANCIENT_BUSH = block(MutantEntitiesModBlocks.ANCIENT_BUSH);
+	public static final RegistryObject<Item> MUTANT_ARROW = REGISTRY.register("mutant_arrow", () -> new MutantArrowItem());
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

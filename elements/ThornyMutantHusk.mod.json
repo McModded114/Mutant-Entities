@@ -87,7 +87,7 @@
     "immuneToWither": false,
     "immuneToDragonBreath": false,
     "mobDrop": {
-      "value": "Items.ROTTEN_FLESH"
+      "value": ""
     },
     "livingSound": {
       "value": "entity.husk.ambient"
@@ -103,6 +103,9 @@
     },
     "whenMobIsHurt": {
       "name": "MutantHuskAbility"
+    },
+    "onMobTickUpdate": {
+      "name": "MutantZombieBreakLeaves"
     },
     "onInitialSpawn": {
       "name": "ThornyMutantHuskStats"

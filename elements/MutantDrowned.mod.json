@@ -8,11 +8,11 @@
     "mobModelGlowTexture": "",
     "visualScale": {
       "fixedValue": 1.25,
-      "name": "MutantZombiesScaling"
+      "name": "MutantDrownedScaling"
     },
     "boundingBoxScale": {
       "fixedValue": 1.0,
-      "name": "MutantZombiesScaling"
+      "name": "MutantDrownedScaling"
     },
     "modelWidth": 1.44,
     "modelHeight": 2.56,
@@ -87,7 +87,7 @@
     "immuneToWither": false,
     "immuneToDragonBreath": false,
     "mobDrop": {
-      "value": "Items.ROTTEN_FLESH"
+      "value": ""
     },
     "livingSound": {
       "value": "entity.drowned.ambient"
@@ -101,17 +101,20 @@
     "stepSound": {
       "value": "entity.drowned.step"
     },
+    "onMobTickUpdate": {
+      "name": "MutantZombieBreakLeaves"
+    },
     "onInitialSpawn": {
       "name": "MutantDrownedStats"
     },
     "hasAI": true,
     "aiBase": "(none)",
-    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">TRUE</field><field name=\"multiplier\">6</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"swim\"><field name=\"speed\">1.3</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityPlayer</field><field name=\"priority\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityPlayerMP</field><field name=\"priority\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityIronGolem</field><field name=\"priority\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityVillager</field><field name=\"priority\">1</field><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">TRUE</field><field name=\"multiplier\">6</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"swim\"><field name=\"speed\">5</field><field name=\"condition\">null,null</field><next><block type=\"leap_at_target\"><field name=\"speed\">0.5</field><field name=\"condition\">IsInWater,IsInWater</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityPlayer</field><field name=\"priority\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityIronGolem</field><field name=\"priority\">1</field><field name=\"condition\">null,null</field><next><block type=\"java_code\"><field name=\"CODE\">this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, AbstractVillager.class, false, false));</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
     "model": "mutant_drowned.geo.json",
     "groupName": "",
     "animation1": "idle",
     "animation2": "walk",
-    "animation3": "",
+    "animation3": "finaldeath",
     "animation4": "",
     "animation5": "",
     "animation6": "",
@@ -120,7 +123,7 @@
     "animation9": "",
     "animation10": "",
     "enable2": true,
-    "enable3": false,
+    "enable3": true,
     "enable4": false,
     "enable5": false,
     "enable6": false,
@@ -145,7 +148,7 @@
     "spawnThisMob": true,
     "doesDespawnWhenIdle": true,
     "spawningProbability": 85,
-    "mobSpawningType": "waterCreature",
+    "mobSpawningType": "monster",
     "minNumberOfMobsPerGroup": 1,
     "maxNumberOfMobsPerGroup": 1,
     "restrictionBiomes": [],

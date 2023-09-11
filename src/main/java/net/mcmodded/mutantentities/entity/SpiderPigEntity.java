@@ -15,6 +15,7 @@ import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.ServerLevelAccessor;
@@ -24,8 +25,8 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.animal.Pig;
+import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
@@ -33,6 +34,7 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.world.entity.ai.goal.LeapAtTargetGoal;
 import net.minecraft.world.entity.ai.goal.FollowOwnerGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -54,7 +56,6 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.Difficulty;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
@@ -144,17 +145,39 @@ public class SpiderPigEntity extends TamableAnimal implements GeoEntity {
 				return super.canContinueToUse() && IsNotTamedProcedure.execute(entity);
 			}
 		});
+		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, IronGolem.class, false, false) {
+			@Override
+			public boolean canUse() {
+				double x = SpiderPigEntity.this.getX();
+				double y = SpiderPigEntity.this.getY();
+				double z = SpiderPigEntity.this.getZ();
+				Entity entity = SpiderPigEntity.this;
+				Level world = SpiderPigEntity.this.level;
+				return super.canUse() && IsNotTamedProcedure.execute(entity);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = SpiderPigEntity.this.getX();
+				double y = SpiderPigEntity.this.getY();
+				double z = SpiderPigEntity.this.getZ();
+				Entity entity = SpiderPigEntity.this;
+				Level world = SpiderPigEntity.this.level;
+				return super.canContinueToUse() && IsNotTamedProcedure.execute(entity);
+			}
+		});
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Pig.class, false, false));
-		this.goalSelector.addGoal(6, new MeleeAttackGoal(this, 2.5, true) {
+		this.goalSelector.addGoal(7, new MeleeAttackGoal(this, 2.5, true) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
 				return (this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth()) * 2;
 			}
 		});
-		this.goalSelector.addGoal(7, new RandomStrollGoal(this, 1.8));
-		this.targetSelector.addGoal(8, new HurtByTargetGoal(this));
-		this.goalSelector.addGoal(9, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(10, new FloatGoal(this));
+		this.goalSelector.addGoal(8, new RandomStrollGoal(this, 1.8));
+		this.targetSelector.addGoal(9, new HurtByTargetGoal(this));
+		this.goalSelector.addGoal(10, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(11, new FloatGoal(this));
+		this.goalSelector.addGoal(12, new LeapAtTargetGoal(this, (float) 0.5));
 	}
 
 	@Override
@@ -312,7 +335,7 @@ public class SpiderPigEntity extends TamableAnimal implements GeoEntity {
 
 	public static void init() {
 		SpawnPlacements.register(MutantEntitiesModEntities.SPIDER_PIG.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-				(entityType, world, reason, pos, random) -> (world.getDifficulty() != Difficulty.PEACEFUL && Monster.isDarkEnoughToSpawn(world, pos, random) && Mob.checkMobSpawnRules(entityType, world, reason, pos, random)));
+				(entityType, world, reason, pos, random) -> (world.getBlockState(pos.below()).getMaterial() == Material.GRASS && world.getRawBrightness(pos, 0) > 8));
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {

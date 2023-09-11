@@ -15,6 +15,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.util.RandomSource;
 import net.minecraft.core.BlockPos;
 
 import net.mcmodded.mutantentities.init.MutantEntitiesModItems;
@@ -43,6 +44,17 @@ public class WeaponEffectsProcedure {
 		if (entity == null || sourceentity == null)
 			return;
 		double entities = 0;
+		if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == MutantEntitiesModItems.MUTANT_WITHER_SKELETON_SWORD.get()
+				|| (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == MutantEntitiesModItems.MUTANT_ZOMBIFIED_PIGLINS_HAMMER.get()
+				|| (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == MutantEntitiesModItems.ENDERSOUL_HAND.get()) {
+			{
+				ItemStack _ist = (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
+				if (_ist.hurt(1, RandomSource.create(), null)) {
+					_ist.shrink(1);
+					_ist.setDamageValue(0);
+				}
+			}
+		}
 		if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == MutantEntitiesModItems.MUTANT_WITHER_SKELETON_SWORD.get()) {
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.WITHER, 70, 0));
@@ -58,14 +70,14 @@ public class WeaponEffectsProcedure {
 								Block.getId((world.getBlockState(BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())))));
 						if (!(sourceentity == entityiterator)) {
 							if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-								_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20, 3));
+								_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40, 9));
 							if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-								_entity.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 15, 1));
+								_entity.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 30, 1));
 						}
 					}
 				}
 				if (sourceentity instanceof Player _player)
-					_player.getCooldowns().addCooldown((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem(), 40);
+					_player.getCooldowns().addCooldown((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem(), 60);
 			}
 		}
 	}

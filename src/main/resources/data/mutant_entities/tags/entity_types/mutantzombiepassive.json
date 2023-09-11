@@ -1,10 +1,15 @@
 {
   "replace": false,
   "values": [
+    "mutant_entities:mutant_zombified_piglin",
     "drowned",
     "zombie",
+    "mutant_entities:mutant_husk",
     "husk",
+    "mutant_entities:mutant_zombie",
     "zombified_piglin",
-    "zombie_villager"
+    "mutant_entities:mutant_drowned",
+    "zombie_villager",
+    "mutant_entities:thorny_mutant_husk"
   ]
 }

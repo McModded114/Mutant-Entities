@@ -10,7 +10,7 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.MultiBufferSource;
 
-import net.mcmodded.mutantentities.procedures.MutantZombiesScalingProcedure;
+import net.mcmodded.mutantentities.procedures.MutantDrownedScalingProcedure;
 import net.mcmodded.mutantentities.entity.model.MutantDrownedModel;
 import net.mcmodded.mutantentities.entity.MutantDrownedEntity;
 
@@ -35,7 +35,7 @@ public class MutantDrownedRenderer extends GeoEntityRenderer<MutantDrownedEntity
 		double x = entity.getX();
 		double y = entity.getY();
 		double z = entity.getZ();
-		float scale = (float) MutantZombiesScalingProcedure.execute(entity);
+		float scale = (float) MutantDrownedScalingProcedure.execute(entity);
 		this.scaleHeight = scale;
 		this.scaleWidth = scale;
 		super.preRender(poseStack, entity, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, red, green, blue, alpha);

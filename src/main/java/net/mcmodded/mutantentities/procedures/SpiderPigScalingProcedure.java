@@ -9,9 +9,6 @@ public class SpiderPigScalingProcedure {
 	public static double execute(Entity entity) {
 		if (entity == null)
 			return 0;
-		if (((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.SIZ.get()).getBaseValue() != 0) {
-			return 1.3 * ((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.SIZ.get()).getBaseValue();
-		}
-		return 1.3;
+		return 1.3 * ((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.SIZ.get()).getBaseValue();
 	}
 }

@@ -19,15 +19,15 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.monster.piglin.PiglinBrute;
-import net.minecraft.world.entity.monster.piglin.Piglin;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.animal.Wolf;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.SpawnGroupData;
@@ -44,7 +44,6 @@ import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -114,14 +113,11 @@ public class MutantWitherSkeletonEntity extends Monster implements GeoEntity {
 			}
 		});
 		this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
-		this.goalSelector.addGoal(3, new RandomStrollGoal(this, 0.8));
-		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(3, new AvoidEntityGoal<>(this, Wolf.class, (float) 6, 1, 1.2));
+		this.goalSelector.addGoal(4, new RandomStrollGoal(this, 0.8));
+		this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Player.class, false, false));
-		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, ServerPlayer.class, false, false));
-		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, MutantIronGolemEntity.class, false, false));
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, IronGolem.class, false, false));
-		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, PiglinBrute.class, false, false));
-		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Piglin.class, false, false));
 	}
 
 	@Override

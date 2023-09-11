@@ -5,7 +5,7 @@
     "description": "Var (don't touch.)",
     "minValue": 0.0,
     "maxValue": 1024.0,
-    "defaultValue": 1.0,
+    "defaultValue": 0.0,
     "isPersistent": false,
     "entities": [
       {

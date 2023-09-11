@@ -21,7 +21,7 @@ public class ChemicalXEffectMobEffect extends MobEffect {
 
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		ChemicalXEffectParticleProcedure.execute(entity.level, entity.getX(), entity.getY(), entity.getZ());
+		ChemicalXEffectParticleProcedure.execute(entity.level, entity);
 	}
 
 	@Override

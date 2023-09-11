@@ -29,6 +29,7 @@ import net.mcmodded.mutantentities.client.renderer.MutantHuskRenderer;
 import net.mcmodded.mutantentities.client.renderer.MutantEndermanRenderer;
 import net.mcmodded.mutantentities.client.renderer.MutantDrownedRenderer;
 import net.mcmodded.mutantentities.client.renderer.MutantCreeperRenderer;
+import net.mcmodded.mutantentities.client.renderer.MutantArrowRenderer;
 import net.mcmodded.mutantentities.client.renderer.EndersoulRenderer;
 import net.mcmodded.mutantentities.client.renderer.CreeperlingRenderer;
 
@@ -57,5 +58,6 @@ public class MutantEntitiesModEntityRenderers {
 		event.registerEntityRenderer(MutantEntitiesModEntities.MUTANT_SHULKER.get(), MutantShulkerRenderer::new);
 		event.registerEntityRenderer(MutantEntitiesModEntities.MUTANT_SNOW_GOLEM.get(), MutantSnowGolemRenderer::new);
 		event.registerEntityRenderer(MutantEntitiesModEntities.THROWABLE_ICE.get(), ThrowableIceRenderer::new);
+		event.registerEntityRenderer(MutantEntitiesModEntities.MUTANT_ARROW.get(), MutantArrowRenderer::new);
 	}
 }

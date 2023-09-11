@@ -20,7 +20,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 public class MutantSnowGolemRenderer extends GeoEntityRenderer<MutantSnowGolemEntity> {
 	public MutantSnowGolemRenderer(EntityRendererProvider.Context renderManager) {
 		super(renderManager, new MutantSnowGolemModel());
-		this.shadowRadius = 1.5f;
+		this.shadowRadius = 0f;
 	}
 
 	@Override

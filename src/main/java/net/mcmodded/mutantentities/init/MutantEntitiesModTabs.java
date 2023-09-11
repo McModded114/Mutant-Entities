@@ -27,6 +27,7 @@ public class MutantEntitiesModTabs {
 			tabData.accept(MutantEntitiesModItems.MUTANT_WITHER_SKELETON_BONE_ARMOR_ARMOR_CHESTPLATE.get());
 			tabData.accept(MutantEntitiesModItems.MUTANT_WITHER_SKELETON_BONE_ARMOR_ARMOR_LEGGINGS.get());
 			tabData.accept(MutantEntitiesModItems.MUTANT_WITHER_SKELETON_BONE_ARMOR_ARMOR_BOOTS.get());
+			tabData.accept(MutantEntitiesModItems.MUTANT_ARROW.get());
 		}
 	}
 

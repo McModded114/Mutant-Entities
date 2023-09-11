@@ -79,7 +79,9 @@ public class WitherSkeletonNewAttacksProcedure {
 										}
 									};
 								}
-							}).get(world, "mutantgeneric", sourceentity)), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getBaseValue());
+							}).get(world, "mutantgeneric", sourceentity)), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
+							if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+								_entity.addEffect(new MobEffectInstance(MobEffects.WITHER, 100, 1));
 						});
 					} else {
 						if (sourceentity instanceof MutantWitherSkeletonEntity) {
@@ -115,7 +117,9 @@ public class WitherSkeletonNewAttacksProcedure {
 										}
 									};
 								}
-							}).get(world, "mutantgeneric", sourceentity)), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getBaseValue());
+							}).get(world, "mutantgeneric", sourceentity)), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
+							if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+								_entity.addEffect(new MobEffectInstance(MobEffects.WITHER, 100, 1));
 						});
 					}
 				} else {
@@ -154,8 +158,10 @@ public class WitherSkeletonNewAttacksProcedure {
 											}
 										};
 									}
-								}).get(world, "mutantgeneric", sourceentity)), (float) (((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getBaseValue() / 10));
+								}).get(world, "mutantgeneric", sourceentity)), (float) (((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue() / 10));
 							});
+							if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
+								_entity.addEffect(new MobEffectInstance(MobEffects.WITHER, 5, 1));
 						}
 					} else {
 						if (sourceentity instanceof LivingEntity _entity && !_entity.level.isClientSide())
@@ -194,13 +200,11 @@ public class WitherSkeletonNewAttacksProcedure {
 											}
 										};
 									}
-								}).get(world, "mutantgeneric", sourceentity)), (float) (((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getBaseValue() * 0.8));
+								}).get(world, "mutantgeneric", sourceentity)), (float) (((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue() * 0.8));
 							});
 						}
 					}
 				}
-				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.WITHER, 100, 1));
 			}
 		}
 	}

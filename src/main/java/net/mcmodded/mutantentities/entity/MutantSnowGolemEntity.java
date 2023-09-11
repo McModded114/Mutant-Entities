@@ -49,7 +49,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
 import net.mcmodded.mutantentities.procedures.MutantsProcedure;
-import net.mcmodded.mutantentities.procedures.MutantZombieTexturesProcedure;
+import net.mcmodded.mutantentities.procedures.MutantSnowGolemSnowProcedure;
 import net.mcmodded.mutantentities.procedures.MutantMobsScalingProcedure;
 import net.mcmodded.mutantentities.init.MutantEntitiesModEntities;
 
@@ -238,6 +238,7 @@ public class MutantSnowGolemEntity extends IronGolem implements RangedAttackMob,
 	@Override
 	public void baseTick() {
 		super.baseTick();
+		MutantSnowGolemSnowProcedure.execute(this.level, this);
 		this.refreshDimensions();
 	}
 
@@ -299,9 +300,6 @@ public class MutantSnowGolemEntity extends IronGolem implements RangedAttackMob,
 		double x = entity.getX();
 		double y = entity.getY();
 		double z = entity.getZ();
-		String condition = MutantZombieTexturesProcedure.execute(entity);
-		if (!condition.equals("empty"))
-			this.animationprocedure = condition;
 		if (!loop && this.lastloop) {
 			this.lastloop = false;
 			event.getController().setAnimation(RawAnimation.begin().thenPlay(this.animationprocedure));
