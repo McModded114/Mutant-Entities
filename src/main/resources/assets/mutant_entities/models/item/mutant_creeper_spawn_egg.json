@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "mutant_entities:item/spawn_egg",
-    "layer1": "mutant_entities:item/spawn_egg_overlay"
+    "layer0": "mutant_entities:items/spawn_egg",
+    "layer1": "mutant_entities:items/spawn_egg_overlay"
   }
 }

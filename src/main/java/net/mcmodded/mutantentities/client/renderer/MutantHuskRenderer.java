@@ -1,8 +1,7 @@
 
 package net.mcmodded.mutantentities.client.renderer;
 
-import software.bernie.geckolib.renderer.GeoEntityRenderer;
-import software.bernie.geckolib.cache.object.BakedGeoModel;
+import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.resources.ResourceLocation;
@@ -24,21 +23,14 @@ public class MutantHuskRenderer extends GeoEntityRenderer<MutantHuskEntity> {
 	}
 
 	@Override
-	public RenderType getRenderType(MutantHuskEntity animatable, ResourceLocation texture, MultiBufferSource bufferSource, float partialTick) {
-		return RenderType.entityTranslucent(getTextureLocation(animatable));
-	}
-
-	@Override
-	public void preRender(PoseStack poseStack, MutantHuskEntity entity, BakedGeoModel model, MultiBufferSource bufferSource, VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, float red, float green,
-			float blue, float alpha) {
+	public RenderType getRenderType(MutantHuskEntity entity, float partialTicks, PoseStack stack, MultiBufferSource renderTypeBuffer, VertexConsumer vertexBuilder, int packedLightIn, ResourceLocation textureLocation) {
 		Level world = entity.level;
 		double x = entity.getX();
 		double y = entity.getY();
 		double z = entity.getZ();
 		float scale = (float) MutantZombiesScalingProcedure.execute(entity);
-		this.scaleHeight = scale;
-		this.scaleWidth = scale;
-		super.preRender(poseStack, entity, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, red, green, blue, alpha);
+		stack.scale(scale, scale, scale);
+		return RenderType.entityTranslucent(getTextureLocation(entity));
 	}
 
 	@Override

@@ -21,7 +21,7 @@ import java.util.List;
 
 public class ThrowableCobblestoneItem extends Item {
 	public ThrowableCobblestoneItem() {
-		super(new Item.Properties().stacksTo(1));
+		super(new Item.Properties().tab(null).stacksTo(1));
 	}
 
 	@Override

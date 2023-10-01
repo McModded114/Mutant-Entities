@@ -28,8 +28,8 @@ public class SpawnCreeperlingProcedure {
 							Entity entityToSpawn = new CreeperlingEntity(MutantEntitiesModEntities.CREEPERLING.get(), _level);
 							entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
 							if (entityToSpawn instanceof Mob _mobToSpawn)
-								_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-							_level.addFreshEntity(entityToSpawn);
+								_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+							world.addFreshEntity(entityToSpawn);
 						}
 						creeperling = (Entity) world.getEntitiesOfClass(CreeperlingEntity.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).stream().sorted(new Object() {
 							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {

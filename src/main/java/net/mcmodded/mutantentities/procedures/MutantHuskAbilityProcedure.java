@@ -35,8 +35,7 @@ public class MutantHuskAbilityProcedure {
 						if (world instanceof ServerLevel _serverworld) {
 							StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("mutant_entities", "husk_ability"));
 							if (template != null) {
-								template.placeInWorld(_serverworld, BlockPos.containing(x, y, z), BlockPos.containing(x, y, z), new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
-										_serverworld.random, 3);
+								template.placeInWorld(_serverworld, new BlockPos(x, y, z), new BlockPos(x, y, z), new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false), _serverworld.random, 3);
 							}
 						}
 					} else {
@@ -47,8 +46,8 @@ public class MutantHuskAbilityProcedure {
 								entityToSpawn.setYBodyRot(0);
 								entityToSpawn.setYHeadRot(0);
 								if (entityToSpawn instanceof Mob _mobToSpawn)
-									_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-								_level.addFreshEntity(entityToSpawn);
+									_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+								world.addFreshEntity(entityToSpawn);
 							}
 							if (world instanceof ServerLevel _level) {
 								Entity entityToSpawn = new Husk(EntityType.HUSK, _level);
@@ -56,8 +55,8 @@ public class MutantHuskAbilityProcedure {
 								entityToSpawn.setYBodyRot(0);
 								entityToSpawn.setYHeadRot(0);
 								if (entityToSpawn instanceof Mob _mobToSpawn)
-									_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-								_level.addFreshEntity(entityToSpawn);
+									_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+								world.addFreshEntity(entityToSpawn);
 							}
 						} else {
 							if (world instanceof ServerLevel _level) {
@@ -66,8 +65,8 @@ public class MutantHuskAbilityProcedure {
 								entityToSpawn.setYBodyRot(0);
 								entityToSpawn.setYHeadRot(0);
 								if (entityToSpawn instanceof Mob _mobToSpawn)
-									_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-								_level.addFreshEntity(entityToSpawn);
+									_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+								world.addFreshEntity(entityToSpawn);
 							}
 							if (world instanceof ServerLevel _level) {
 								Entity entityToSpawn = new Husk(EntityType.HUSK, _level);
@@ -75,8 +74,8 @@ public class MutantHuskAbilityProcedure {
 								entityToSpawn.setYBodyRot(0);
 								entityToSpawn.setYHeadRot(0);
 								if (entityToSpawn instanceof Mob _mobToSpawn)
-									_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-								_level.addFreshEntity(entityToSpawn);
+									_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+								world.addFreshEntity(entityToSpawn);
 							}
 						}
 					}
@@ -88,8 +87,8 @@ public class MutantHuskAbilityProcedure {
 							entityToSpawn.setYBodyRot(0);
 							entityToSpawn.setYHeadRot(0);
 							if (entityToSpawn instanceof Mob _mobToSpawn)
-								_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-							_level.addFreshEntity(entityToSpawn);
+								_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+							world.addFreshEntity(entityToSpawn);
 						}
 						if (world instanceof ServerLevel _level) {
 							Entity entityToSpawn = new Husk(EntityType.HUSK, _level);
@@ -97,8 +96,8 @@ public class MutantHuskAbilityProcedure {
 							entityToSpawn.setYBodyRot(0);
 							entityToSpawn.setYHeadRot(0);
 							if (entityToSpawn instanceof Mob _mobToSpawn)
-								_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-							_level.addFreshEntity(entityToSpawn);
+								_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+							world.addFreshEntity(entityToSpawn);
 						}
 					} else {
 						if (world instanceof ServerLevel _level) {
@@ -107,8 +106,8 @@ public class MutantHuskAbilityProcedure {
 							entityToSpawn.setYBodyRot(0);
 							entityToSpawn.setYHeadRot(0);
 							if (entityToSpawn instanceof Mob _mobToSpawn)
-								_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-							_level.addFreshEntity(entityToSpawn);
+								_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+							world.addFreshEntity(entityToSpawn);
 						}
 						if (world instanceof ServerLevel _level) {
 							Entity entityToSpawn = new Husk(EntityType.HUSK, _level);
@@ -116,8 +115,8 @@ public class MutantHuskAbilityProcedure {
 							entityToSpawn.setYBodyRot(0);
 							entityToSpawn.setYHeadRot(0);
 							if (entityToSpawn instanceof Mob _mobToSpawn)
-								_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-							_level.addFreshEntity(entityToSpawn);
+								_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+							world.addFreshEntity(entityToSpawn);
 						}
 					}
 				}

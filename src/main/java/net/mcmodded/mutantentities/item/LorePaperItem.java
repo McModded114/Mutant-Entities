@@ -14,12 +14,13 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.network.chat.Component;
 
 import net.mcmodded.mutantentities.procedures.LorePaperLoreProcedure;
+import net.mcmodded.mutantentities.init.MutantEntitiesModTabs;
 
 import java.util.List;
 
 public class LorePaperItem extends Item {
 	public LorePaperItem() {
-		super(new Item.Properties().stacksTo(64).rarity(Rarity.UNCOMMON));
+		super(new Item.Properties().tab(MutantEntitiesModTabs.TAB_MUTANT_ENTITIES_ITEMS).stacksTo(64).rarity(Rarity.UNCOMMON));
 	}
 
 	@Override
@@ -35,6 +36,7 @@ public class LorePaperItem extends Item {
 		double x = entity.getX();
 		double y = entity.getY();
 		double z = entity.getZ();
+
 		LorePaperLoreProcedure.execute(world, entity, itemstack);
 		return ar;
 	}

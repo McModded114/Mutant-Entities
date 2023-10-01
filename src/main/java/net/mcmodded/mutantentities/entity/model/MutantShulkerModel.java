@@ -1,12 +1,12 @@
 package net.mcmodded.mutantentities.entity.model;
 
-import software.bernie.geckolib.model.GeoModel;
+import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 import net.minecraft.resources.ResourceLocation;
 
 import net.mcmodded.mutantentities.entity.MutantShulkerEntity;
 
-public class MutantShulkerModel extends GeoModel<MutantShulkerEntity> {
+public class MutantShulkerModel extends AnimatedGeoModel<MutantShulkerEntity> {
 	@Override
 	public ResourceLocation getAnimationResource(MutantShulkerEntity entity) {
 		return new ResourceLocation("mutant_entities", "animations/mutant_shulker.animation.json");

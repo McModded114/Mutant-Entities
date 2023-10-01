@@ -36,6 +36,7 @@ public class ChemicalXParticleParticle extends TextureSheetParticle {
 		super(world, x, y, z);
 		this.spriteSet = spriteSet;
 		this.setSize(0.3f, 0.3f);
+
 		this.lifetime = (int) Math.max(1, 160 + (this.random.nextInt(80) - 40));
 		this.gravity = 0f;
 		this.hasPhysics = true;

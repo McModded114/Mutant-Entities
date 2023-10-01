@@ -6,16 +6,14 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.damagesource.EntityDamageSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.network.chat.Component;
-import net.minecraft.core.registries.Registries;
 
 import net.mcmodded.mutantentities.entity.MutantWitherSkeletonEntity;
 import net.mcmodded.mutantentities.MutantEntitiesMod;
@@ -40,7 +38,7 @@ public class WitherSkeletonNewAttacksProcedure {
 		if (entity == null || sourceentity == null)
 			return;
 		if (sourceentity instanceof MutantWitherSkeletonEntity) {
-			if ((damagesource).is(DamageTypes.MOB_ATTACK)) {
+			if ((damagesource) == DamageSource.GENERIC) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
 				}
@@ -51,8 +49,8 @@ public class WitherSkeletonNewAttacksProcedure {
 						}
 						MutantEntitiesMod.queueServerWork(26, () -> {
 							entity.hurt(((new Object() {
-								public DamageSource get(LevelAccessor _world, final String _msgID, Entity _directSource) {
-									return new DamageSource(((Level) _world).registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.CACTUS), _directSource) {
+								public DamageSource get(final String _msgID, Entity _directSource) {
+									return new EntityDamageSource(_msgID, _directSource) {
 										@Override
 										public Component getLocalizedDeathMessage(LivingEntity _livingEntity) {
 											Component _attackerName = null;
@@ -79,7 +77,7 @@ public class WitherSkeletonNewAttacksProcedure {
 										}
 									};
 								}
-							}).get(world, "mutantgeneric", sourceentity)), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
+							}).get("mutantgeneric", sourceentity)), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
 							if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 								_entity.addEffect(new MobEffectInstance(MobEffects.WITHER, 100, 1));
 						});
@@ -89,8 +87,8 @@ public class WitherSkeletonNewAttacksProcedure {
 						}
 						MutantEntitiesMod.queueServerWork(26, () -> {
 							entity.hurt(((new Object() {
-								public DamageSource get(LevelAccessor _world, final String _msgID, Entity _directSource) {
-									return new DamageSource(((Level) _world).registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.CACTUS), _directSource) {
+								public DamageSource get(final String _msgID, Entity _directSource) {
+									return new EntityDamageSource(_msgID, _directSource) {
 										@Override
 										public Component getLocalizedDeathMessage(LivingEntity _livingEntity) {
 											Component _attackerName = null;
@@ -117,7 +115,7 @@ public class WitherSkeletonNewAttacksProcedure {
 										}
 									};
 								}
-							}).get(world, "mutantgeneric", sourceentity)), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
+							}).get("mutantgeneric", sourceentity)), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
 							if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 								_entity.addEffect(new MobEffectInstance(MobEffects.WITHER, 100, 1));
 						});
@@ -130,8 +128,8 @@ public class WitherSkeletonNewAttacksProcedure {
 						for (int index0 = 0; index0 < 26; index0++) {
 							MutantEntitiesMod.queueServerWork(1, () -> {
 								entity.hurt(((new Object() {
-									public DamageSource get(LevelAccessor _world, final String _msgID, Entity _directSource) {
-										return new DamageSource(((Level) _world).registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.CACTUS), _directSource) {
+									public DamageSource get(final String _msgID, Entity _directSource) {
+										return new EntityDamageSource(_msgID, _directSource) {
 											@Override
 											public Component getLocalizedDeathMessage(LivingEntity _livingEntity) {
 												Component _attackerName = null;
@@ -158,7 +156,7 @@ public class WitherSkeletonNewAttacksProcedure {
 											}
 										};
 									}
-								}).get(world, "mutantgeneric", sourceentity)), (float) (((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue() / 10));
+								}).get("mutantgeneric", sourceentity)), (float) (((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue() / 10));
 							});
 							if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 								_entity.addEffect(new MobEffectInstance(MobEffects.WITHER, 5, 1));
@@ -172,8 +170,8 @@ public class WitherSkeletonNewAttacksProcedure {
 						for (int index1 = 0; index1 < 2; index1++) {
 							MutantEntitiesMod.queueServerWork(19, () -> {
 								entity.hurt(((new Object() {
-									public DamageSource get(LevelAccessor _world, final String _msgID, Entity _directSource) {
-										return new DamageSource(((Level) _world).registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.CACTUS), _directSource) {
+									public DamageSource get(final String _msgID, Entity _directSource) {
+										return new EntityDamageSource(_msgID, _directSource) {
 											@Override
 											public Component getLocalizedDeathMessage(LivingEntity _livingEntity) {
 												Component _attackerName = null;
@@ -200,7 +198,7 @@ public class WitherSkeletonNewAttacksProcedure {
 											}
 										};
 									}
-								}).get(world, "mutantgeneric", sourceentity)), (float) (((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue() * 0.8));
+								}).get("mutantgeneric", sourceentity)), (float) (((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue() * 0.8));
 							});
 						}
 					}

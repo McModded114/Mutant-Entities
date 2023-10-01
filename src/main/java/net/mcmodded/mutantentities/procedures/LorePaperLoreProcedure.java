@@ -24,6 +24,6 @@ public class LorePaperLoreProcedure {
 		}
 		if (entity instanceof Player _player && !_player.level.isClientSide())
 			_player.displayClientMessage(Component.literal(MutantEntitiesModVariables.MapVariables.get(world).lorepaper), false);
-		itemstack.shrink(1);
+		(itemstack).shrink(1);
 	}
 }

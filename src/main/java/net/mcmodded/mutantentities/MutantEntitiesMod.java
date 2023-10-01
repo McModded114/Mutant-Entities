@@ -13,7 +13,7 @@
  */
 package net.mcmodded.mutantentities;
 
-import software.bernie.geckolib.GeckoLib;
+import software.bernie.geckolib3.GeckoLib;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
@@ -32,6 +32,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 
 import net.mcmodded.mutantentities.init.MutantEntitiesModVillagerProfessions;
+import net.mcmodded.mutantentities.init.MutantEntitiesModTabs;
 import net.mcmodded.mutantentities.init.MutantEntitiesModParticleTypes;
 import net.mcmodded.mutantentities.init.MutantEntitiesModMobEffects;
 import net.mcmodded.mutantentities.init.MutantEntitiesModItems;
@@ -41,6 +42,7 @@ import net.mcmodded.mutantentities.init.MutantEntitiesModFeatures;
 import net.mcmodded.mutantentities.init.MutantEntitiesModEntities;
 import net.mcmodded.mutantentities.init.MutantEntitiesModEnchantments;
 import net.mcmodded.mutantentities.init.MutantEntitiesModBlocks;
+import net.mcmodded.mutantentities.init.MutantEntitiesModBiomes;
 
 import java.util.function.Supplier;
 import java.util.function.Function;
@@ -58,6 +60,7 @@ public class MutantEntitiesMod {
 
 	public MutantEntitiesMod() {
 		MinecraftForge.EVENT_BUS.register(this);
+		MutantEntitiesModTabs.load();
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
 		MutantEntitiesModBlocks.REGISTRY.register(bus);
@@ -73,6 +76,7 @@ public class MutantEntitiesMod {
 		MutantEntitiesModEnchantments.REGISTRY.register(bus);
 		MutantEntitiesModParticleTypes.REGISTRY.register(bus);
 
+		MutantEntitiesModBiomes.REGISTRY.register(bus);
 		MutantEntitiesModVillagerProfessions.PROFESSIONS.register(bus);
 		GeckoLib.initialize();
 	}

@@ -25,8 +25,8 @@ public class ThrowableIceProjectileHitsBlockProcedure {
 					boolean _flag3 = _level == null ? false : _blockState.canBeReplaced(new BlockPlaceContext(_level, null, InteractionHand.OFF_HAND, ItemStack.EMPTY, _pos));
 					return _flag || _flag2 || _flag3;
 				}
-			}).replaceable(world, (world.getBlockState(BlockPos.containing(x, y + 1, z))))) {
-				world.setBlock(BlockPos.containing(x, y + 1, z), Blocks.SNOW.defaultBlockState(), 3);
+			}).replaceable(world, (world.getBlockState(new BlockPos(x, y + 1, z))))) {
+				world.setBlock(new BlockPos(x, y + 1, z), Blocks.SNOW.defaultBlockState(), 3);
 			}
 			if ((new Object() {
 				public boolean replaceable(LevelAccessor _world, BlockState _blockState) {
@@ -37,8 +37,8 @@ public class ThrowableIceProjectileHitsBlockProcedure {
 					boolean _flag3 = _level == null ? false : _blockState.canBeReplaced(new BlockPlaceContext(_level, null, InteractionHand.OFF_HAND, ItemStack.EMPTY, _pos));
 					return _flag || _flag2 || _flag3;
 				}
-			}).replaceable(world, (world.getBlockState(BlockPos.containing(x + 1, y + 1, z))))) {
-				world.setBlock(BlockPos.containing(x + 1, y + 1, z), Blocks.SNOW.defaultBlockState(), 3);
+			}).replaceable(world, (world.getBlockState(new BlockPos(x + 1, y + 1, z))))) {
+				world.setBlock(new BlockPos(x + 1, y + 1, z), Blocks.SNOW.defaultBlockState(), 3);
 			}
 			if ((new Object() {
 				public boolean replaceable(LevelAccessor _world, BlockState _blockState) {
@@ -49,8 +49,8 @@ public class ThrowableIceProjectileHitsBlockProcedure {
 					boolean _flag3 = _level == null ? false : _blockState.canBeReplaced(new BlockPlaceContext(_level, null, InteractionHand.OFF_HAND, ItemStack.EMPTY, _pos));
 					return _flag || _flag2 || _flag3;
 				}
-			}).replaceable(world, (world.getBlockState(BlockPos.containing(x - 1, y + 1, z))))) {
-				world.setBlock(BlockPos.containing(x - 1, y + 1, z), Blocks.SNOW.defaultBlockState(), 3);
+			}).replaceable(world, (world.getBlockState(new BlockPos(x - 1, y + 1, z))))) {
+				world.setBlock(new BlockPos(x - 1, y + 1, z), Blocks.SNOW.defaultBlockState(), 3);
 			}
 			if ((new Object() {
 				public boolean replaceable(LevelAccessor _world, BlockState _blockState) {
@@ -61,8 +61,8 @@ public class ThrowableIceProjectileHitsBlockProcedure {
 					boolean _flag3 = _level == null ? false : _blockState.canBeReplaced(new BlockPlaceContext(_level, null, InteractionHand.OFF_HAND, ItemStack.EMPTY, _pos));
 					return _flag || _flag2 || _flag3;
 				}
-			}).replaceable(world, (world.getBlockState(BlockPos.containing(x, y + 1, z + 1))))) {
-				world.setBlock(BlockPos.containing(x, y + 1, z + 1), Blocks.SNOW.defaultBlockState(), 3);
+			}).replaceable(world, (world.getBlockState(new BlockPos(x, y + 1, z + 1))))) {
+				world.setBlock(new BlockPos(x, y + 1, z + 1), Blocks.SNOW.defaultBlockState(), 3);
 			}
 			if ((new Object() {
 				public boolean replaceable(LevelAccessor _world, BlockState _blockState) {
@@ -73,8 +73,8 @@ public class ThrowableIceProjectileHitsBlockProcedure {
 					boolean _flag3 = _level == null ? false : _blockState.canBeReplaced(new BlockPlaceContext(_level, null, InteractionHand.OFF_HAND, ItemStack.EMPTY, _pos));
 					return _flag || _flag2 || _flag3;
 				}
-			}).replaceable(world, (world.getBlockState(BlockPos.containing(x, y + 1, z - 1))))) {
-				world.setBlock(BlockPos.containing(x, y + 1, z - 1), Blocks.SNOW.defaultBlockState(), 3);
+			}).replaceable(world, (world.getBlockState(new BlockPos(x, y + 1, z - 1))))) {
+				world.setBlock(new BlockPos(x, y + 1, z - 1), Blocks.SNOW.defaultBlockState(), 3);
 			}
 		}
 	}

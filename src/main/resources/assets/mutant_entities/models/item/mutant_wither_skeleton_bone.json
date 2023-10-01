@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "mutant_entities:item/mutant_wither_skeleton_bones"
+    "layer0": "mutant_entities:items/mutant_wither_skeleton_bones"
   }
 }

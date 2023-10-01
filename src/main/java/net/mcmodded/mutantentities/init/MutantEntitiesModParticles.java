@@ -15,6 +15,6 @@ import net.mcmodded.mutantentities.client.particle.ChemicalXParticleParticle;
 public class MutantEntitiesModParticles {
 	@SubscribeEvent
 	public static void registerParticles(RegisterParticleProvidersEvent event) {
-		event.registerSpriteSet(MutantEntitiesModParticleTypes.CHEMICAL_X_PARTICLE.get(), ChemicalXParticleParticle::provider);
+		event.register(MutantEntitiesModParticleTypes.CHEMICAL_X_PARTICLE.get(), ChemicalXParticleParticle::provider);
 	}
 }

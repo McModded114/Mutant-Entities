@@ -14,11 +14,10 @@ import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.damagesource.EntityDamageSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
-import net.minecraft.core.registries.Registries;
 
 import net.mcmodded.mutantentities.init.MutantEntitiesModEntities;
 import net.mcmodded.mutantentities.init.MutantEntitiesModAttributes;
@@ -80,7 +79,7 @@ public class NewMutantEndermanAttackProcedure {
 			}
 		}
 		if ((sourceentity instanceof MutantEndermanEntity || sourceentity instanceof EndersoulEntity) && entity instanceof LivingEntity) {
-			if ((damagesource).is(DamageTypes.MOB_ATTACK)) {
+			if ((damagesource) == DamageSource.GENERIC) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
 				}
@@ -110,8 +109,8 @@ public class NewMutantEndermanAttackProcedure {
 						}
 						MutantEntitiesMod.queueServerWork(16, () -> {
 							entity.hurt(((new Object() {
-								public DamageSource get(LevelAccessor _world, final String _msgID, Entity _directSource) {
-									return new DamageSource(((Level) _world).registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.CACTUS), _directSource) {
+								public DamageSource get(final String _msgID, Entity _directSource) {
+									return new EntityDamageSource(_msgID, _directSource) {
 										@Override
 										public Component getLocalizedDeathMessage(LivingEntity _livingEntity) {
 											Component _attackerName = null;
@@ -138,7 +137,7 @@ public class NewMutantEndermanAttackProcedure {
 										}
 									};
 								}
-							}).get(world, "mutantgeneric", sourceentity)), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
+							}).get("mutantgeneric", sourceentity)), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
 							MutantEntitiesMod.queueServerWork(16, () -> {
 								((LivingEntity) sourceentity).getAttribute(MutantEntitiesModAttributes.ATK.get()).setBaseValue(0);
 							});
@@ -168,8 +167,8 @@ public class NewMutantEndermanAttackProcedure {
 						}
 						MutantEntitiesMod.queueServerWork(16, () -> {
 							entity.hurt(((new Object() {
-								public DamageSource get(LevelAccessor _world, final String _msgID, Entity _directSource) {
-									return new DamageSource(((Level) _world).registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.CACTUS), _directSource) {
+								public DamageSource get(final String _msgID, Entity _directSource) {
+									return new EntityDamageSource(_msgID, _directSource) {
 										@Override
 										public Component getLocalizedDeathMessage(LivingEntity _livingEntity) {
 											Component _attackerName = null;
@@ -196,7 +195,7 @@ public class NewMutantEndermanAttackProcedure {
 										}
 									};
 								}
-							}).get(world, "mutantgeneric", sourceentity)), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
+							}).get("mutantgeneric", sourceentity)), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
 							if (Math.random() < 0.5) {
 								if (Math.random() < 0.5) {
 									{

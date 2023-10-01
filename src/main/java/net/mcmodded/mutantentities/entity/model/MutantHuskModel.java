@@ -1,12 +1,12 @@
 package net.mcmodded.mutantentities.entity.model;
 
-import software.bernie.geckolib.model.GeoModel;
+import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 import net.minecraft.resources.ResourceLocation;
 
 import net.mcmodded.mutantentities.entity.MutantHuskEntity;
 
-public class MutantHuskModel extends GeoModel<MutantHuskEntity> {
+public class MutantHuskModel extends AnimatedGeoModel<MutantHuskEntity> {
 	@Override
 	public ResourceLocation getAnimationResource(MutantHuskEntity entity) {
 		return new ResourceLocation("mutant_entities", "animations/mutant_zombie.animation.json");

@@ -6,9 +6,11 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 
+import net.mcmodded.mutantentities.init.MutantEntitiesModTabs;
+
 public class MutantWitherSkeletonSwordItem extends Item {
 	public MutantWitherSkeletonSwordItem() {
-		super(new Item.Properties().durability(2031).rarity(Rarity.RARE));
+		super(new Item.Properties().tab(MutantEntitiesModTabs.TAB_MUTANT_ENTITIES_ITEMS).durability(2031).rarity(Rarity.RARE));
 	}
 
 	@Override

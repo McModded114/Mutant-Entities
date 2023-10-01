@@ -1807,7 +1807,7 @@
       "registry_name": "nuclear_wastes",
       "metadata": {
         "files": [
-          "src/main/resources/data/mutant_entities/worldgen/biome/nuclear_wastes.json"
+          "src/main/java/net/mcmodded/mutantentities/world/biome/NuclearWastesBiome.java"
         ]
       }
     },
@@ -2723,7 +2723,7 @@
     "mcreatorDependencies": [
       "geckolib"
     ],
-    "currentGenerator": "forge-1.19.4",
+    "currentGenerator": "forge-1.19.2",
     "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcmodded.mutantentities",
     "lockBaseModFiles": false

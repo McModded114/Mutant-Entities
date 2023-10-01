@@ -1,12 +1,12 @@
 package net.mcmodded.mutantentities.entity.model;
 
-import software.bernie.geckolib.model.GeoModel;
+import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 import net.minecraft.resources.ResourceLocation;
 
 import net.mcmodded.mutantentities.entity.SpiderPigEntity;
 
-public class SpiderPigModel extends GeoModel<SpiderPigEntity> {
+public class SpiderPigModel extends AnimatedGeoModel<SpiderPigEntity> {
 	@Override
 	public ResourceLocation getAnimationResource(SpiderPigEntity entity) {
 		return new ResourceLocation("mutant_entities", "animations/spiderpig.animation.json");

@@ -13,11 +13,12 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.server.level.ServerPlayer;
 
+import net.mcmodded.mutantentities.init.MutantEntitiesModTabs;
 import net.mcmodded.mutantentities.entity.ChemicalXItemEntity;
 
 public class ChemicalXItemItem extends Item {
 	public ChemicalXItemItem() {
-		super(new Item.Properties().durability(1));
+		super(new Item.Properties().tab(MutantEntitiesModTabs.TAB_MUTANT_ENTITIES_ITEMS).durability(1));
 	}
 
 	@Override
@@ -37,7 +38,8 @@ public class ChemicalXItemItem extends Item {
 	}
 
 	@Override
-	public void onUseTick(Level world, LivingEntity entityLiving, ItemStack itemstack, int count) {
+	public void onUsingTick(ItemStack itemstack, LivingEntity entityLiving, int count) {
+		Level world = entityLiving.level;
 		if (!world.isClientSide() && entityLiving instanceof ServerPlayer entity) {
 			double x = entity.getX();
 			double y = entity.getY();

@@ -1,14 +1,12 @@
 package net.mcmodded.mutantentities.procedures;
 
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.damagesource.IndirectEntityDamageSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.network.chat.Component;
-import net.minecraft.core.registries.Registries;
 
 public class ThrowableIceProjectileHitsEntityProcedure {
 	public static void execute(LevelAccessor world, Entity entity, Entity immediatesourceentity, Entity sourceentity) {
@@ -16,7 +14,7 @@ public class ThrowableIceProjectileHitsEntityProcedure {
 			return;
 		if (!(sourceentity == null)) {
 			if (!(sourceentity == entity)) {
-				entity.hurt((new DamageSource(((Level) world).registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MOB_ATTACK), immediatesourceentity, sourceentity) {
+				entity.hurt(((new IndirectEntityDamageSource("mob", immediatesourceentity, sourceentity) {
 					@Override
 					public Component getLocalizedDeathMessage(LivingEntity _livingEntity) {
 						Component _attackerName = null;
@@ -44,11 +42,11 @@ public class ThrowableIceProjectileHitsEntityProcedure {
 							return Component.translatable("death.attack." + "mob", _entityName);
 						}
 					}
-				}), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
+				})), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
 				entity.setTicksFrozen((int) (entity.getTicksFrozen() + 40));
 			}
 		} else {
-			entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.FREEZE)), 5);
+			entity.hurt(DamageSource.FREEZE, 5);
 		}
 	}
 }

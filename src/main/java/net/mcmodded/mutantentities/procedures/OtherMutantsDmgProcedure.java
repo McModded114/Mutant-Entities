@@ -6,14 +6,12 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.damagesource.EntityDamageSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.network.chat.Component;
-import net.minecraft.core.registries.Registries;
 
 import net.mcmodded.mutantentities.entity.SpiderPigEntity;
 import net.mcmodded.mutantentities.MutantEntitiesMod;
@@ -39,7 +37,7 @@ public class OtherMutantsDmgProcedure {
 			return;
 		Entity summon = null;
 		if (sourceentity instanceof SpiderPigEntity && entity instanceof LivingEntity) {
-			if ((damagesource).is(DamageTypes.MOB_ATTACK)) {
+			if ((damagesource) == DamageSource.GENERIC) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
 				}
@@ -48,8 +46,8 @@ public class OtherMutantsDmgProcedure {
 				}
 				MutantEntitiesMod.queueServerWork(15, () -> {
 					entity.hurt(((new Object() {
-						public DamageSource get(LevelAccessor _world, final String _msgID, Entity _directSource) {
-							return new DamageSource(((Level) _world).registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.CACTUS), _directSource) {
+						public DamageSource get(final String _msgID, Entity _directSource) {
+							return new EntityDamageSource(_msgID, _directSource) {
 								@Override
 								public Component getLocalizedDeathMessage(LivingEntity _livingEntity) {
 									Component _attackerName = null;
@@ -76,7 +74,7 @@ public class OtherMutantsDmgProcedure {
 								}
 							};
 						}
-					}).get(world, "mutantgeneric", sourceentity)), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
+					}).get("mutantgeneric", sourceentity)), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
 				});
 			}
 		}

@@ -49,7 +49,7 @@ public class CalculatingAttributeModifiersProcedure {
 		if (EnchantmentHelper.getItemEnchantmentLevel(MutantEntitiesModEnchantments.CLEAVING.get(), itemstack) != 0) {
 			if (event instanceof ItemAttributeModifierEvent _event && _event.getSlotType() == EquipmentSlot.MAINHAND) {
 				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE, (new AttributeModifier(UUID.fromString("5ef16418-277c-4eeb-8f20-f568be461218"), "cleavingdmg",
-						(1.25 + itemstack.getEnchantmentLevel(MutantEntitiesModEnchantments.CLEAVING.get()) * 0.75), AttributeModifier.Operation.ADDITION)));
+						(1.25 + EnchantmentHelper.getItemEnchantmentLevel(MutantEntitiesModEnchantments.CLEAVING.get(), itemstack) * 0.75), AttributeModifier.Operation.ADDITION)));
 			}
 		}
 	}

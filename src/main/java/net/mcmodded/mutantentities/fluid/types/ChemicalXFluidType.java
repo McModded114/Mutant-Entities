@@ -19,7 +19,7 @@ public class ChemicalXFluidType extends FluidType {
 	@Override
 	public void initializeClient(Consumer<IClientFluidTypeExtensions> consumer) {
 		consumer.accept(new IClientFluidTypeExtensions() {
-			private static final ResourceLocation STILL_TEXTURE = new ResourceLocation("mutant_entities:block/liquidchemicalx_still"), FLOWING_TEXTURE = new ResourceLocation("mutant_entities:block/liquidchemicalx_flow");
+			private static final ResourceLocation STILL_TEXTURE = new ResourceLocation("mutant_entities:blocks/liquidchemicalx_still"), FLOWING_TEXTURE = new ResourceLocation("mutant_entities:blocks/liquidchemicalx_flow");
 
 			@Override
 			public ResourceLocation getStillTexture() {

@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "mutant_entities:item/endersoul_hand"
+    "layer0": "mutant_entities:items/endersoul_hand"
   }
 }

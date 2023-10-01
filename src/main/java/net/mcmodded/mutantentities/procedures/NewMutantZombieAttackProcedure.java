@@ -9,7 +9,6 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
@@ -18,7 +17,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.damagesource.EntityDamageSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
@@ -26,7 +25,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
-import net.minecraft.core.registries.Registries;
+import net.minecraft.core.Registry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 
@@ -62,8 +61,8 @@ public class NewMutantZombieAttackProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, DamageSource damagesource, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
 			return;
-		if (sourceentity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("mutant_entities:mutantzombieattack"))) && entity instanceof LivingEntity) {
-			if ((damagesource).is(DamageTypes.MOB_ATTACK)) {
+		if (sourceentity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("mutant_entities:mutantzombieattack"))) && entity instanceof LivingEntity) {
+			if ((damagesource) == DamageSource.GENERIC) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
 				}
@@ -90,8 +89,8 @@ public class NewMutantZombieAttackProcedure {
 										0.4, Math.sin(((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).getBaseValue() * 3 * (sourceentity.getYRot() + 90) * (Math.PI / 180))));
 						sourceentity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3((entity.getX()), (entity.getY() + entity.getBbHeight()), (entity.getZ())));
 						entity.hurt(((new Object() {
-							public DamageSource get(LevelAccessor _world, final String _msgID, Entity _directSource) {
-								return new DamageSource(((Level) _world).registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.CACTUS), _directSource) {
+							public DamageSource get(final String _msgID, Entity _directSource) {
+								return new EntityDamageSource(_msgID, _directSource) {
 									@Override
 									public Component getLocalizedDeathMessage(LivingEntity _livingEntity) {
 										Component _attackerName = null;
@@ -118,7 +117,7 @@ public class NewMutantZombieAttackProcedure {
 									}
 								};
 							}
-						}).get(world, "slam", sourceentity)), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
+						}).get("slam", sourceentity)), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
 						MutantEntitiesMod.queueServerWork(10, () -> {
 							((LivingEntity) sourceentity).getAttribute(MutantEntitiesModAttributes.ATK.get()).setBaseValue(0);
 						});
@@ -151,10 +150,10 @@ public class NewMutantZombieAttackProcedure {
 										.collect(Collectors.toList());
 								for (Entity entityiterator : _entfound) {
 									if (!(entityiterator == sourceentity)) {
-										if (entityiterator == entity && entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("mutant_entities:mutantzombiepassive")))) {
+										if (entityiterator == entity && entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("mutant_entities:mutantzombiepassive")))) {
 											entityiterator.hurt(((new Object() {
-												public DamageSource get(LevelAccessor _world, final String _msgID, Entity _directSource) {
-													return new DamageSource(((Level) _world).registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.CACTUS), _directSource) {
+												public DamageSource get(final String _msgID, Entity _directSource) {
+													return new EntityDamageSource(_msgID, _directSource) {
 														@Override
 														public Component getLocalizedDeathMessage(LivingEntity _livingEntity) {
 															Component _attackerName = null;
@@ -181,16 +180,16 @@ public class NewMutantZombieAttackProcedure {
 														}
 													};
 												}
-											}).get(world, "slam", sourceentity)), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
+											}).get("slam", sourceentity)), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
 											for (int index0 = 0; index0 < 4; index0++) {
-												world.levelEvent(2001, BlockPos.containing(entityiterator.getX() + Mth.nextInt(RandomSource.create(), 1, 3), entityiterator.getY(), entityiterator.getZ() + Mth.nextInt(RandomSource.create(), 1, 3)),
-														Block.getId((world.getBlockState(BlockPos.containing(entityiterator.getX(), entityiterator.getY() - 1, entityiterator.getZ())))));
+												world.levelEvent(2001, new BlockPos(entityiterator.getX() + Mth.nextInt(RandomSource.create(), 1, 3), entityiterator.getY(), entityiterator.getZ() + Mth.nextInt(RandomSource.create(), 1, 3)),
+														Block.getId((world.getBlockState(new BlockPos(entityiterator.getX(), entityiterator.getY() - 1, entityiterator.getZ())))));
 											}
-										} else if (!entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("mutant_entities:mutantzombiepassive")))) {
-											if (!entityiterator.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("mutant_entities:mutantzombiepassive")))) {
+										} else if (!entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("mutant_entities:mutantzombiepassive")))) {
+											if (!entityiterator.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("mutant_entities:mutantzombiepassive")))) {
 												entityiterator.hurt(((new Object() {
-													public DamageSource get(LevelAccessor _world, final String _msgID, Entity _directSource) {
-														return new DamageSource(((Level) _world).registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.CACTUS), _directSource) {
+													public DamageSource get(final String _msgID, Entity _directSource) {
+														return new EntityDamageSource(_msgID, _directSource) {
 															@Override
 															public Component getLocalizedDeathMessage(LivingEntity _livingEntity) {
 																Component _attackerName = null;
@@ -217,10 +216,10 @@ public class NewMutantZombieAttackProcedure {
 															}
 														};
 													}
-												}).get(world, "slam", sourceentity)), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
+												}).get("slam", sourceentity)), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
 												for (int index1 = 0; index1 < 4; index1++) {
-													world.levelEvent(2001, BlockPos.containing(entityiterator.getX() + Mth.nextInt(RandomSource.create(), 1, 3), entityiterator.getY(), entityiterator.getZ() + Mth.nextInt(RandomSource.create(), 1, 3)),
-															Block.getId((world.getBlockState(BlockPos.containing(entityiterator.getX(), entityiterator.getY() - 1, entityiterator.getZ())))));
+													world.levelEvent(2001, new BlockPos(entityiterator.getX() + Mth.nextInt(RandomSource.create(), 1, 3), entityiterator.getY(), entityiterator.getZ() + Mth.nextInt(RandomSource.create(), 1, 3)),
+															Block.getId((world.getBlockState(new BlockPos(entityiterator.getX(), entityiterator.getY() - 1, entityiterator.getZ())))));
 												}
 											}
 										}
@@ -244,7 +243,7 @@ public class NewMutantZombieAttackProcedure {
 					}
 					for (int index2 = 0; index2 < 4; index2++) {
 						if (Math.random() < 0.5) {
-							world.levelEvent(2001, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), Block.getId((world.getBlockState(BlockPos.containing(entity.getX(), entity.getY(), entity.getZ())))));
+							world.levelEvent(2001, new BlockPos(entity.getX(), entity.getY(), entity.getZ()), Block.getId((world.getBlockState(new BlockPos(entity.getX(), entity.getY(), entity.getZ())))));
 							if (world instanceof ServerLevel _level) {
 								Entity _entityToSpawn = EntityType.ZOMBIE.create(_level);
 								_entityToSpawn.moveTo((entity.getX()), (entity.getY()), (entity.getZ()), world.getRandom().nextFloat() * 360.0F, 0.0F);
@@ -256,8 +255,7 @@ public class NewMutantZombieAttackProcedure {
 								_level.addFreshEntity(_entityToSpawn);
 							}
 						} else {
-							world.levelEvent(2001, BlockPos.containing(sourceentity.getX(), sourceentity.getY(), sourceentity.getZ()),
-									Block.getId((world.getBlockState(BlockPos.containing(sourceentity.getX(), sourceentity.getY(), sourceentity.getZ())))));
+							world.levelEvent(2001, new BlockPos(sourceentity.getX(), sourceentity.getY(), sourceentity.getZ()), Block.getId((world.getBlockState(new BlockPos(sourceentity.getX(), sourceentity.getY(), sourceentity.getZ())))));
 							if (world instanceof ServerLevel _level) {
 								Entity _entityToSpawn = EntityType.ZOMBIE.create(_level);
 								_entityToSpawn.moveTo((sourceentity.getX()), (sourceentity.getY()), (sourceentity.getZ()), world.getRandom().nextFloat() * 360.0F, 0.0F);

@@ -3,6 +3,7 @@ package net.mcmodded.mutantentities.procedures;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.GameRules;
+import net.minecraft.world.level.Explosion;
 import net.minecraft.world.entity.Entity;
 
 public class MutantCreeperExplodeProcedure {
@@ -11,7 +12,7 @@ public class MutantCreeperExplodeProcedure {
 			return;
 		if (world.getLevelData().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING) == true) {
 			if (world instanceof Level _level && !_level.isClientSide()) {
-				_level.explode(entity, (entity.getX()), (entity.getY()), (entity.getZ()), 9, false, Level.ExplosionInteraction.TNT);
+				_level.explode(entity, (entity.getX()), (entity.getY()), (entity.getZ()), 9, false, Explosion.BlockInteraction.BREAK);
 			}
 		}
 	}

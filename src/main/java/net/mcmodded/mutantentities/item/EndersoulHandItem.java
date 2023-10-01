@@ -11,13 +11,14 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EquipmentSlot;
 
 import net.mcmodded.mutantentities.procedures.EndersoulHandAbilityProcedure;
+import net.mcmodded.mutantentities.init.MutantEntitiesModTabs;
 
 import com.google.common.collect.Multimap;
 import com.google.common.collect.ImmutableMultimap;
 
 public class EndersoulHandItem extends Item {
 	public EndersoulHandItem() {
-		super(new Item.Properties().durability(120).rarity(Rarity.EPIC));
+		super(new Item.Properties().tab(MutantEntitiesModTabs.TAB_MUTANT_ENTITIES_ITEMS).durability(120).rarity(Rarity.EPIC));
 	}
 
 	@Override

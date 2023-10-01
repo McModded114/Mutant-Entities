@@ -1,8 +1,8 @@
 {
   "parent": "block/cross",
   "textures": {
-    "cross": "mutant_entities:block/ancient_bush",
-    "particle": "mutant_entities:block/ancient_bush"
+    "cross": "mutant_entities:blocks/ancient_bush",
+    "particle": "mutant_entities:blocks/ancient_bush"
   },
   "render_type": "cutout"
 }

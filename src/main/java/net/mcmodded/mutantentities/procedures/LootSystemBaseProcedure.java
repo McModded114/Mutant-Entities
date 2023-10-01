@@ -5,6 +5,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.LivingEntity;
@@ -22,7 +23,7 @@ public class LootSystemBaseProcedure {
 			for (ItemStack itemstackiterator : world.getServer().getLootTables()
 					.get(new ResourceLocation((("mutant_entities:entities/" + (ForgeRegistries.ENTITY_TYPES.getKey(entity.getType()).toString()).replace("mutant_entities:", "") + "_loot")).toLowerCase(java.util.Locale.ENGLISH)))
 					.getRandomItems(new LootContext.Builder((ServerLevel) world).create(LootContextParamSets.EMPTY))) {
-				if (world instanceof ServerLevel _level) {
+				if (world instanceof Level _level && !_level.isClientSide()) {
 					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, itemstackiterator);
 					entityToSpawn.setPickUpDelay(10);
 					_level.addFreshEntity(entityToSpawn);
@@ -35,7 +36,7 @@ public class LootSystemBaseProcedure {
 						.get(new ResourceLocation((("mutant_entities:entities/" + (ForgeRegistries.ENTITY_TYPES.getKey(entity.getType()).toString()).replace("mutant_entities:", "") + "_loot"
 								+ Math.round(((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.MOBVAR.get()).getBaseValue()))).toLowerCase(java.util.Locale.ENGLISH)))
 						.getRandomItems(new LootContext.Builder((ServerLevel) world).create(LootContextParamSets.EMPTY))) {
-					if (world instanceof ServerLevel _level) {
+					if (world instanceof Level _level && !_level.isClientSide()) {
 						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, itemstackiterator);
 						entityToSpawn.setPickUpDelay(10);
 						_level.addFreshEntity(entityToSpawn);

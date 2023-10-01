@@ -66,8 +66,7 @@ public class WeaponEffectsProcedure {
 					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(4 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
 							.collect(Collectors.toList());
 					for (Entity entityiterator : _entfound) {
-						world.levelEvent(2001, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()),
-								Block.getId((world.getBlockState(BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())))));
+						world.levelEvent(2001, new BlockPos(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), Block.getId((world.getBlockState(new BlockPos(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())))));
 						if (!(sourceentity == entityiterator)) {
 							if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
 								_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40, 9));

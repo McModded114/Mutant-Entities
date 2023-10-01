@@ -16,7 +16,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
 import net.minecraft.tags.TagKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.Registries;
+import net.minecraft.core.Registry;
 
 import net.mcmodded.mutantentities.init.MutantEntitiesModAttributes;
 import net.mcmodded.mutantentities.entity.MutantDrownedEntity;
@@ -41,7 +41,7 @@ public class OnSpawnProcedure {
 		if (entity instanceof Pig) {
 			((Pig) entity).goalSelector.addGoal(0, new TemptGoal(((Pig) entity), 1, Ingredient.of(Items.SPIDER_EYE), false));
 		}
-		if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("mutant_entities:mutant_entities")))) {
+		if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("mutant_entities:mutant_entities")))) {
 			if (entity.getPersistentData().getBoolean("textured") == false) {
 				if (MutantEntitiesConfigFileConfiguration.SIZEVARIES.get() == true) {
 					((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.SIZ.get())
@@ -51,7 +51,7 @@ public class OnSpawnProcedure {
 					((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).setBaseValue(
 							(((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getBaseValue() * ((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.SIZ.get()).getBaseValue()));
 				}
-				if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("mutant_entities:extralives")))) {
+				if (entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("mutant_entities:extralives")))) {
 					((LivingEntity) entity).getAttribute(MutantEntitiesModAttributes.EXT.get()).setBaseValue((double) MutantEntitiesConfigFileConfiguration.MAXLIVES.get());
 				}
 				entity.getPersistentData().putBoolean("textured", true);

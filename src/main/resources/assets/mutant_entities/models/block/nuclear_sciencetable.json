@@ -1,9 +1,9 @@
 {
   "parent": "mutant_entities:custom/nuclear_sciencetable",
   "textures": {
-    "all": "mutant_entities:block/nuclear_sciencetable",
-    "particle": "mutant_entities:block/nuclear_sciencetable",
-    "0": "mutant_entities:block/nuclear_sciencetable"
+    "all": "mutant_entities:blocks/nuclear_sciencetable",
+    "particle": "mutant_entities:blocks/nuclear_sciencetable",
+    "0": "mutant_entities:blocks/nuclear_sciencetable"
   },
   "render_type": "solid"
 }

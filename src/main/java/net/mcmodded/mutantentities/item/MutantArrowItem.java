@@ -6,6 +6,7 @@ import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
@@ -21,7 +22,7 @@ import java.util.List;
 
 public class MutantArrowItem extends Item {
 	public MutantArrowItem() {
-		super(new Item.Properties().stacksTo(1));
+		super(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).stacksTo(1));
 	}
 
 	@Override

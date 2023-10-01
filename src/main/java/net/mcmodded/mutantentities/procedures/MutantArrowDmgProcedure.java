@@ -1,14 +1,12 @@
 package net.mcmodded.mutantentities.procedures;
 
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.damagesource.IndirectEntityDamageSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.network.chat.Component;
-import net.minecraft.core.registries.Registries;
 
 public class MutantArrowDmgProcedure {
 	public static void execute(LevelAccessor world, Entity entity, Entity immediatesourceentity, Entity sourceentity) {
@@ -17,8 +15,8 @@ public class MutantArrowDmgProcedure {
 		if (!(sourceentity == null)) {
 			if (!(sourceentity == entity)) {
 				entity.hurt(((new Object() {
-					public DamageSource get(LevelAccessor _world, final String _msgID, Entity _directSource, Entity _indirectSource) {
-						return new DamageSource(((Level) _world).registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.CACTUS), _directSource, _indirectSource) {
+					public DamageSource get(final String _msgID, Entity _directSource, Entity _indirectSource) {
+						return new IndirectEntityDamageSource(_msgID, _directSource, _indirectSource) {
 							@Override
 							public Component getLocalizedDeathMessage(LivingEntity _livingEntity) {
 								Component _attackerName = null;
@@ -48,20 +46,10 @@ public class MutantArrowDmgProcedure {
 							}
 						};
 					}
-				}).get(world, "mutantarrow", immediatesourceentity, sourceentity)), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
+				}).get("mutantarrow", immediatesourceentity, sourceentity)), (float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
 			}
 		} else {
-			entity.hurt(((new Object() {
-				public DamageSource get(LevelAccessor _world, final String _msgID) {
-					DamageSource _damageSource = new DamageSource(((Level) _world).registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.CACTUS)) {
-						@Override
-						public Component getLocalizedDeathMessage(LivingEntity _livingEntity) {
-							return Component.translatable("death.attack." + _msgID, _livingEntity.getDisplayName());
-						}
-					};
-					return _damageSource;
-				}
-			}).get(world, "mutantarrow")), 5);
+			entity.hurt((new DamageSource("mutantarrow")), 5);
 		}
 	}
 }
